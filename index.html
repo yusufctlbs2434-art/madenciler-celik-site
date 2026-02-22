@@ -1,137 +1,151 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <title>Madenciler Çelik | Uzay Çatı & Çelik Konstrüksiyon</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Madenciler Çelik | Uzay Çatı & Çelik Konstrüksiyon</title>
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
 
-        body {
-            background: #f4f6f9;
-            color: #333;
-        }
+body {
+    background: #f4f6f9;
+    color: #333;
+}
 
-        header {
-            background: #111827;
-            padding: 20px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: white;
-        }
+header {
+    background: #111827;
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
 
-        header h1 {
-            font-size: 22px;
-            font-weight: 600;
-        }
+header h1 {
+    font-size: 22px;
+}
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 25px;
-            font-size: 14px;
-        }
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 14px;
+}
 
-        nav a:hover {
-            color: #f59e0b;
-        }
+nav a:hover {
+    color: #f59e0b;
+}
 
-        .hero {
-            height: 90vh;
-            background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
-                        url('https://images.unsplash.com/photo-1581093588401-12a41c66a47b');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: white;
-            padding: 20px;
-        }
+.hero {
+    height: 90vh;
+    background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+    url('https://images.unsplash.com/photo-1581093588401-12a41c66a47b');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
 
-        .hero h2 {
-            font-size: 42px;
-            margin-bottom: 20px;
-        }
+.hero h2 {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
 
-        .hero p {
-            font-size: 18px;
-            margin-bottom: 30px;
-        }
+.hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
 
-        .btn {
-            background: #f59e0b;
-            padding: 14px 30px;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: 600;
-            transition: 0.3s;
-        }
+.btn {
+    background: #f59e0b;
+    padding: 14px 30px;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: 0.3s;
+}
 
-        .btn:hover {
-            background: #d97706;
-        }
+.btn:hover {
+    background: #d97706;
+}
 
-        .section {
-            padding: 80px 8%;
-            text-align: center;
-        }
+.section {
+    padding: 80px 8%;
+    text-align: center;
+}
 
-        .section h3 {
-            font-size: 30px;
-            margin-bottom: 40px;
-        }
+.section h3 {
+    font-size: 30px;
+    margin-bottom: 40px;
+}
 
-        .services {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
 
-        .card {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-            transition: 0.3s;
-        }
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
 
-        .card:hover {
-            transform: translateY(-8px);
-        }
+.card:hover {
+    transform: translateY(-8px);
+}
 
-        .card h4 {
-            margin-bottom: 15px;
-            color: #111827;
-        }
+footer {
+    background: #111827;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
 
-        footer {
-            background: #111827;
-            color: white;
-            text-align: center;
-            padding: 30px;
-            margin-top: 60px;
-        }
+/* WhatsApp Buton */
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25D366;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    transition: 0.3s;
+    z-index: 999;
+}
 
-        @media(max-width: 768px) {
-            .hero h2 {
-                font-size: 28px;
-            }
-        }
-    </style>
+.whatsapp-float:hover {
+    transform: scale(1.1);
+}
+
+@media(max-width: 768px) {
+    .hero h2 {
+        font-size: 28px;
+    }
+}
+</style>
 </head>
+
 <body>
 
 <header>
@@ -139,7 +153,6 @@
     <nav>
         <a href="#">Anasayfa</a>
         <a href="#">Hizmetler</a>
-        <a href="#">Projeler</a>
         <a href="#">İletişim</a>
     </nav>
 </header>
@@ -170,9 +183,20 @@
     </div>
 </section>
 
+<section class="section" style="background:#ffffff;">
+    <h3>İletişim</h3>
+    <p><strong>Telefon 1:</strong> 0533 481 55 90</p>
+    <p><strong>Telefon 2:</strong> +90 531 914 29 16</p>
+    <p><strong>Email:</strong> info@madencilercelik.com</p>
+</section>
+
 <footer>
     © 2026 Madenciler Çelik | Tüm Hakları Saklıdır
 </footer>
+
+<a href="https://wa.me/905319142916" target="_blank" class="whatsapp-float">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" width="30">
+</a>
 
 </body>
 </html>
