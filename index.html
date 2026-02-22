@@ -179,6 +179,31 @@ transition:.3s;
 .hero h2{font-size:28px;}
 .gallery-item img{height:220px;}
 }
+/* LIGHTBOX */
+
+.lightbox{
+display:none;
+position:fixed;
+z-index:9999;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
+justify-content:center;
+align-items:center;
+}
+
+.lightbox img{
+max-width:90%;
+max-height:90%;
+border-radius:10px;
+}
+
+.lightbox.active{
+display:flex;
+cursor:pointer;
+}
 </style>
 </head>
 
@@ -216,21 +241,23 @@ transition:.3s;
 <h3>Tamamlanan Projelerimiz</h3>
 
 <div class="gallery">
-<div class="gallery-item"><img src="images/proje1.jpg"></div>
-<div class="gallery-item"><img src="images/proje2.jpg"></div>
-<div class="gallery-item"><img src="images/proje3.jpg"></div>
-<div class="gallery-item"><img src="images/proje4.jpg"></div>
-<div class="gallery-item"><img src="images/proje5.jpg"></div>
-<div class="gallery-item"><img src="images/proje6.jpg"></div>
-<div class="gallery-item"><img src="images/proje7.jpg"></div>
-<div class="gallery-item"><img src="images/proje8.jpg"></div>
-<div class="gallery-item"><img src="images/proje9.jpg"></div>
-<div class="gallery-item"><img src="images/proje10.jpg"></div>
-<div class="gallery-item"><img src="images/proje11.jpg"></div>
-<div class="gallery-item"><img src="images/proje12.jpg"></div>
-<div class="gallery-item"><img src="images/proje13.jpg"></div>
-<div class="gallery-item"><img src="images/proje14.jpg"></div>
-<div class="gallery-item"><img src="images/proje15.jpg"></div>
+
+<img src="images/proje1.jpg" onclick="openLightbox(this.src)">
+<img src="images/proje2.jpg" onclick="openLightbox(this.src)">
+<img src="images/proje3.jpg" onclick="openLightbox(this.src)">
+<img src="images/proje4.jpg" onclick="openLightbox(this.src)">
+<img src="images/proje5.jpg" onclick="openLightbox(this.src)">
+<img src="images/proje6.jpg" onclick="openLightbox(this.src)">
+<img src="images/proje7.jpg" onclick="openLightbox(this.src)">
+<img src="images/proje8.jpg" onclick="openLightbox(this.src)">
+<img src="images/proje9.jpg" onclick="openLightbox(this.src)">
+<img src="images/proje10.jpg" onclick="openLightbox(this.src)">
+<img src="images/proje11.jpg" onclick="openLightbox(this.src)">
+<img src="images/proje12.jpg" onclick="openLightbox(this.src)">
+<img src="images/proje13.jpg" onclick="openLightbox(this.src)">
+<img src="images/proje14.jpg" onclick="openLightbox(this.src)">
+<img src="images/proje15.jpg" onclick="openLightbox(this.src)">
+
 </div>
 </section>
 
@@ -274,6 +301,26 @@ transition:.3s;
 <a href="https://wa.me/905319142916" target="_blank" class="whatsapp">
 <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" width="28">
 </a>
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+<img id="lightbox-img">
+</div>
 
+<script>
+
+function openLightbox(src){
+
+document.getElementById("lightbox-img").src = src;
+
+document.getElementById("lightbox").classList.add("active");
+
+}
+
+function closeLightbox(){
+
+document.getElementById("lightbox").classList.remove("active");
+
+}
+
+</script>
 </body>
 </html>
