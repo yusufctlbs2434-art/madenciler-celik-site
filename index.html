@@ -9,19 +9,8 @@
 
 <style>
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-}
-
-body{
-background:#f4f6f9;
-color:#333;
-}
-
-/* HEADER */
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{background:#f4f6f9;color:#333;}
 
 header{
 background:#111827;
@@ -39,8 +28,6 @@ margin-left:25px;
 font-size:15px;
 }
 
-/* HERO */
-
 .hero{
 height:90vh;
 background:linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),
@@ -50,15 +37,11 @@ background-position:center;
 display:flex;
 justify-content:center;
 align-items:center;
-text-align:center;
 color:white;
+text-align:center;
 }
 
-.hero h2{
-font-size:42px;
-}
-
-/* SECTION */
+.hero h2{font-size:42px;}
 
 .section{
 padding:90px 8%;
@@ -70,8 +53,6 @@ font-size:32px;
 margin-bottom:50px;
 color:#111827;
 }
-
-/* CORPORATE */
 
 .corporate{
 display:grid;
@@ -85,13 +66,14 @@ background:white;
 padding:35px;
 border-radius:12px;
 box-shadow:0 10px 25px rgba(0,0,0,0.08);
+line-height:1.7;
 }
 
 /* SERVICES */
 
 .services{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:25px;
 }
 
@@ -148,6 +130,7 @@ background:white;
 padding:25px;
 border-radius:10px;
 box-shadow:0 8px 20px rgba(0,0,0,0.08);
+font-weight:500;
 }
 
 /* MAP */
@@ -155,32 +138,8 @@ box-shadow:0 8px 20px rgba(0,0,0,0.08);
 .map iframe{
 width:100%;
 height:350px;
-border:0;
 border-radius:10px;
-}
-
-/* LIGHTBOX */
-
-.lightbox{
-display:none;
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.9);
-justify-content:center;
-align-items:center;
-z-index:9999;
-}
-
-.lightbox img{
-max-width:90%;
-max-height:90%;
-}
-
-.lightbox.active{
-display:flex;
+border:0;
 }
 
 /* WHATSAPP */
@@ -200,9 +159,7 @@ box-shadow:0 8px 25px rgba(0,0,0,0.3);
 z-index:9999;
 }
 
-.whatsapp img{
-width:40px;
-}
+.whatsapp img{width:40px;}
 
 footer{
 background:#111827;
@@ -210,6 +167,21 @@ color:white;
 padding:30px;
 text-align:center;
 }
+
+.lightbox{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
+justify-content:center;
+align-items:center;
+}
+
+.lightbox.active{display:flex;}
+.lightbox img{max-width:90%;}
 
 </style>
 </head>
@@ -229,11 +201,9 @@ text-align:center;
 </nav>
 </header>
 
-
 <section class="hero">
 <h2>Uzay Çatı ve Çelik Konstrüksiyon Sistemleri</h2>
 </section>
-
 
 <!-- HAKKIMIZDA -->
 
@@ -244,29 +214,17 @@ text-align:center;
 
 <div class="corporate-box">
 
-<p>
+Madenciler Çelik Konstrüksiyon, 2010 yılında kurulmuş olup uzay çatı sistemleri, çelik konstrüksiyon, çatı kaplamaları, imalat ve montaj alanlarında faaliyet göstermektedir. Kurulduğu günden bu yana sektörde güvenilirliği, kalite anlayışı ve mühendislik disiplini ile ön plana çıkmıştır.
 
-Madenciler Çelik Konstrüksiyon, 2010 yılında kurulmuş olup uzay çatı sistemleri, çelik konstrüksiyon, çatı kaplamaları, imalat ve montaj alanlarında faaliyet göstermektedir.
-
-</p>
-
-<p>
-
-Kurulduğu günden bu yana sanayi tesisleri, spor kompleksleri ve çeşitli yapı projelerinde kaliteli ve güvenilir çözümler sunmaktadır.
-
-</p>
+Firmamız sanayi tesisleri, spor kompleksleri, fuar alanları, ticari yapılar ve çeşitli mimari projelerde anahtar teslim çözümler sunarak müşterilerine uzun ömürlü ve güvenli yapılar kazandırmaktadır.
 
 </div>
 
 <div class="corporate-box">
 
-<h4>Deneyim ve Güven</h4>
+Madenciler Çelik, güçlü teknik kadrosu, modern üretim teknikleri ve müşteri odaklı yaklaşımı ile projelerini zamanında ve eksiksiz tamamlamayı ilke edinmiştir.
 
-<p>
-
-2010 yılından bu yana edindiğimiz saha tecrübesi ile müşterilerimize profesyonel çözümler sunmaktayız.
-
-</p>
+Kalite, güven ve sürdürülebilirlik ilkeleri doğrultusunda sektörde büyümeye ve müşterilerine en iyi hizmeti sunmaya devam etmektedir.
 
 </div>
 
@@ -274,8 +232,7 @@ Kurulduğu günden bu yana sanayi tesisleri, spor kompleksleri ve çeşitli yap�
 
 </section>
 
-
-<!-- HİZMETLER -->
+<!-- SERVICES -->
 
 <section class="section">
 <h3>Hizmetlerimiz</h3>
@@ -283,143 +240,84 @@ Kurulduğu günden bu yana sanayi tesisleri, spor kompleksleri ve çeşitli yap�
 <div class="services">
 
 <div>
-<div class="service-card" onclick="toggleService(this)">Uzay Çatı Sistemleri</div>
+<div class="service-card" onclick="toggleService(this)">Uzay Çatı</div>
 <div class="service-content">
-<ul>
-<li>Sanayi tesisleri</li>
-<li>Spor tesisleri</li>
-<li>Fuar alanları</li>
-</ul>
+Sanayi tesisleri, spor salonları, hangarlar, fuar alanları, konser salonları, mağazalar, pazar yerleri ve geniş açıklıklı yapılarda uygulanmaktadır.
 </div>
 </div>
 
 <div>
 <div class="service-card" onclick="toggleService(this)">Çelik Konstrüksiyon</div>
 <div class="service-content">
-<ul>
-<li>Sanayi yapıları</li>
-<li>Otoparklar</li>
-</ul>
+Sanayi yapıları, otoparklar, kolon, kiriş sistemleri ve çeşitli çelik yapı projelerinde kullanılmaktadır.
+</div>
+</div>
+
+<div>
+<div class="service-card" onclick="toggleService(this)">Çatı Kaplamaları</div>
+<div class="service-content">
+Sandviç panel, membran, yalıtım ve modern çatı sistemleri uygulanmaktadır.
+</div>
+</div>
+
+<div>
+<div class="service-card" onclick="toggleService(this)">İmalat</div>
+<div class="service-content">
+Projeye özel çelik üretim ve imalat hizmetleri sunulmaktadır.
+</div>
+</div>
+
+<div>
+<div class="service-card" onclick="toggleService(this)">Montaj</div>
+<div class="service-content">
+Profesyonel saha montaj ve anahtar teslim uygulamalar yapılmaktadır.
 </div>
 </div>
 
 </div>
 
 </section>
-
-
-<!-- PROJELER -->
-
-<section class="section">
-<h3>Tamamlanan Projelerimiz</h3>
-
-<div class="gallery">
-
-<script>
-for(let i=1;i<=15;i++){
-document.write(`<div class="gallery-item" onclick="openLightbox('images/proje${i}.jpg')">
-<img src="images/proje${i}.jpg">
-</div>`);
-}
-</script>
-
-</div>
-
-</section>
-
 
 <!-- REFERANSLAR -->
 
 <section class="section">
+
 <h3>Referanslarımız</h3>
 
 <div class="references">
 
 <div class="reference-box">DÜNDAR İNŞAAT A.Ş</div>
 <div class="reference-box">2.M PROJE MÜHENDİSLİK</div>
+<div class="reference-box">ZETAŞ ZEMİN ETÜT A.Ş</div>
+<div class="reference-box">ANKAS GRUP VE FEMA İNŞ.A.Ş</div>
+<div class="reference-box">37 BURAK İNŞ.LTD.ŞTİ</div>
+<div class="reference-box">CEMAK YAPI LTD.ŞTİ</div>
+<div class="reference-box">KOÇ MÜHENDİSLİK LTD.ŞTİ</div>
+<div class="reference-box">MERVE GROUP LTD.ŞTİ</div>
+<div class="reference-box">UZUNYOL PASLANMAZ LTD.ŞTİ</div>
+<div class="reference-box">NORM HAVUZCULUK LTD.ŞTİ</div>
+<div class="reference-box">PİMAŞ A.Ş</div>
+<div class="reference-box">BAHAR MADENCİLİK A.Ş</div>
+<div class="reference-box">SKC MÜHENDİSLİK</div>
+<div class="reference-box">SERHAT YAPI NİLTAŞ A.Ş</div>
+<div class="reference-box">URFA KARÇELİK BORU</div>
+<div class="reference-box">ÖZ NAKLİYAT KARA TAŞIMACILIK A.Ş</div>
 
 </div>
 
 </section>
 
-
-<!-- KURUMSAL -->
-
-<section class="section">
-
-<h3>Kurumsal</h3>
-
-<div class="corporate">
-
-<div class="corporate-box">
-<h4>Vizyonumuz</h4>
-<p>Güvenilir firma olmak.</p>
-</div>
-
-<div class="corporate-box">
-<h4>Misyonumuz</h4>
-<p>Kaliteli hizmet sunmak.</p>
-</div>
-
-<div class="corporate-box">
-<h4>Kalite Politikamız</h4>
-<p>Müşteri memnuniyeti.</p>
-</div>
-
-</div>
-
-</section>
-
-
-<section class="section map">
-
-<h3>Konum</h3>
-
-<iframe src="https://www.google.com/maps?q=Ömerli+Koçullu+Mah.+Bağcı+Sk.+No:14+Çekmeköy+İstanbul&output=embed"></iframe>
-
-</section>
-
-
-<section class="section">
-
-<h3>İletişim</h3>
-
-<p>Telefon: +90 0533 481 55 90</p>
-<p>Telefon: +90 0531 914 29 16</p>
-<p>Email: madencilercelik@gmail.com</p>
-
-</section>
-
-
-<footer>
-© 2026 Madenciler Çelik
-</footer>
-
-
-<div class="lightbox" id="lightbox" onclick="closeLightbox()">
-<img id="lightbox-img">
-</div>
-
+<!-- WHATSAPP -->
 
 <a href="https://wa.me/905319142916" class="whatsapp">
 <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
 </a>
 
-
 <script>
 
 function toggleService(el){
-let content=el.nextElementSibling;
+let content = el.nextElementSibling;
 content.style.display = content.style.display==="block"?"none":"block";
-}
-
-function openLightbox(src){
-document.getElementById("lightbox-img").src=src;
-document.getElementById("lightbox").classList.add("active");
-}
-
-function closeLightbox(){
-document.getElementById("lightbox").classList.remove("active");
 }
 
 </script>
