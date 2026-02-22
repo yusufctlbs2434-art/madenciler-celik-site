@@ -21,6 +21,8 @@ background:#f4f6f9;
 color:#333;
 }
 
+/* HEADER */
+
 header{
 background:#111827;
 padding:20px 8%;
@@ -36,6 +38,8 @@ text-decoration:none;
 margin-left:25px;
 font-size:15px;
 }
+
+/* HERO */
 
 .hero{
 height:90vh;
@@ -54,6 +58,8 @@ color:white;
 font-size:42px;
 }
 
+/* SECTION */
+
 .section{
 padding:90px 8%;
 text-align:center;
@@ -65,7 +71,7 @@ margin-bottom:50px;
 color:#111827;
 }
 
-/* HAKKIMIZDA & KURUMSAL */
+/* CORPORATE */
 
 .corporate{
 display:grid;
@@ -81,7 +87,7 @@ border-radius:12px;
 box-shadow:0 10px 25px rgba(0,0,0,0.08);
 }
 
-/* HİZMETLER */
+/* SERVICES */
 
 .services{
 display:grid;
@@ -95,12 +101,7 @@ padding:30px;
 border-radius:12px;
 cursor:pointer;
 box-shadow:0 10px 25px rgba(0,0,0,0.08);
-transition:0.3s;
 font-weight:600;
-}
-
-.service-card:hover{
-transform:translateY(-5px);
 }
 
 .service-content{
@@ -110,14 +111,9 @@ padding:25px;
 margin-top:10px;
 border-radius:10px;
 text-align:left;
-box-shadow:0 5px 15px rgba(0,0,0,0.05);
 }
 
-.service-content li{
-margin-bottom:8px;
-}
-
-/* GALERİ */
+/* GALLERY */
 
 .gallery{
 display:grid;
@@ -139,7 +135,7 @@ height:260px;
 object-fit:cover;
 }
 
-/* REFERANSLAR */
+/* REFERENCES */
 
 .references{
 display:grid;
@@ -152,7 +148,6 @@ background:white;
 padding:25px;
 border-radius:10px;
 box-shadow:0 8px 20px rgba(0,0,0,0.08);
-font-weight:500;
 }
 
 /* MAP */
@@ -162,15 +157,6 @@ width:100%;
 height:350px;
 border:0;
 border-radius:10px;
-}
-
-/* FOOTER */
-
-footer{
-background:#111827;
-color:white;
-padding:30px;
-text-align:center;
 }
 
 /* LIGHTBOX */
@@ -212,15 +198,17 @@ justify-content:center;
 align-items:center;
 box-shadow:0 8px 25px rgba(0,0,0,0.3);
 z-index:9999;
-transition:0.3s;
-}
-
-.whatsapp:hover{
-transform:scale(1.1);
 }
 
 .whatsapp img{
 width:40px;
+}
+
+footer{
+background:#111827;
+color:white;
+padding:30px;
+text-align:center;
 }
 
 </style>
@@ -240,6 +228,7 @@ width:40px;
 <a href="#">İletişim</a>
 </nav>
 </header>
+
 
 <section class="hero">
 <h2>Uzay Çatı ve Çelik Konstrüksiyon Sistemleri</h2>
@@ -263,13 +252,7 @@ Madenciler Çelik Konstrüksiyon, 2010 yılında kurulmuş olup uzay çatı sist
 
 <p>
 
-Kurulduğu günden bu yana sanayi tesisleri, spor kompleksleri, fuar alanları ve çeşitli yapı projelerinde kaliteli ve güvenilir çözümler sunarak sektörde sağlam bir yer edinmiştir.
-
-</p>
-
-<p>
-
-Firmamız, mühendislik disiplinine bağlı kalarak her projede kalite, dayanıklılık ve estetiği bir arada sunmayı hedeflemektedir.
+Kurulduğu günden bu yana sanayi tesisleri, spor kompleksleri ve çeşitli yapı projelerinde kaliteli ve güvenilir çözümler sunmaktadır.
 
 </p>
 
@@ -281,13 +264,7 @@ Firmamız, mühendislik disiplinine bağlı kalarak her projede kalite, dayanık
 
 <p>
 
-2010 yılından bu yana edindiğimiz saha tecrübesi ve teknik uzmanlığımız ile müşterilerimize anahtar teslim çelik yapı çözümleri sunmaktayız.
-
-</p>
-
-<p>
-
-Müşteri memnuniyeti odaklı yaklaşımımız ile projelerimizi zamanında ve eksiksiz teslim etmek temel prensibimizdir.
+2010 yılından bu yana edindiğimiz saha tecrübesi ile müşterilerimize profesyonel çözümler sunmaktayız.
 
 </p>
 
@@ -309,9 +286,9 @@ Müşteri memnuniyeti odaklı yaklaşımımız ile projelerimizi zamanında ve e
 <div class="service-card" onclick="toggleService(this)">Uzay Çatı Sistemleri</div>
 <div class="service-content">
 <ul>
-<li>Sanayi Tesisleri</li>
-<li>Spor Tesisleri</li>
-<li>Fuar Alanları</li>
+<li>Sanayi tesisleri</li>
+<li>Spor tesisleri</li>
+<li>Fuar alanları</li>
 </ul>
 </div>
 </div>
@@ -320,36 +297,8 @@ Müşteri memnuniyeti odaklı yaklaşımımız ile projelerimizi zamanında ve e
 <div class="service-card" onclick="toggleService(this)">Çelik Konstrüksiyon</div>
 <div class="service-content">
 <ul>
-<li>Sanayi Yapıları</li>
+<li>Sanayi yapıları</li>
 <li>Otoparklar</li>
-</ul>
-</div>
-</div>
-
-<div>
-<div class="service-card" onclick="toggleService(this)">Çatı Kaplamaları</div>
-<div class="service-content">
-<ul>
-<li>Sandviç Panel Sistemleri</li>
-<li>Membran Sistemleri</li>
-</ul>
-</div>
-</div>
-
-<div>
-<div class="service-card" onclick="toggleService(this)">İmalat</div>
-<div class="service-content">
-<ul>
-<li>Çelik üretim</li>
-</ul>
-</div>
-</div>
-
-<div>
-<div class="service-card" onclick="toggleService(this)">Montaj</div>
-<div class="service-content">
-<ul>
-<li>Saha montaj</li>
 </ul>
 </div>
 </div>
@@ -358,25 +307,119 @@ Müşteri memnuniyeti odaklı yaklaşımımız ile projelerimizi zamanında ve e
 
 </section>
 
-<!-- Projeler, Referanslar, Kurumsal, Map, İletişim aynı şekilde korunur -->
+
+<!-- PROJELER -->
+
+<section class="section">
+<h3>Tamamlanan Projelerimiz</h3>
+
+<div class="gallery">
+
+<script>
+for(let i=1;i<=15;i++){
+document.write(`<div class="gallery-item" onclick="openLightbox('images/proje${i}.jpg')">
+<img src="images/proje${i}.jpg">
+</div>`);
+}
+</script>
+
+</div>
+
+</section>
+
+
+<!-- REFERANSLAR -->
+
+<section class="section">
+<h3>Referanslarımız</h3>
+
+<div class="references">
+
+<div class="reference-box">DÜNDAR İNŞAAT A.Ş</div>
+<div class="reference-box">2.M PROJE MÜHENDİSLİK</div>
+
+</div>
+
+</section>
+
+
+<!-- KURUMSAL -->
+
+<section class="section">
+
+<h3>Kurumsal</h3>
+
+<div class="corporate">
+
+<div class="corporate-box">
+<h4>Vizyonumuz</h4>
+<p>Güvenilir firma olmak.</p>
+</div>
+
+<div class="corporate-box">
+<h4>Misyonumuz</h4>
+<p>Kaliteli hizmet sunmak.</p>
+</div>
+
+<div class="corporate-box">
+<h4>Kalite Politikamız</h4>
+<p>Müşteri memnuniyeti.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<section class="section map">
+
+<h3>Konum</h3>
+
+<iframe src="https://www.google.com/maps?q=Ömerli+Koçullu+Mah.+Bağcı+Sk.+No:14+Çekmeköy+İstanbul&output=embed"></iframe>
+
+</section>
+
+
+<section class="section">
+
+<h3>İletişim</h3>
+
+<p>Telefon: +90 0533 481 55 90</p>
+<p>Telefon: +90 0531 914 29 16</p>
+<p>Email: madencilercelik@gmail.com</p>
+
+</section>
+
 
 <footer>
 © 2026 Madenciler Çelik
 </footer>
 
+
 <div class="lightbox" id="lightbox" onclick="closeLightbox()">
 <img id="lightbox-img">
 </div>
 
+
 <a href="https://wa.me/905319142916" class="whatsapp">
 <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
 </a>
+
 
 <script>
 
 function toggleService(el){
 let content=el.nextElementSibling;
 content.style.display = content.style.display==="block"?"none":"block";
+}
+
+function openLightbox(src){
+document.getElementById("lightbox-img").src=src;
+document.getElementById("lightbox").classList.add("active");
+}
+
+function closeLightbox(){
+document.getElementById("lightbox").classList.remove("active");
 }
 
 </script>
