@@ -259,7 +259,82 @@ font-size: 28px;
 <div class="card"><h4>ÖZ NAKLİYAT KARA TAŞIMACILIK A.Ş</h4></div>
 
 </div>
+</section>
+<!-- REFERANSLAR BİTİŞ -->
 
+<!-- BURAYA YAPIŞTIR -->
+<section class="section" style="background:#ffffff;">
+
+<h3>Tamamlanan Projelerimiz</h3>
+
+<p style="margin-bottom:40px; color:#6b7280;">
+Madenciler Çelik olarak gerçekleştirdiğimiz projelerimizden örnekler.
+</p>
+
+<div class="slider">
+
+<img src="images/proje1.jpg" class="slide active">
+<img src="images/proje2.jpg" class="slide">
+<img src="images/proje3.jpg" class="slide">
+<img src="images/proje4.jpg" class="slide">
+<img src="images/proje5.jpg" class="slide">
+<img src="images/proje6.jpg" class="slide">
+<img src="images/proje7.jpg" class="slide">
+<img src="images/proje8.jpg" class="slide">
+<img src="images/proje9.jpg" class="slide">
+<img src="images/proje10.jpg" class="slide">
+<img src="images/proje11.jpg" class="slide">
+<img src="images/proje12.jpg" class="slide">
+<img src="images/proje13.jpg" class="slide">
+<img src="images/proje14.jpg" class="slide">
+<img src="images/proje15.jpg" class="slide">
+
+</div>
+
+</section>
+
+<style>
+.slider {
+position: relative;
+width: 100%;
+max-width: 1000px;
+height: 500px;
+margin: auto;
+overflow: hidden;
+border-radius: 12px;
+box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+}
+
+.slide {
+position: absolute;
+width: 100%;
+height: 100%;
+object-fit: cover;
+opacity: 0;
+transition: opacity 1s ease;
+}
+
+.slide.active {
+opacity: 1;
+}
+</style>
+
+<script>
+let slides = document.querySelectorAll(".slide");
+let current = 0;
+
+setInterval(() => {
+slides[current].classList.remove("active");
+current = (current + 1) % slides.length;
+slides[current].classList.add("active");
+}, 3500);
+</script>
+
+<!-- SONRA MAP DEVAM EDER -->
+
+<section class="section">
+
+<h3>Konumumuz</h3>
 </section>
 
 
