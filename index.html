@@ -21,8 +21,6 @@ background:#f4f6f9;
 color:#333;
 }
 
-/* HEADER */
-
 header{
 background:#111827;
 padding:20px 8%;
@@ -36,10 +34,7 @@ nav a{
 color:white;
 text-decoration:none;
 margin-left:25px;
-font-size:14px;
 }
-
-/* HERO */
 
 .hero{
 height:90vh;
@@ -54,12 +49,6 @@ text-align:center;
 color:white;
 }
 
-.hero h2{
-font-size:42px;
-}
-
-/* SECTION */
-
 .section{
 padding:90px 8%;
 text-align:center;
@@ -69,6 +58,45 @@ text-align:center;
 font-size:32px;
 margin-bottom:50px;
 color:#111827;
+}
+
+/* HİZMETLER */
+
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.service-card{
+background:white;
+padding:30px;
+border-radius:12px;
+cursor:pointer;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+transition:0.3s;
+}
+
+.service-card:hover{
+transform:translateY(-5px);
+}
+
+.service-content{
+display:none;
+background:white;
+padding:25px;
+margin-top:10px;
+border-radius:10px;
+text-align:left;
+}
+
+.service-content ul{
+padding-left:20px;
+}
+
+.service-content li{
+margin-bottom:8px;
+color:#555;
 }
 
 /* GALERİ */
@@ -83,8 +111,8 @@ gap:25px;
 background:white;
 border-radius:12px;
 overflow:hidden;
-box-shadow:0 10px 25px rgba(0,0,0,0.08);
 cursor:pointer;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
 }
 
 .gallery-item img{
@@ -124,24 +152,13 @@ border-radius:12px;
 box-shadow:0 10px 25px rgba(0,0,0,0.08);
 }
 
-.corporate-box h4{
-margin-bottom:15px;
-color:#111827;
-}
-
-.corporate-box p{
-color:#6b7280;
-line-height:1.7;
-margin-bottom:15px;
-}
-
 /* MAP */
 
 .map iframe{
 width:100%;
 height:350px;
-border-radius:10px;
 border:0;
+border-radius:10px;
 }
 
 /* FOOTER */
@@ -153,12 +170,9 @@ padding:30px;
 text-align:center;
 }
 
-/* LIGHTBOX */
-
 .lightbox{
 display:none;
 position:fixed;
-z-index:9999;
 top:0;
 left:0;
 width:100%;
@@ -177,43 +191,103 @@ max-height:90%;
 display:flex;
 }
 
-/* WHATSAPP */
-
-.whatsapp{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-width:60px;
-height:60px;
-border-radius:50%;
-display:flex;
-justify-content:center;
-align-items:center;
-}
-
 </style>
 </head>
 
 <body>
 
 <header>
-
 <h2>Madenciler Çelik</h2>
-
 <nav>
 <a href="#">Anasayfa</a>
+<a href="#">Hizmetler</a>
 <a href="#">Projeler</a>
 <a href="#">Referanslar</a>
-<a href="#">Kurumsal</a>
 <a href="#">İletişim</a>
 </nav>
-
 </header>
-
 
 <section class="hero">
 <h2>Uzay Çatı ve Çelik Konstrüksiyon Sistemleri</h2>
+</section>
+
+
+<!-- HİZMETLER -->
+
+<section class="section">
+<h3>Hizmetlerimiz</h3>
+
+<div class="services">
+
+<div>
+<div class="service-card" onclick="toggleService(this)">Uzay Çatı Sistemleri</div>
+<div class="service-content">
+<ul>
+<li>Sanayi Tesisleri (Fabrika, Depo, Antrepo)</li>
+<li>Spor Tesisleri</li>
+<li>Çok Amaçlı Salonlar</li>
+<li>Tiyatro ve Konser Salonları</li>
+<li>Sinema ve Sergi Salonları</li>
+<li>Uçak Hangarları</li>
+<li>Fuar Standları</li>
+<li>Fuar Merkezleri ve Mağazalar</li>
+<li>Bina Giriş Saçakları</li>
+<li>Pazar Yerleri</li>
+</ul>
+</div>
+</div>
+
+<div>
+<div class="service-card" onclick="toggleService(this)">Çelik Konstrüksiyon</div>
+<div class="service-content">
+<ul>
+<li>Çatı Girişleri</li>
+<li>Döşeme Kirişleri</li>
+<li>Kolonlar</li>
+<li>Otoparklar</li>
+<li>Sanayi Yapıları</li>
+<li>Asma Katlar</li>
+<li>Çeşitli Çelik Konstrüksiyon Uygulamaları</li>
+</ul>
+</div>
+</div>
+
+<div>
+<div class="service-card" onclick="toggleService(this)">Çatı Kaplamaları</div>
+<div class="service-content">
+<ul>
+<li>Sandviç Paneller</li>
+<li>Membran Sistemleri</li>
+<li>Isı ve Su Yalıtımı</li>
+<li>Teras Çatı Sistemleri</li>
+<li>Dış Cephe Yalıtımı</li>
+</ul>
+</div>
+</div>
+
+<div>
+<div class="service-card" onclick="toggleService(this)">İmalat</div>
+<div class="service-content">
+<ul>
+<li>Çelik İmalat Hizmetleri</li>
+<li>Proje Bazlı Üretim</li>
+<li>Kalite Kontrollü Üretim</li>
+</ul>
+</div>
+</div>
+
+<div>
+<div class="service-card" onclick="toggleService(this)">Montaj</div>
+<div class="service-content">
+<ul>
+<li>Saha Montaj Hizmetleri</li>
+<li>Profesyonel Kurulum</li>
+<li>Anahtar Teslim Projeler</li>
+</ul>
+</div>
+</div>
+
+</div>
 </section>
 
 
@@ -224,67 +298,16 @@ align-items:center;
 
 <div class="gallery">
 
-<div class="gallery-item" onclick="openLightbox('images/proje1.jpg')">
-<img src="images/proje1.jpg">
-</div>
-
-<div class="gallery-item" onclick="openLightbox('images/proje2.jpg')">
-<img src="images/proje2.jpg">
-</div>
-
-<div class="gallery-item" onclick="openLightbox('images/proje3.jpg')">
-<img src="images/proje3.jpg">
-</div>
-
-<div class="gallery-item" onclick="openLightbox('images/proje4.jpg')">
-<img src="images/proje4.jpg">
-</div>
-
-<div class="gallery-item" onclick="openLightbox('images/proje5.jpg')">
-<img src="images/proje5.jpg">
-</div>
-
-<div class="gallery-item" onclick="openLightbox('images/proje6.jpg')">
-<img src="images/proje6.jpg">
-</div>
-
-<div class="gallery-item" onclick="openLightbox('images/proje7.jpg')">
-<img src="images/proje7.jpg">
-</div>
-
-<div class="gallery-item" onclick="openLightbox('images/proje8.jpg')">
-<img src="images/proje8.jpg">
-</div>
-
-<div class="gallery-item" onclick="openLightbox('images/proje9.jpg')">
-<img src="images/proje9.jpg">
-</div>
-
-<div class="gallery-item" onclick="openLightbox('images/proje10.jpg')">
-<img src="images/proje10.jpg">
-</div>
-
-<div class="gallery-item" onclick="openLightbox('images/proje11.jpg')">
-<img src="images/proje11.jpg">
-</div>
-
-<div class="gallery-item" onclick="openLightbox('images/proje12.jpg')">
-<img src="images/proje12.jpg">
-</div>
-
-<div class="gallery-item" onclick="openLightbox('images/proje13.jpg')">
-<img src="images/proje13.jpg">
-</div>
-
-<div class="gallery-item" onclick="openLightbox('images/proje14.jpg')">
-<img src="images/proje14.jpg">
-</div>
-
-<div class="gallery-item" onclick="openLightbox('images/proje15.jpg')">
-<img src="images/proje15.jpg">
-</div>
+<script>
+for(let i=1;i<=15;i++){
+document.write(`<div class="gallery-item" onclick="openLightbox('images/proje${i}.jpg')">
+<img src="images/proje${i}.jpg">
+</div>`);
+}
+</script>
 
 </div>
+
 </section>
 
 
@@ -313,43 +336,13 @@ align-items:center;
 <div class="reference-box">ÖZ NAKLİYAT KARA TAŞIMACILIK A.Ş</div>
 
 </div>
-
-</section>
-
-
-<!-- KURUMSAL -->
-
-<section class="section">
-<h3>Kurumsal</h3>
-
-<div class="corporate">
-
-<div class="corporate-box">
-<h4>Vizyonumuz</h4>
-<p>MADENCİLER Çelik olarak firmamız yaşadığımız ve özellikle çalıştığımız çevreye saygılı, çalışanlarının mutlu, iş yapmak istenilen firmaların başında gelerek yasal sorumluluklarını yerine getirmek.</p>
-<p>Etik ilkelerden vazgeçmeden planlı ve programlı bir şekilde büyümek.</p>
-</div>
-
-<div class="corporate-box">
-<h4>Misyonumuz</h4>
-<p>MADENCİLER Çelik Konstrüksiyon globalleşen dünyamızda sürekli gelişim gösteren inşaat, metal ve çelik sanayisinde geçmişten gelen deneyimlerimizi güçlü teknik kadromuzla müşterilerimize kaliteli hizmet sunmak ve memnuniyetlerini kazanmaktır.</p>
-</div>
-
-<div class="corporate-box">
-<h4>Kalite Politikamız</h4>
-<p>Kalitenin devamlı gelişme ve süreklilik göstermesi gereken bir süreç olduğuna inanıyoruz. Müşteri beklentilerini doğru anlar ve bu beklentileri aşmak için çalışırız.</p>
-<p>Tüm çalışanlarımızın kalite bilinci ile hareket etmesini sağlamak için sürekli eğitim veririz.</p>
-</div>
-
-</div>
-
 </section>
 
 
 <!-- MAP -->
 
 <section class="section map">
-<h3>Konumumuz</h3>
+<h3>Konum</h3>
 
 <iframe src="https://www.google.com/maps?q=Ömerli+Koçullu+Mah.+Bağcı+Sk.+No:14+Çekmeköy+İstanbul&output=embed"></iframe>
 
@@ -361,9 +354,9 @@ align-items:center;
 <section class="section">
 <h3>İletişim</h3>
 
-<p><strong>Telefon:</strong> +90 0533 481 55 90</p>
-<p><strong>Telefon:</strong> +90 0531 914 29 16</p>
-<p><strong>Email:</strong> madencilercelik@gmail.com</p>
+<p>Telefon: +90 0533 481 55 90</p>
+<p>Telefon: +90 0531 914 29 16</p>
+<p>Email: madencilercelik@gmail.com</p>
 
 </section>
 
@@ -377,23 +370,32 @@ align-items:center;
 <img id="lightbox-img">
 </div>
 
+
 <script>
 
+function toggleService(el){
+
+let content=el.nextElementSibling;
+
+content.style.display=
+content.style.display==="block"?"none":"block";
+
+}
+
 function openLightbox(src){
-document.getElementById("lightbox-img").src = src;
+
+document.getElementById("lightbox-img").src=src;
 document.getElementById("lightbox").classList.add("active");
+
 }
 
 function closeLightbox(){
+
 document.getElementById("lightbox").classList.remove("active");
+
 }
 
 </script>
-
-
-<a href="https://wa.me/905319142916" class="whatsapp">
-<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" width="30">
-</a>
 
 </body>
 </html>
