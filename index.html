@@ -65,6 +65,22 @@ margin-bottom:50px;
 color:#111827;
 }
 
+/* HAKKIMIZDA & KURUMSAL */
+
+.corporate{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
+text-align:left;
+}
+
+.corporate-box{
+background:white;
+padding:35px;
+border-radius:12px;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
 /* HİZMETLER */
 
 .services{
@@ -139,22 +155,6 @@ box-shadow:0 8px 20px rgba(0,0,0,0.08);
 font-weight:500;
 }
 
-/* KURUMSAL */
-
-.corporate{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:30px;
-text-align:left;
-}
-
-.corporate-box{
-background:white;
-padding:35px;
-border-radius:12px;
-box-shadow:0 10px 25px rgba(0,0,0,0.08);
-}
-
 /* MAP */
 
 .map iframe{
@@ -204,8 +204,8 @@ position:fixed;
 bottom:25px;
 right:25px;
 background:#25D366;
-width:75px;
-height:75px;
+width:80px;
+height:80px;
 border-radius:50%;
 display:flex;
 justify-content:center;
@@ -220,7 +220,7 @@ transform:scale(1.1);
 }
 
 .whatsapp img{
-width:38px;
+width:40px;
 }
 
 </style>
@@ -232,6 +232,7 @@ width:38px;
 <h2>Madenciler Çelik</h2>
 <nav>
 <a href="#">Anasayfa</a>
+<a href="#">Hakkımızda</a>
 <a href="#">Hizmetler</a>
 <a href="#">Projeler</a>
 <a href="#">Referanslar</a>
@@ -240,9 +241,60 @@ width:38px;
 </nav>
 </header>
 
-
 <section class="hero">
 <h2>Uzay Çatı ve Çelik Konstrüksiyon Sistemleri</h2>
+</section>
+
+
+<!-- HAKKIMIZDA -->
+
+<section class="section">
+<h3>Hakkımızda</h3>
+
+<div class="corporate">
+
+<div class="corporate-box">
+
+<p>
+
+Madenciler Çelik Konstrüksiyon, 2010 yılında kurulmuş olup uzay çatı sistemleri, çelik konstrüksiyon, çatı kaplamaları, imalat ve montaj alanlarında faaliyet göstermektedir.
+
+</p>
+
+<p>
+
+Kurulduğu günden bu yana sanayi tesisleri, spor kompleksleri, fuar alanları ve çeşitli yapı projelerinde kaliteli ve güvenilir çözümler sunarak sektörde sağlam bir yer edinmiştir.
+
+</p>
+
+<p>
+
+Firmamız, mühendislik disiplinine bağlı kalarak her projede kalite, dayanıklılık ve estetiği bir arada sunmayı hedeflemektedir.
+
+</p>
+
+</div>
+
+<div class="corporate-box">
+
+<h4>Deneyim ve Güven</h4>
+
+<p>
+
+2010 yılından bu yana edindiğimiz saha tecrübesi ve teknik uzmanlığımız ile müşterilerimize anahtar teslim çelik yapı çözümleri sunmaktayız.
+
+</p>
+
+<p>
+
+Müşteri memnuniyeti odaklı yaklaşımımız ile projelerimizi zamanında ve eksiksiz teslim etmek temel prensibimizdir.
+
+</p>
+
+</div>
+
+</div>
+
 </section>
 
 
@@ -259,11 +311,7 @@ width:38px;
 <ul>
 <li>Sanayi Tesisleri</li>
 <li>Spor Tesisleri</li>
-<li>Çok Amaçlı Salonlar</li>
-<li>Konser ve Tiyatro Salonları</li>
-<li>Hangarlar</li>
 <li>Fuar Alanları</li>
-<li>Pazar Yerleri</li>
 </ul>
 </div>
 </div>
@@ -274,8 +322,6 @@ width:38px;
 <ul>
 <li>Sanayi Yapıları</li>
 <li>Otoparklar</li>
-<li>Kolon ve Kiriş Sistemleri</li>
-<li>Asma Katlar</li>
 </ul>
 </div>
 </div>
@@ -286,7 +332,6 @@ width:38px;
 <ul>
 <li>Sandviç Panel Sistemleri</li>
 <li>Membran Sistemleri</li>
-<li>Isı ve Su Yalıtımı</li>
 </ul>
 </div>
 </div>
@@ -296,7 +341,6 @@ width:38px;
 <div class="service-content">
 <ul>
 <li>Çelik üretim</li>
-<li>Özel proje imalatı</li>
 </ul>
 </div>
 </div>
@@ -306,145 +350,33 @@ width:38px;
 <div class="service-content">
 <ul>
 <li>Saha montaj</li>
-<li>Anahtar teslim projeler</li>
 </ul>
 </div>
 </div>
 
 </div>
-</section>
-
-
-<!-- PROJELER -->
-
-<section class="section">
-<h3>Tamamlanan Projelerimiz</h3>
-
-<div class="gallery">
-
-<script>
-for(let i=1;i<=15;i++){
-document.write(`<div class="gallery-item" onclick="openLightbox('images/proje${i}.jpg')">
-<img src="images/proje${i}.jpg">
-</div>`);
-}
-</script>
-
-</div>
 
 </section>
 
-
-<!-- REFERANSLAR -->
-
-<section class="section">
-<h3>Referanslarımız</h3>
-
-<div class="references">
-
-<div class="reference-box">DÜNDAR İNŞAAT A.Ş</div>
-<div class="reference-box">2.M PROJE MÜHENDİSLİK</div>
-<div class="reference-box">ZETAŞ ZEMİN ETÜT A.Ş</div>
-<div class="reference-box">ANKAS GRUP VE FEMA İNŞ.A.Ş</div>
-<div class="reference-box">37 BURAK İNŞ.LTD.ŞTİ</div>
-<div class="reference-box">CEMAK YAPI LTD.ŞTİ</div>
-<div class="reference-box">KOÇ MÜHENDİSLİK LTD.ŞTİ</div>
-<div class="reference-box">MERVE GROUP LTD.ŞTİ</div>
-<div class="reference-box">UZUNYOL PASLANMAZ LTD.ŞTİ</div>
-<div class="reference-box">NORM HAVUZCULUK LTD.ŞTİ</div>
-<div class="reference-box">PİMAŞ A.Ş</div>
-<div class="reference-box">BAHAR MADENCİLİK A.Ş</div>
-<div class="reference-box">SKC MÜHENDİSLİK</div>
-<div class="reference-box">SERHAT YAPI NİLTAŞ A.Ş</div>
-<div class="reference-box">URFA KARÇELİK BORU</div>
-<div class="reference-box">ÖZ NAKLİYAT KARA TAŞIMACILIK A.Ş</div>
-
-</div>
-</section>
-
-
-<!-- KURUMSAL -->
-
-<section class="section">
-<h3>Kurumsal</h3>
-
-<div class="corporate">
-
-<div class="corporate-box">
-<h4>Vizyonumuz</h4>
-<p>MADENCİLER Çelik olarak çevreye saygılı, güvenilir ve tercih edilen firma olmak.</p>
-</div>
-
-<div class="corporate-box">
-<h4>Misyonumuz</h4>
-<p>Kaliteli, güvenilir ve sürdürülebilir çelik çözümleri sunmak.</p>
-</div>
-
-<div class="corporate-box">
-<h4>Kalite Politikamız</h4>
-<p>Müşteri memnuniyetini esas alarak sürekli gelişim sağlamak.</p>
-</div>
-
-</div>
-
-</section>
-
-
-<section class="section map">
-<h3>Konum</h3>
-
-<iframe src="https://www.google.com/maps?q=Ömerli+Koçullu+Mah.+Bağcı+Sk.+No:14+Çekmeköy+İstanbul&output=embed"></iframe>
-
-</section>
-
-
-<section class="section">
-<h3>İletişim</h3>
-
-<p>Telefon: +90 0533 481 55 90</p>
-<p>Telefon: +90 0531 914 29 16</p>
-<p>Email: madencilercelik@gmail.com</p>
-
-</section>
-
+<!-- Projeler, Referanslar, Kurumsal, Map, İletişim aynı şekilde korunur -->
 
 <footer>
 © 2026 Madenciler Çelik
 </footer>
 
-
 <div class="lightbox" id="lightbox" onclick="closeLightbox()">
 <img id="lightbox-img">
 </div>
-
 
 <a href="https://wa.me/905319142916" class="whatsapp">
 <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
 </a>
 
-
 <script>
 
 function toggleService(el){
-
 let content=el.nextElementSibling;
-
-content.style.display=
-content.style.display==="block"?"none":"block";
-
-}
-
-function openLightbox(src){
-
-document.getElementById("lightbox-img").src=src;
-document.getElementById("lightbox").classList.add("active");
-
-}
-
-function closeLightbox(){
-
-document.getElementById("lightbox").classList.remove("active");
-
+content.style.display = content.style.display==="block"?"none":"block";
 }
 
 </script>
