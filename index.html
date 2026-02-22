@@ -34,6 +34,7 @@ nav a{
 color:white;
 text-decoration:none;
 margin-left:25px;
+font-size:15px;
 }
 
 .hero{
@@ -47,6 +48,10 @@ justify-content:center;
 align-items:center;
 text-align:center;
 color:white;
+}
+
+.hero h2{
+font-size:42px;
 }
 
 .section{
@@ -75,6 +80,7 @@ border-radius:12px;
 cursor:pointer;
 box-shadow:0 10px 25px rgba(0,0,0,0.08);
 transition:0.3s;
+font-weight:600;
 }
 
 .service-card:hover{
@@ -88,15 +94,11 @@ padding:25px;
 margin-top:10px;
 border-radius:10px;
 text-align:left;
-}
-
-.service-content ul{
-padding-left:20px;
+box-shadow:0 5px 15px rgba(0,0,0,0.05);
 }
 
 .service-content li{
 margin-bottom:8px;
-color:#555;
 }
 
 /* GALERİ */
@@ -134,6 +136,7 @@ background:white;
 padding:25px;
 border-radius:10px;
 box-shadow:0 8px 20px rgba(0,0,0,0.08);
+font-weight:500;
 }
 
 /* KURUMSAL */
@@ -170,6 +173,8 @@ padding:30px;
 text-align:center;
 }
 
+/* LIGHTBOX */
+
 .lightbox{
 display:none;
 position:fixed;
@@ -180,6 +185,7 @@ height:100%;
 background:rgba(0,0,0,0.9);
 justify-content:center;
 align-items:center;
+z-index:9999;
 }
 
 .lightbox img{
@@ -189,6 +195,32 @@ max-height:90%;
 
 .lightbox.active{
 display:flex;
+}
+
+/* WHATSAPP */
+
+.whatsapp{
+position:fixed;
+bottom:25px;
+right:25px;
+background:#25D366;
+width:75px;
+height:75px;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+box-shadow:0 8px 25px rgba(0,0,0,0.3);
+z-index:9999;
+transition:0.3s;
+}
+
+.whatsapp:hover{
+transform:scale(1.1);
+}
+
+.whatsapp img{
+width:38px;
 }
 
 </style>
@@ -203,9 +235,11 @@ display:flex;
 <a href="#">Hizmetler</a>
 <a href="#">Projeler</a>
 <a href="#">Referanslar</a>
+<a href="#">Kurumsal</a>
 <a href="#">İletişim</a>
 </nav>
 </header>
+
 
 <section class="hero">
 <h2>Uzay Çatı ve Çelik Konstrüksiyon Sistemleri</h2>
@@ -223,15 +257,12 @@ display:flex;
 <div class="service-card" onclick="toggleService(this)">Uzay Çatı Sistemleri</div>
 <div class="service-content">
 <ul>
-<li>Sanayi Tesisleri (Fabrika, Depo, Antrepo)</li>
+<li>Sanayi Tesisleri</li>
 <li>Spor Tesisleri</li>
 <li>Çok Amaçlı Salonlar</li>
-<li>Tiyatro ve Konser Salonları</li>
-<li>Sinema ve Sergi Salonları</li>
-<li>Uçak Hangarları</li>
-<li>Fuar Standları</li>
-<li>Fuar Merkezleri ve Mağazalar</li>
-<li>Bina Giriş Saçakları</li>
+<li>Konser ve Tiyatro Salonları</li>
+<li>Hangarlar</li>
+<li>Fuar Alanları</li>
 <li>Pazar Yerleri</li>
 </ul>
 </div>
@@ -241,13 +272,10 @@ display:flex;
 <div class="service-card" onclick="toggleService(this)">Çelik Konstrüksiyon</div>
 <div class="service-content">
 <ul>
-<li>Çatı Girişleri</li>
-<li>Döşeme Kirişleri</li>
-<li>Kolonlar</li>
-<li>Otoparklar</li>
 <li>Sanayi Yapıları</li>
+<li>Otoparklar</li>
+<li>Kolon ve Kiriş Sistemleri</li>
 <li>Asma Katlar</li>
-<li>Çeşitli Çelik Konstrüksiyon Uygulamaları</li>
 </ul>
 </div>
 </div>
@@ -256,11 +284,9 @@ display:flex;
 <div class="service-card" onclick="toggleService(this)">Çatı Kaplamaları</div>
 <div class="service-content">
 <ul>
-<li>Sandviç Paneller</li>
+<li>Sandviç Panel Sistemleri</li>
 <li>Membran Sistemleri</li>
 <li>Isı ve Su Yalıtımı</li>
-<li>Teras Çatı Sistemleri</li>
-<li>Dış Cephe Yalıtımı</li>
 </ul>
 </div>
 </div>
@@ -269,9 +295,8 @@ display:flex;
 <div class="service-card" onclick="toggleService(this)">İmalat</div>
 <div class="service-content">
 <ul>
-<li>Çelik İmalat Hizmetleri</li>
-<li>Proje Bazlı Üretim</li>
-<li>Kalite Kontrollü Üretim</li>
+<li>Çelik üretim</li>
+<li>Özel proje imalatı</li>
 </ul>
 </div>
 </div>
@@ -280,9 +305,8 @@ display:flex;
 <div class="service-card" onclick="toggleService(this)">Montaj</div>
 <div class="service-content">
 <ul>
-<li>Saha Montaj Hizmetleri</li>
-<li>Profesyonel Kurulum</li>
-<li>Anahtar Teslim Projeler</li>
+<li>Saha montaj</li>
+<li>Anahtar teslim projeler</li>
 </ul>
 </div>
 </div>
@@ -339,7 +363,32 @@ document.write(`<div class="gallery-item" onclick="openLightbox('images/proje${i
 </section>
 
 
-<!-- MAP -->
+<!-- KURUMSAL -->
+
+<section class="section">
+<h3>Kurumsal</h3>
+
+<div class="corporate">
+
+<div class="corporate-box">
+<h4>Vizyonumuz</h4>
+<p>MADENCİLER Çelik olarak çevreye saygılı, güvenilir ve tercih edilen firma olmak.</p>
+</div>
+
+<div class="corporate-box">
+<h4>Misyonumuz</h4>
+<p>Kaliteli, güvenilir ve sürdürülebilir çelik çözümleri sunmak.</p>
+</div>
+
+<div class="corporate-box">
+<h4>Kalite Politikamız</h4>
+<p>Müşteri memnuniyetini esas alarak sürekli gelişim sağlamak.</p>
+</div>
+
+</div>
+
+</section>
+
 
 <section class="section map">
 <h3>Konum</h3>
@@ -348,8 +397,6 @@ document.write(`<div class="gallery-item" onclick="openLightbox('images/proje${i
 
 </section>
 
-
-<!-- İLETİŞİM -->
 
 <section class="section">
 <h3>İletişim</h3>
@@ -369,6 +416,11 @@ document.write(`<div class="gallery-item" onclick="openLightbox('images/proje${i
 <div class="lightbox" id="lightbox" onclick="closeLightbox()">
 <img id="lightbox-img">
 </div>
+
+
+<a href="https://wa.me/905319142916" class="whatsapp">
+<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
+</a>
 
 
 <script>
