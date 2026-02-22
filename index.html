@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Madenciler Çelik</title>
+<title>Madenciler Çelik | Uzay Çatı & Çelik Konstrüksiyon</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
@@ -21,6 +21,8 @@ background:#f4f6f9;
 color:#333;
 }
 
+/* HEADER */
+
 header{
 background:#111827;
 padding:20px 8%;
@@ -36,6 +38,8 @@ text-decoration:none;
 margin-left:25px;
 font-size:14px;
 }
+
+/* HERO */
 
 .hero{
 height:90vh;
@@ -54,6 +58,8 @@ color:white;
 font-size:42px;
 }
 
+/* SECTION */
+
 .section{
 padding:90px 8%;
 text-align:center;
@@ -64,6 +70,8 @@ font-size:32px;
 margin-bottom:50px;
 color:#111827;
 }
+
+/* GALERİ */
 
 .gallery{
 display:grid;
@@ -77,6 +85,11 @@ border-radius:12px;
 overflow:hidden;
 box-shadow:0 10px 25px rgba(0,0,0,0.08);
 cursor:pointer;
+transition:.3s;
+}
+
+.gallery-item:hover{
+transform:translateY(-6px);
 }
 
 .gallery-item img{
@@ -85,9 +98,11 @@ height:260px;
 object-fit:cover;
 }
 
+/* REFERANSLAR */
+
 .references{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:20px;
 }
 
@@ -96,6 +111,11 @@ background:white;
 padding:25px;
 border-radius:10px;
 box-shadow:0 8px 20px rgba(0,0,0,0.08);
+transition:.3s;
+}
+
+.reference-box:hover{
+transform:translateY(-5px);
 }
 
 /* KURUMSAL */
@@ -122,6 +142,7 @@ color:#111827;
 .corporate-box p{
 color:#6b7280;
 line-height:1.7;
+margin-bottom:10px;
 }
 
 /* MAP */
@@ -140,6 +161,7 @@ background:#111827;
 color:white;
 padding:30px;
 text-align:center;
+margin-top:50px;
 }
 
 /* LIGHTBOX */
@@ -166,13 +188,31 @@ max-height:90%;
 display:flex;
 }
 
+/* WHATSAPP */
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+width:60px;
+height:60px;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
 </style>
 </head>
 
 <body>
 
 <header>
+
 <h2>Madenciler Çelik</h2>
+
 <nav>
 <a href="#">Anasayfa</a>
 <a href="#">Projeler</a>
@@ -180,17 +220,21 @@ display:flex;
 <a href="#">Kurumsal</a>
 <a href="#">İletişim</a>
 </nav>
+
 </header>
 
 
 <section class="hero">
+
 <h2>Uzay Çatı ve Çelik Konstrüksiyon Sistemleri</h2>
+
 </section>
 
 
 <!-- PROJELER -->
 
 <section class="section">
+
 <h3>Tamamlanan Projelerimiz</h3>
 
 <div class="gallery">
@@ -256,90 +300,72 @@ display:flex;
 </div>
 
 </div>
+
 </section>
 
 
 <!-- REFERANSLAR -->
 
 <section class="section">
+
 <h3>Referanslarımız</h3>
+
 <div class="references">
-<div class="card">DÜNDAR İNŞAAT A.Ş</div>
-<div class="card">2.M PROJE MÜHENDİSLİK</div>
-<div class="card">ZETAŞ ZEMİN ETÜT A.Ş</div>
-<div class="card">ANKAS GRUP VE FEMA İNŞ.A.Ş</div>
-<div class="card">37 BURAK İNŞ.LTD.ŞTİ</div>
-<div class="card">CEMAK YAPI LTD.ŞTİ</div>
-<div class="card">KOÇ MÜHENDİSLİK LTD.ŞTİ</div>
-<div class="card">MERVE GROUP LTD.ŞTİ</div>
-<div class="card">UZUNYOL PASLANMAZ LTD.ŞTİ</div>
-<div class="card">NORM HAVUZCULUK LTD.ŞTİ</div>
-<div class="card">PİMAŞ A.Ş</div>
-<div class="card">BAHAR MADENCİLİK A.Ş</div>
-<div class="card">SKC MÜHENDİSLİK</div>
-<div class="card">SERHAT YAPI NİLTAŞ A.Ş</div>
-<div class="card">URFA KARÇELİK BORU</div>
-<div class="card">ÖZ NAKLİYAT KARA TAŞIMACILIK A.Ş</div>
+
+<div class="reference-box">DÜNDAR İNŞAAT A.Ş - ÇELİK İŞLERİ</div>
+<div class="reference-box">2.M PROJE MÜHENDİSLİK - UZAY ÇATI İŞLERİ</div>
+<div class="reference-box">ZETAŞ ZEMİN ETÜT A.Ş - UZAY ÇATI İŞLERİ</div>
+<div class="reference-box">ANKAS GRUP VE FEMA İNŞ.A.Ş - UZAY ÇATI İŞLERİ</div>
+<div class="reference-box">37 BURAK İNŞ.LTD.ŞTİ - UZAY ÇATI İMALAT</div>
+<div class="reference-box">CEMAK YAPI LTD.ŞTİ - UZAY ÇATI İŞLERİ</div>
+<div class="reference-box">KOÇ MÜHENDİSLİK LTD.ŞTİ - UZAY ÇATI İMALATI</div>
+<div class="reference-box">MERVE GROUP LTD.ŞTİ - UZAY ÇATI İŞLERİ</div>
+<div class="reference-box">UZUNYOL PASLANMAZ LTD.ŞTİ - UZAY ÇATI İŞLERİ</div>
+<div class="reference-box">NORM HAVUZCULUK LTD.ŞTİ - UZAY ÇATI İŞLERİ</div>
+<div class="reference-box">PİMAŞ A.Ş - UZAY ÇATI İŞLERİ</div>
+<div class="reference-box">BAHAR MADENCİLİK A.Ş - UZAY ÇATI İŞLERİ</div>
+<div class="reference-box">SKC MÜHENDİSLİK - METAL KAYNAK İŞLERİ</div>
+<div class="reference-box">SERHAT YAPI NİLTAŞ A.Ş - TAŞDELEN / İSTANBUL</div>
+<div class="reference-box">URFA KARÇELİK BORU - ŞANLIURFA</div>
+<div class="reference-box">ÖZ NAKLİYAT KARA TAŞIMACILIK A.Ş - İSTANBUL</div>
+
 </div>
+
 </section>
 
 
 <!-- KURUMSAL -->
 
 <section class="section">
+
 <h3>Kurumsal</h3>
 
 <div class="corporate">
 
 <div class="corporate-box">
-
 <h4>Vizyonumuz</h4>
-
-<p>
-MADENCİLER Çelik olarak çevreye saygılı, güvenilir, tercih edilen ve sürdürülebilir büyüyen bir firma olmak temel vizyonumuzdur.
-</p>
-
+<p>Çevreye saygılı, güvenilir ve tercih edilen firma olmak.</p>
 </div>
 
-
 <div class="corporate-box">
-
 <h4>Misyonumuz</h4>
-
-<p>
-Güçlü teknik kadromuz ile kaliteli çelik konstrüksiyon çözümleri sunmak ve müşteri memnuniyetini en üst seviyede tutmak.
-</p>
-
+<p>Kaliteli çelik konstrüksiyon çözümleri sunmak.</p>
 </div>
-
 
 <div class="corporate-box">
-
 <h4>Kalite Politikamız</h4>
-
-<p>
-Kaliteyi sürekli geliştirmek, müşteri beklentilerini aşmak ve çalışanlarımızı sürekli geliştirmek temel ilkemizdir.
-</p>
-
+<p>Sürekli gelişim ve müşteri memnuniyeti.</p>
 </div>
 
 </div>
-
-</section>
-
-
-<!-- HARITA -->
-
-<section class="section map">
-<h3>Konumumuz</h3>
-
-<iframe src="https://www.google.com/maps?q=Ömerli+Koçullu+Mah.+Bağcı+Sk.+No:14+Çekmeköy+İstanbul&output=embed"></iframe>
 
 </section>
 
 
 <footer>
+
 © 2026 Madenciler Çelik
+
 </footer>
 
 
@@ -351,20 +377,20 @@ Kaliteyi sürekli geliştirmek, müşteri beklentilerini aşmak ve çalışanlar
 <script>
 
 function openLightbox(src){
-
 document.getElementById("lightbox-img").src = src;
-
 document.getElementById("lightbox").classList.add("active");
-
 }
 
 function closeLightbox(){
-
 document.getElementById("lightbox").classList.remove("active");
-
 }
 
 </script>
+
+
+<a href="https://wa.me/905319142916" class="whatsapp">
+<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" width="30">
+</a>
 
 
 </body>
