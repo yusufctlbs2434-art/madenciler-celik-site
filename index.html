@@ -85,11 +85,6 @@ border-radius:12px;
 overflow:hidden;
 box-shadow:0 10px 25px rgba(0,0,0,0.08);
 cursor:pointer;
-transition:.3s;
-}
-
-.gallery-item:hover{
-transform:translateY(-6px);
 }
 
 .gallery-item img{
@@ -111,11 +106,6 @@ background:white;
 padding:25px;
 border-radius:10px;
 box-shadow:0 8px 20px rgba(0,0,0,0.08);
-transition:.3s;
-}
-
-.reference-box:hover{
-transform:translateY(-5px);
 }
 
 /* KURUMSAL */
@@ -142,7 +132,7 @@ color:#111827;
 .corporate-box p{
 color:#6b7280;
 line-height:1.7;
-margin-bottom:10px;
+margin-bottom:15px;
 }
 
 /* MAP */
@@ -161,7 +151,6 @@ background:#111827;
 color:white;
 padding:30px;
 text-align:center;
-margin-top:50px;
 }
 
 /* LIGHTBOX */
@@ -201,7 +190,6 @@ border-radius:50%;
 display:flex;
 justify-content:center;
 align-items:center;
-box-shadow:0 10px 25px rgba(0,0,0,0.3);
 }
 
 </style>
@@ -225,16 +213,13 @@ box-shadow:0 10px 25px rgba(0,0,0,0.3);
 
 
 <section class="hero">
-
 <h2>Uzay Çatı ve Çelik Konstrüksiyon Sistemleri</h2>
-
 </section>
 
 
 <!-- PROJELER -->
 
 <section class="section">
-
 <h3>Tamamlanan Projelerimiz</h3>
 
 <div class="gallery">
@@ -300,14 +285,12 @@ box-shadow:0 10px 25px rgba(0,0,0,0.3);
 </div>
 
 </div>
-
 </section>
 
 
 <!-- REFERANSLAR -->
 
 <section class="section">
-
 <h3>Referanslarımız</h3>
 
 <div class="references">
@@ -337,24 +320,25 @@ box-shadow:0 10px 25px rgba(0,0,0,0.3);
 <!-- KURUMSAL -->
 
 <section class="section">
-
 <h3>Kurumsal</h3>
 
 <div class="corporate">
 
 <div class="corporate-box">
 <h4>Vizyonumuz</h4>
-<p>Çevreye saygılı, güvenilir ve tercih edilen firma olmak.</p>
+<p>MADENCİLER Çelik olarak firmamız yaşadığımız ve özellikle çalıştığımız çevreye saygılı, çalışanlarının mutlu, iş yapmak istenilen firmaların başında gelerek yasal sorumluluklarını yerine getirmek.</p>
+<p>Etik ilkelerden vazgeçmeden planlı ve programlı bir şekilde büyümek.</p>
 </div>
 
 <div class="corporate-box">
 <h4>Misyonumuz</h4>
-<p>Kaliteli çelik konstrüksiyon çözümleri sunmak.</p>
+<p>MADENCİLER Çelik Konstrüksiyon globalleşen dünyamızda sürekli gelişim gösteren inşaat, metal ve çelik sanayisinde geçmişten gelen deneyimlerimizi güçlü teknik kadromuzla müşterilerimize kaliteli hizmet sunmak ve memnuniyetlerini kazanmaktır.</p>
 </div>
 
 <div class="corporate-box">
 <h4>Kalite Politikamız</h4>
-<p>Sürekli gelişim ve müşteri memnuniyeti.</p>
+<p>Kalitenin devamlı gelişme ve süreklilik göstermesi gereken bir süreç olduğuna inanıyoruz. Müşteri beklentilerini doğru anlar ve bu beklentileri aşmak için çalışırız.</p>
+<p>Tüm çalışanlarımızın kalite bilinci ile hareket etmesini sağlamak için sürekli eğitim veririz.</p>
 </div>
 
 </div>
@@ -362,17 +346,36 @@ box-shadow:0 10px 25px rgba(0,0,0,0.3);
 </section>
 
 
+<!-- MAP -->
+
+<section class="section map">
+<h3>Konumumuz</h3>
+
+<iframe src="https://www.google.com/maps?q=Ömerli+Koçullu+Mah.+Bağcı+Sk.+No:14+Çekmeköy+İstanbul&output=embed"></iframe>
+
+</section>
+
+
+<!-- İLETİŞİM -->
+
+<section class="section">
+<h3>İletişim</h3>
+
+<p><strong>Telefon:</strong> +90 0533 481 55 90</p>
+<p><strong>Telefon:</strong> +90 0531 914 29 16</p>
+<p><strong>Email:</strong> madencilercelik@gmail.com</p>
+
+</section>
+
+
 <footer>
-
 © 2026 Madenciler Çelik
-
 </footer>
 
 
 <div class="lightbox" id="lightbox" onclick="closeLightbox()">
 <img id="lightbox-img">
 </div>
-
 
 <script>
 
@@ -391,7 +394,6 @@ document.getElementById("lightbox").classList.remove("active");
 <a href="https://wa.me/905319142916" class="whatsapp">
 <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" width="30">
 </a>
-
 
 </body>
 </html>
