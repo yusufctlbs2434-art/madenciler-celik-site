@@ -3,14 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Madenciler Çelik | Uzay Çatı & Çelik Konstrüksiyon</title>
+<title>Madenciler Çelik</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
 
-body{background:#f4f6f9;color:#333;}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#f4f6f9;
+color:#333;
+}
+
+/* HEADER */
 
 header{
 background:#111827;
@@ -19,12 +30,7 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 color:white;
-position:sticky;
-top:0;
-z-index:1000;
 }
-
-header h1{font-size:20px;}
 
 nav a{
 color:white;
@@ -33,7 +39,7 @@ margin-left:25px;
 font-size:14px;
 }
 
-nav a:hover{color:#f59e0b;}
+/* HERO */
 
 .hero{
 height:90vh;
@@ -42,143 +48,57 @@ url('https://images.unsplash.com/photo-1581093588401-12a41c66a47b');
 background-size:cover;
 background-position:center;
 display:flex;
-align-items:center;
 justify-content:center;
+align-items:center;
 text-align:center;
 color:white;
-padding:20px;
 }
 
-.hero h2{font-size:42px;margin-bottom:20px;}
-
-.hero p{font-size:18px;margin-bottom:30px;}
-
-.btn{
-background:#f59e0b;
-padding:14px 32px;
-color:white;
-text-decoration:none;
-border-radius:6px;
-font-weight:600;
-transition:.3s;
+.hero h2{
+font-size:42px;
+margin-bottom:20px;
 }
 
-.btn:hover{background:#d97706;}
+/* SECTION */
 
-.section{padding:90px 8%;text-align:center;}
-
-.section h3{font-size:32px;margin-bottom:50px;color:#111827;}
-
-.services{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:30px;
+.section{
+padding:90px 8%;
+text-align:center;
 }
 
-.card{
-background:white;
-padding:30px;
-border-radius:12px;
-box-shadow:0 10px 25px rgba(0,0,0,0.08);
-transition:.4s;
+.section h3{
+font-size:32px;
+margin-bottom:50px;
 }
 
-.card:hover{
-transform:translateY(-10px);
-box-shadow:0 20px 40px rgba(0,0,0,0.15);
-}
-
-.card h4{margin-bottom:10px;}
-
-.references{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:20px;
-}
-
-/* ===== PROJE GALERİ ===== */
+/* GALERİ */
 
 .gallery{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 gap:25px;
 }
 
 .gallery-item{
-position:relative;
+background:white;
+border-radius:12px;
 overflow:hidden;
-border-radius:14px;
-box-shadow:0 10px 30px rgba(0,0,0,0.1);
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+cursor:pointer;
+transition:.3s;
+}
+
+.gallery-item:hover{
+transform:translateY(-8px);
 }
 
 .gallery-item img{
 width:100%;
-height:280px;
+height:260px;
 object-fit:cover;
-transition:.5s;
+display:block;
 }
 
-.gallery-item:hover img{
-transform:scale(1.1);
-}
-
-.gallery-item::after{
-content:"Proje Detayı";
-position:absolute;
-bottom:0;
-left:0;
-width:100%;
-background:rgba(0,0,0,0.6);
-color:white;
-padding:15px;
-opacity:0;
-transition:.4s;
-}
-
-.gallery-item:hover::after{
-opacity:1;
-}
-
-/* MAP */
-.map iframe{
-width:100%;
-height:350px;
-border-radius:12px;
-border:0;
-}
-
-/* FOOTER */
-footer{
-background:#111827;
-color:white;
-text-align:center;
-padding:30px;
-margin-top:60px;
-}
-
-/* WHATSAPP */
-.whatsapp{
-position:fixed;
-bottom:25px;
-right:25px;
-background:#25D366;
-width:65px;
-height:65px;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-box-shadow:0 10px 25px rgba(0,0,0,0.3);
-z-index:999;
-transition:.3s;
-}
-
-.whatsapp:hover{transform:scale(1.1);}
-
-@media(max-width:768px){
-.hero h2{font-size:28px;}
-.gallery-item img{height:220px;}
-}
 /* LIGHTBOX */
 
 .lightbox{
@@ -197,20 +117,73 @@ align-items:center;
 .lightbox img{
 max-width:90%;
 max-height:90%;
-border-radius:10px;
+object-fit:contain;
 }
 
 .lightbox.active{
 display:flex;
-cursor:pointer;
 }
+
+/* REFERANSLAR */
+
+.references{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.reference-box{
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 8px 20px rgba(0,0,0,0.08);
+}
+
+/* MAP */
+
+.map iframe{
+width:100%;
+height:350px;
+border:0;
+border-radius:10px;
+}
+
+/* FOOTER */
+
+footer{
+background:#111827;
+color:white;
+padding:30px;
+text-align:center;
+}
+
+/* WHATSAPP */
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+width:60px;
+height:60px;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+@media(max-width:768px){
+.hero h2{font-size:28px;}
+.gallery-item img{height:200px;}
+}
+
 </style>
 </head>
 
 <body>
 
 <header>
-<h1>Madenciler Çelik</h1>
+<h2>Madenciler Çelik</h2>
 <nav>
 <a href="#">Anasayfa</a>
 <a href="#">Hizmetler</a>
@@ -223,63 +196,55 @@ cursor:pointer;
 <section class="hero">
 <div>
 <h2>Uzay Çatı ve Çelik Konstrüksiyon Sistemleri</h2>
-<p>Modern, dayanıklı ve mühendislik odaklı çelik çözümler.</p>
-<a href="#" class="btn">Teklif Al</a>
 </div>
 </section>
 
 <section class="section">
-<h3>Hizmetlerimiz</h3>
-<div class="services">
-<div class="card"><h4>Uzay Çatı Sistemleri</h4><p>Geniş açıklıklı yapılarda ekonomik çözümler.</p></div>
-<div class="card"><h4>Çelik Konstrüksiyon</h4><p>Endüstriyel tesisler için güçlü sistemler.</p></div>
-<div class="card"><h4>Proje & Mühendislik</h4><p>Statik hesap ve uygulama hizmetleri.</p></div>
-</div>
-</section>
-
-<section class="section" style="background:#ffffff;">
 <h3>Tamamlanan Projelerimiz</h3>
 
 <div class="gallery">
 
-<img src="images/proje1.jpg" onclick="openLightbox(this.src)">
-<img src="images/proje2.jpg" onclick="openLightbox(this.src)">
-<img src="images/proje3.jpg" onclick="openLightbox(this.src)">
-<img src="images/proje4.jpg" onclick="openLightbox(this.src)">
-<img src="images/proje5.jpg" onclick="openLightbox(this.src)">
-<img src="images/proje6.jpg" onclick="openLightbox(this.src)">
-<img src="images/proje7.jpg" onclick="openLightbox(this.src)">
-<img src="images/proje8.jpg" onclick="openLightbox(this.src)">
-<img src="images/proje9.jpg" onclick="openLightbox(this.src)">
-<img src="images/proje10.jpg" onclick="openLightbox(this.src)">
-<img src="images/proje11.jpg" onclick="openLightbox(this.src)">
-<img src="images/proje12.jpg" onclick="openLightbox(this.src)">
-<img src="images/proje13.jpg" onclick="openLightbox(this.src)">
-<img src="images/proje14.jpg" onclick="openLightbox(this.src)">
-<img src="images/proje15.jpg" onclick="openLightbox(this.src)">
+<div class="gallery-item" onclick="openLightbox('images/proje1.jpg')"><img src="images/proje1.jpg"></div>
+<div class="gallery-item" onclick="openLightbox('images/proje2.jpg')"><img src="images/proje2.jpg"></div>
+<div class="gallery-item" onclick="openLightbox('images/proje3.jpg')"><img src="images/proje3.jpg"></div>
+<div class="gallery-item" onclick="openLightbox('images/proje4.jpg')"><img src="images/proje4.jpg"></div>
+<div class="gallery-item" onclick="openLightbox('images/proje5.jpg')"><img src="images/proje5.jpg"></div>
+<div class="gallery-item" onclick="openLightbox('images/proje6.jpg')"><img src="images/proje6.jpg"></div>
+<div class="gallery-item" onclick="openLightbox('images/proje7.jpg')"><img src="images/proje7.jpg"></div>
+<div class="gallery-item" onclick="openLightbox('images/proje8.jpg')"><img src="images/proje8.jpg"></div>
+<div class="gallery-item" onclick="openLightbox('images/proje9.jpg')"><img src="images/proje9.jpg"></div>
+<div class="gallery-item" onclick="openLightbox('images/proje10.jpg')"><img src="images/proje10.jpg"></div>
+<div class="gallery-item" onclick="openLightbox('images/proje11.jpg')"><img src="images/proje11.jpg"></div>
+<div class="gallery-item" onclick="openLightbox('images/proje12.jpg')"><img src="images/proje12.jpg"></div>
+<div class="gallery-item" onclick="openLightbox('images/proje13.jpg')"><img src="images/proje13.jpg"></div>
+<div class="gallery-item" onclick="openLightbox('images/proje14.jpg')"><img src="images/proje14.jpg"></div>
+<div class="gallery-item" onclick="openLightbox('images/proje15.jpg')"><img src="images/proje15.jpg"></div>
 
 </div>
 </section>
 
 <section class="section">
 <h3>Referanslarımız</h3>
+
 <div class="references">
-<div class="card">DÜNDAR İNŞAAT A.Ş</div>A
-<div class="card">2.M PROJE MÜHENDİSLİK</div>
-<div class="card">ZETAŞ ZEMİN ETÜT A.Ş</div>
-<div class="card">ANKAS GRUP VE FEMA İNŞ.A.Ş</div>
-<div class="card">37 BURAK İNŞ.LTD.ŞTİ</div>
-<div class="card">CEMAK YAPI LTD.ŞTİ</div>
-<div class="card">KOÇ MÜHENDİSLİK LTD.ŞTİ</div>
-<div class="card">MERVE GROUP LTD.ŞTİ</div>
-<div class="card">UZUNYOL PASLANMAZ LTD.ŞTİ</div>
-<div class="card">NORM HAVUZCULUK LTD.ŞTİ</div>
-<div class="card">PİMAŞ A.Ş</div>
-<div class="card">BAHAR MADENCİLİK A.Ş</div>
-<div class="card">SKC MÜHENDİSLİK</div>
-<div class="card">SERHAT YAPI NİLTAŞ A.Ş</div>
-<div class="card">URFA KARÇELİK BORU</div>
-<div class="card">ÖZ NAKLİYAT KARA TAŞIMACILIK A.Ş</div>
+
+<div class="reference-box">DÜNDAR İNŞAAT A.Ş</div>
+<div class="reference-box">2.M PROJE MÜHENDİSLİK</div>
+<div class="reference-box">ZETAŞ ZEMİN ETÜT A.Ş</div>
+<div class="reference-box">ANKAS GRUP VE FEMA İNŞ.A.Ş</div>
+<div class="reference-box">37 BURAK İNŞ.LTD.ŞTİ</div>
+<div class="reference-box">CEMAK YAPI LTD.ŞTİ</div>
+<div class="reference-box">KOÇ MÜHENDİSLİK LTD.ŞTİ</div>
+<div class="reference-box">MERVE GROUP LTD.ŞTİ</div>
+<div class="reference-box">UZUNYOL PASLANMAZ LTD.ŞTİ</div>
+<div class="reference-box">NORM HAVUZCULUK LTD.ŞTİ</div>
+<div class="reference-box">PİMAŞ A.Ş</div>
+<div class="reference-box">BAHAR MADENCİLİK A.Ş</div>
+<div class="reference-box">SKC MÜHENDİSLİK</div>
+<div class="reference-box">SERHAT YAPI NİLTAŞ A.Ş</div>
+<div class="reference-box">URFA KARÇELİK BORU</div>
+<div class="reference-box">ÖZ NAKLİYAT KARA TAŞIMACILIK A.Ş</div>
+
 </div>
 </section>
 
@@ -288,39 +253,27 @@ cursor:pointer;
 <iframe src="https://www.google.com/maps?q=Ömerli+Koçullu+Mah.+Bağcı+Sk.+No:14+Çekmeköy+İstanbul&output=embed"></iframe>
 </section>
 
-<section class="section" style="background:#ffffff;">
-<h3>İletişim</h3>
-<p><strong>Telefon:</strong> +90 0533 481 55 90 | +90 0531 914 29 16</p>
-<p><strong>Email:</strong> info@madencilercelik.com</p>
-</section>
-
 <footer>
-© 2026 Madenciler Çelik | Tüm Hakları Saklıdır
+© 2026 Madenciler Çelik
 </footer>
 
-<a href="https://wa.me/905319142916" target="_blank" class="whatsapp">
-<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" width="28">
-</a>
 <div class="lightbox" id="lightbox" onclick="closeLightbox()">
 <img id="lightbox-img">
 </div>
 
 <script>
-
 function openLightbox(src){
-
 document.getElementById("lightbox-img").src = src;
-
 document.getElementById("lightbox").classList.add("active");
-
 }
-
 function closeLightbox(){
-
 document.getElementById("lightbox").classList.remove("active");
-
 }
-
 </script>
+
+<a href="https://wa.me/905319142916" class="whatsapp">
+<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" width="28">
+</a>
+
 </body>
 </html>
