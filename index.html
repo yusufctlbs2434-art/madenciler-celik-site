@@ -1,75 +1,137 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Madenciler Çelik | Uzay Çatı Sistemleri</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #111;
-      color: white;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Madenciler Çelik | Uzay Çatı Sistemleri</title>
 
-    nav {
-      background: #000;
-      padding: 15px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 20px;
-    }
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
-    header {
-      padding: 120px 20px;
-      text-align: center;
-      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
-                  url('https://images.unsplash.com/photo-1581093588401-22b6a1f8f4e2');
-      background-size: cover;
-      background-position: center;
-    }
+body{
+  font-family:'Poppins', sans-serif;
+  background:#0f0f0f;
+  color:white;
+}
 
-    section {
-      padding: 80px 40px;
-      text-align: center;
-    }
+nav{
+  position:fixed;
+  width:100%;
+  top:0;
+  background:rgba(0,0,0,0.9);
+  padding:20px 60px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  z-index:1000;
+}
 
-    .services {
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      flex-wrap: wrap;
-    }
+nav a{
+  color:white;
+  text-decoration:none;
+  margin-left:25px;
+  transition:0.3s;
+}
 
-    .card {
-      background: #222;
-      padding: 30px;
-      width: 250px;
-      border-radius: 10px;
-    }
+nav a:hover{
+  color:#ff3c00;
+}
 
-    footer {
-      background: #000;
-      text-align: center;
-      padding: 20px;
-    }
+header{
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  background:linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),
+  url('https://images.unsplash.com/photo-1503387762-592deb58ef4e');
+  background-size:cover;
+  background-position:center;
+}
 
-    .btn {
-      background: #ff3c00;
-      padding: 12px 25px;
-      text-decoration: none;
-      color: white;
-      display: inline-block;
-      margin-top: 20px;
-    }
-  </style>
+header h1{
+  font-size:48px;
+  margin-bottom:20px;
+}
+
+header p{
+  font-size:18px;
+  opacity:0.8;
+}
+
+.btn{
+  margin-top:30px;
+  padding:14px 35px;
+  background:#ff3c00;
+  text-decoration:none;
+  color:white;
+  border-radius:30px;
+  transition:0.3s;
+}
+
+.btn:hover{
+  background:white;
+  color:black;
+}
+
+section{
+  padding:120px 80px;
+  text-align:center;
+}
+
+section h2{
+  font-size:36px;
+  margin-bottom:40px;
+}
+
+.services{
+  display:flex;
+  justify-content:center;
+  gap:40px;
+  flex-wrap:wrap;
+}
+
+.card{
+  background:#1c1c1c;
+  padding:40px;
+  width:280px;
+  border-radius:15px;
+  transition:0.4s;
+}
+
+.card:hover{
+  transform:translateY(-10px);
+  background:#ff3c00;
+}
+
+footer{
+  background:black;
+  text-align:center;
+  padding:30px;
+}
+
+/* WhatsApp Butonu */
+.whatsapp{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25D366;
+  color:white;
+  padding:15px 18px;
+  border-radius:50%;
+  text-decoration:none;
+  font-size:20px;
+}
+</style>
 </head>
+
 <body>
 
 <nav>
@@ -82,17 +144,14 @@
 </nav>
 
 <header>
-  <h1>Uzay Çatı ve Çelik Konstrüksiyon Sistemleri</h1>
-  <p>Modern, dayanıklı ve mühendislik odaklı çözümler</p>
+  <h1>Uzay Çatı & Çelik Konstrüksiyon</h1>
+  <p>Mühendislik gücüyle dayanıklı yapılar</p>
   <a href="#iletisim" class="btn">Teklif Al</a>
 </header>
 
 <section id="hakkimizda">
   <h2>Hakkımızda</h2>
-  <p>
-    Madenciler Çelik olarak endüstriyel yapılar, fabrika çatı sistemleri
-    ve uzay çatı projelerinde uzman çözümler sunuyoruz.
-  </p>
+  <p>Endüstriyel yapılar, fabrika çatı sistemleri ve uzay çatı projelerinde uzman çözümler sunuyoruz.</p>
 </section>
 
 <section id="hizmetler">
@@ -100,15 +159,15 @@
   <div class="services">
     <div class="card">
       <h3>Uzay Çatı</h3>
-      <p>Geniş açıklıklar için dayanıklı sistemler.</p>
+      <p>Geniş açıklıklar için yüksek dayanımlı sistemler.</p>
     </div>
     <div class="card">
       <h3>Çelik Konstrüksiyon</h3>
-      <p>Sanayi yapıları için mühendislik çözümleri.</p>
+      <p>Sanayi ve endüstriyel yapı çözümleri.</p>
     </div>
     <div class="card">
       <h3>Proje & Montaj</h3>
-      <p>Planlama ve uygulama hizmetleri.</p>
+      <p>Planlama, üretim ve saha montaj hizmeti.</p>
     </div>
   </div>
 </section>
@@ -123,7 +182,7 @@
   © 2026 Madenciler Çelik - Tüm Hakları Saklıdır
 </footer>
 
+<a href="https://wa.me/905XXXXXXXXX" class="whatsapp">W</a>
+
 </body>
-</html>git add .
-git commit -m "premium tasarım"
-git push
+</html>Test123
