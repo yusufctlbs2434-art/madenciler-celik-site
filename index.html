@@ -10,19 +10,15 @@
     <style>
         :root {
             --primary: #111827;
-            --accent: #ca8a04; /* Kurumsal altın/turuncu tonu */
+            --accent: #ca8a04;
             --text-main: #374151;
             --white: #ffffff;
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
 
-        * {
-            margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background: #f3f4f6; color: var(--text-main); line-height: 1.6; }
 
-        body { background: #f9fafb; color: var(--text-main); line-height: 1.6; }
-
-        /* HEADER */
         header {
             background: var(--primary);
             padding: 20px 8%;
@@ -35,19 +31,10 @@
             z-index: 1000;
         }
 
-        nav a {
-            color: #d1d5db;
-            text-decoration: none;
-            margin-left: 25px;
-            font-size: 15px;
-            transition: var(--transition);
-        }
+        nav a { color: #d1d5db; text-decoration: none; margin-left: 25px; font-size: 15px; }
 
-        nav a:hover { color: var(--accent); }
-
-        /* HERO */
         .hero {
-            height: 60vh;
+            height: 50vh;
             background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
                         url('https://images.unsplash.com/photo-1513828583688-c52646db42da?q=80&w=1470&auto=format&fit=crop');
             background-size: cover;
@@ -59,114 +46,99 @@
             color: white;
         }
 
-        .hero h1 { font-size: clamp(28px, 5vw, 48px); font-weight: 700; text-transform: uppercase; }
-
-        /* SECTION */
         .section { padding: 80px 8%; }
-        .section h3 {
-            font-size: 32px;
-            text-align: center;
-            margin-bottom: 50px;
-            color: var(--primary);
-            position: relative;
-        }
-        .section h3::after {
-            content: ''; display: block; width: 50px; height: 3px; background: var(--accent); margin: 10px auto;
-        }
+        .section h3 { font-size: 32px; text-align: center; margin-bottom: 50px; color: var(--primary); }
 
-        /* GRID */
-        .grid {
+        /* --- DÜZELTİLEN KRİTİK ALAN --- */
+        .grid-services {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            /* Bu satır yan kutuların uzamasını engeller */
+            align-items: start; 
         }
 
-        /* HİZMETLER - AKORDİYON (DÜZELTİLMİŞ) */
         .service-box {
             background: var(--white);
-            border-radius: 10px;
+            border-radius: 12px;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
             overflow: hidden;
             border: 1px solid #e5e7eb;
             transition: var(--transition);
+            height: auto; /* Kendi içeriği kadar uzasın */
         }
 
-        .service-box:hover { transform: translateY(-3px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
-
         .service-header {
-            padding: 20px 25px;
-            background: var(--white);
+            padding: 25px;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            user-select: none;
+            background: var(--white);
         }
 
-        .service-header h4 { font-size: 18px; font-weight: 600; color: var(--primary); }
+        .service-header h4 { font-size: 18px; color: var(--primary); font-weight: 600; }
 
-        /* Açılır Ok İkonu */
         .icon-arrow {
-            width: 12px; height: 12px;
-            border-right: 2px solid var(--accent);
-            border-bottom: 2px solid var(--accent);
+            width: 10px; height: 10px;
+            border-right: 2.5px solid var(--accent);
+            border-bottom: 2.5px solid var(--accent);
             transform: rotate(45deg);
             transition: var(--transition);
         }
 
-        /* İçerik Alanı */
         .service-content {
             max-height: 0;
             overflow: hidden;
-            transition: all 0.5s ease-in-out;
-            background: #fdfdfd;
+            transition: var(--transition);
+            padding: 0 25px; /* Başlangıçta padding kapalı */
+            background: #fafafa;
         }
 
-        /* JS ile eklenecek aktif sınıfı */
+        /* Aktif olan kutu */
+        .service-box.active {
+            border-color: var(--accent);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
         .service-box.active .service-content {
             max-height: 500px;
-            padding: 0 25px 25px 25px;
-            border-top: 1px solid #f3f4f6;
+            padding: 10px 25px 30px 25px;
+            border-top: 1px solid #eee;
         }
 
         .service-box.active .icon-arrow {
             transform: rotate(-135deg);
         }
 
-        .service-content ul { list-style: none; padding-top: 15px; }
+        .service-content ul { list-style: none; margin-top: 10px; }
         .service-content li {
-            padding: 8px 0;
-            font-size: 15px;
-            color: #4b5563;
+            padding: 6px 0;
+            font-size: 14px;
             display: flex;
             align-items: center;
         }
         .service-content li::before {
-            content: "•"; color: var(--accent); font-weight: bold; width: 20px;
+            content: "→"; color: var(--accent); margin-right: 10px; font-weight: bold;
         }
 
-        /* DİĞER ALANLAR */
-        .ref-box {
-            background: white; padding: 20px; text-align: center; border-radius: 8px;
-            font-size: 14px; font-weight: 600; border: 1px solid #eee;
+        /* DİĞER YAPILAR */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
         }
+        .gallery-grid img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; }
 
-        .gallery img { width: 100%; height: 250px; object-fit: cover; border-radius: 8px; cursor: pointer; }
-
-        footer { background: var(--primary); color: white; padding: 40px; text-align: center; font-size: 14px; }
+        footer { background: var(--primary); color: white; padding: 30px; text-align: center; }
 
         .whatsapp {
             position: fixed; bottom: 25px; right: 25px; background: #25D366;
-            width: 60px; height: 60px; border-radius: 50%; display: flex;
-            justify-content: center; align-items: center; z-index: 1000;
+            width: 65px; height: 65px; border-radius: 50%; display: flex;
+            justify-content: center; align-items: center; box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
         .whatsapp img { width: 35px; }
 
-        @media (max-width: 768px) {
-            header { flex-direction: column; text-align: center; }
-            nav { margin-top: 15px; }
-            nav a { margin: 0 10px; }
-        }
     </style>
 </head>
 <body>
@@ -176,18 +148,17 @@
     <nav>
         <a href="#">Anasayfa</a>
         <a href="#hizmetler">Hizmetler</a>
-        <a href="#projeler">Projeler</a>
         <a href="#iletisim">İletişim</a>
     </nav>
 </header>
 
 <section class="hero">
-    <h1>Endüstriyel Çelik Çözümleri</h1>
+    <h1>Profesyonel Çelik Yapı Sistemleri</h1>
 </section>
 
 <section class="section" id="hizmetler">
     <h3>Hizmetlerimiz</h3>
-    <div class="grid">
+    <div class="grid-services">
 
         <div class="service-box">
             <div class="service-header">
@@ -196,11 +167,9 @@
             </div>
             <div class="service-content">
                 <ul>
-                    <li>Geniş Açıklıklı Sanayi Tesisleri</li>
-                    <li>Spor Tesisleri ve Stadyumlar</li>
-                    <li>Konser ve Sergi Salonları</li>
-                    <li>Uçak Hangarları</li>
-                    <li>Modern Pazar Yerleri</li>
+                    <li>Endüstriyel Tesisler</li>
+                    <li>Spor Salonları</li>
+                    <li>Pazar Yerleri</li>
                 </ul>
             </div>
         </div>
@@ -212,10 +181,9 @@
             </div>
             <div class="service-content">
                 <ul>
-                    <li>Ağır Sanayi Yapıları</li>
-                    <li>Çelik Kolon ve Kiriş İmalatı</li>
-                    <li>Çok Katlı Çelik Ofisler</li>
-                    <li>Asma Kat Tasarımları</li>
+                    <li>Ağır Çelik Yapılar</li>
+                    <li>Asma Katlar</li>
+                    <li>Çelik Çatılar</li>
                 </ul>
             </div>
         </div>
@@ -227,38 +195,35 @@
             </div>
             <div class="service-content">
                 <ul>
-                    <li>Sandviç Panel Uygulamaları</li>
-                    <li>Kenet Çatı Sistemleri</li>
-                    <li>Membran Su Yalıtımı</li>
-                    <li>Isı ve Ses İzolasyonu</li>
+                    <li>Sandviç Panel</li>
+                    <li>Trapez Sac</li>
+                    <li>Kenet Sistem</li>
                 </ul>
             </div>
         </div>
 
         <div class="service-box">
             <div class="service-header">
-                <h4>Özel İmalat</h4>
+                <h4>İmalat</h4>
                 <div class="icon-arrow"></div>
             </div>
             <div class="service-content">
                 <ul>
-                    <li>Proje Bazlı Çelik Üretimi</li>
-                    <li>Kaynaklı İmalat Çözümleri</li>
-                    <li>Hassas Kesim ve Şekillendirme</li>
+                    <li>Kaynaklı İmalat</li>
+                    <li>Özel Tasarım Çelik</li>
                 </ul>
             </div>
         </div>
 
         <div class="service-box">
             <div class="service-header">
-                <h4>Montaj Hizmetleri</h4>
+                <h4>Montaj</h4>
                 <div class="icon-arrow"></div>
             </div>
             <div class="service-content">
                 <ul>
-                    <li>Yerinde Hızlı ve Güvenli Montaj</li>
-                    <li>Vinçli Kurulum Operasyonları</li>
-                    <li>Anahtar Teslim Proje Yönetimi</li>
+                    <li>Şantiye Kurulumu</li>
+                    <li>Vinçli Montaj</li>
                 </ul>
             </div>
         </div>
@@ -266,60 +231,38 @@
     </div>
 </section>
 
-<section class="section" id="projeler">
-    <h3>Projelerimiz</h3>
-    <div class="grid gallery">
-        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1470&auto=format&fit=crop" onclick="alert('Görsel Detayı Yakında!')">
-        <img src="https://images.unsplash.com/photo-1581094288338-2314dddb7ecc?q=80&w=1470&auto=format&fit=crop" onclick="alert('Görsel Detayı Yakında!')">
-        <img src="https://images.unsplash.com/photo-1516937941344-00b4e0337589?q=80&w=1470&auto=format&fit=crop" onclick="alert('Görsel Detayı Yakında!')">
-    </div>
-</section>
-
-<section class="section">
-    <h3>Referanslarımız</h3>
-    <div class="grid">
-        <div class="ref-box">DÜNDAR İNŞAAT A.Ş</div>
-        <div class="ref-box">2.M PROJE MÜHENDİSLİK</div>
-        <div class="ref-box">ZETAŞ ZEMİN ETÜT A.Ş</div>
-        <div class="ref-box">CEMAK YAPI LTD.ŞTİ</div>
-        <div class="ref-box">PİMAŞ A.Ş</div>
-        <div class="ref-box">BAHAR MADENCİLİK A.Ş</div>
-    </div>
-</section>
-
-<section class="section" id="iletisim" style="background: #f3f4f6;">
+<section class="section" id="iletisim">
     <h3>İletişim</h3>
-    <div style="text-align: center; max-width: 600px; margin: 0 auto;">
-        <p><strong>Merkez Ofis:</strong> İstanbul, Türkiye</p>
-        <p><strong>Telefon:</strong> +90 533 481 55 90</p>
-        <p><strong>Email:</strong> madencilercelik@gmail.com</p>
+    <div style="text-align: center;">
+        <p>Telefon: 0531 914 29 16</p>
+        <p>Email: madencilercelik@gmail.com</p>
     </div>
 </section>
 
 <footer>
-    © 2026 Madenciler Çelik - Güvenle İnşa Eder.
+    © 2026 Madenciler Çelik
 </footer>
 
-<a href="https://wa.me/905319142916" class="whatsapp">
-    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
+<a href="https://wa.me/905319142916" class="whatsapp" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
 </a>
 
 <script>
-    // BAĞIMSIZ AKORDİYON MANTIĞI
     document.querySelectorAll(".service-header").forEach(header => {
         header.addEventListener("click", function() {
-            // Tıklanan başlığın üst kapsayıcısını bul (service-box)
-            const parent = this.parentElement;
+            const box = this.parentElement;
             
-            // Sadece bu kutuyu aç/kapat (toggle)
-            parent.classList.toggle("active");
-            
-            // OPSİYONEL: Biri açılınca diğerleri kapansın istiyorsan aşağıdaki satırları aktif et:
-            /*
-            document.querySelectorAll(".service-box").forEach(box => {
-                if (box !== parent) box.classList.remove("active");
-            });
-            */
+            // Eğer tıklanan zaten açıksa kapat
+            if(box.classList.contains("active")) {
+                box.classList.remove("active");
+            } else {
+                // Sadece tıklananı aç
+                // Not: Diğerlerinin otomatik kapanmasını istiyorsan 
+                // alt satırdaki döngüdeki yorumları kaldırabilirsin.
+                /* document.querySelectorAll(".service-box").forEach(b => b.classList.remove("active"));
+                */
+                box.classList.add("active");
+            }
         });
     });
 </script>
