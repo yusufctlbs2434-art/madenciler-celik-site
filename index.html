@@ -1,392 +1,328 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Madenciler Çelik | Uzay Çatı & Çelik Konstrüksiyon</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Madenciler Çelik | Uzay Çatı & Çelik Yapı Sistemleri</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #111827;
+            --accent: #ca8a04; /* Kurumsal altın/turuncu tonu */
+            --text-main: #374151;
+            --white: #ffffff;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
 
-<style>
+        * {
+            margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif;
+        }
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-}
+        body { background: #f9fafb; color: var(--text-main); line-height: 1.6; }
 
-body{
-background:#f4f6f9;
-color:#333;
-}
+        /* HEADER */
+        header {
+            background: var(--primary);
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
-/* HEADER */
+        nav a {
+            color: #d1d5db;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 15px;
+            transition: var(--transition);
+        }
 
-header{
-background:#111827;
-padding:20px 8%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-color:white;
-}
+        nav a:hover { color: var(--accent); }
 
-nav a{
-color:white;
-text-decoration:none;
-margin-left:25px;
-font-size:15px;
-}
+        /* HERO */
+        .hero {
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                        url('https://images.unsplash.com/photo-1513828583688-c52646db42da?q=80&w=1470&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
 
-/* HERO */
+        .hero h1 { font-size: clamp(28px, 5vw, 48px); font-weight: 700; text-transform: uppercase; }
 
-.hero{
-height:90vh;
-background:linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),
-url('https://images.unsplash.com/photo-1581093588401-12a41c66a47b');
-background-size:cover;
-background-position:center;
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
-color:white;
-}
+        /* SECTION */
+        .section { padding: 80px 8%; }
+        .section h3 {
+            font-size: 32px;
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--primary);
+            position: relative;
+        }
+        .section h3::after {
+            content: ''; display: block; width: 50px; height: 3px; background: var(--accent); margin: 10px auto;
+        }
 
-.hero h2{
-font-size:42px;
-}
+        /* GRID */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
 
-/* SECTION */
+        /* HİZMETLER - AKORDİYON (DÜZELTİLMİŞ) */
+        .service-box {
+            background: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            border: 1px solid #e5e7eb;
+            transition: var(--transition);
+        }
 
-.section{
-padding:90px 8%;
-text-align:center;
-}
+        .service-box:hover { transform: translateY(-3px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
 
-.section h3{
-font-size:32px;
-margin-bottom:50px;
-color:#111827;
-}
+        .service-header {
+            padding: 20px 25px;
+            background: var(--white);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
 
-/* GRID */
+        .service-header h4 { font-size: 18px; font-weight: 600; color: var(--primary); }
 
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:25px;
-}
+        /* Açılır Ok İkonu */
+        .icon-arrow {
+            width: 12px; height: 12px;
+            border-right: 2px solid var(--accent);
+            border-bottom: 2px solid var(--accent);
+            transform: rotate(45deg);
+            transition: var(--transition);
+        }
 
-/* BOX */
+        /* İçerik Alanı */
+        .service-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.5s ease-in-out;
+            background: #fdfdfd;
+        }
 
-.box{
-background:white;
-padding:30px;
-border-radius:12px;
-box-shadow:0 10px 25px rgba(0,0,0,0.08);
-text-align:left;
-line-height:1.7;
-}
+        /* JS ile eklenecek aktif sınıfı */
+        .service-box.active .service-content {
+            max-height: 500px;
+            padding: 0 25px 25px 25px;
+            border-top: 1px solid #f3f4f6;
+        }
 
-/* SERVICES */
+        .service-box.active .icon-arrow {
+            transform: rotate(-135deg);
+        }
 
-.service-title{
-cursor:pointer;
-font-weight:600;
-font-size:18px;
-}
+        .service-content ul { list-style: none; padding-top: 15px; }
+        .service-content li {
+            padding: 8px 0;
+            font-size: 15px;
+            color: #4b5563;
+            display: flex;
+            align-items: center;
+        }
+        .service-content li::before {
+            content: "•"; color: var(--accent); font-weight: bold; width: 20px;
+        }
 
-.service-content{
-display:none;
-margin-top:15px;
-}
+        /* DİĞER ALANLAR */
+        .ref-box {
+            background: white; padding: 20px; text-align: center; border-radius: 8px;
+            font-size: 14px; font-weight: 600; border: 1px solid #eee;
+        }
 
-.service-content ul{
-padding-left:20px;
-}
+        .gallery img { width: 100%; height: 250px; object-fit: cover; border-radius: 8px; cursor: pointer; }
 
-/* GALLERY */
+        footer { background: var(--primary); color: white; padding: 40px; text-align: center; font-size: 14px; }
 
-.gallery img{
-width:100%;
-height:260px;
-object-fit:cover;
-border-radius:10px;
-cursor:pointer;
-}
+        .whatsapp {
+            position: fixed; bottom: 25px; right: 25px; background: #25D366;
+            width: 60px; height: 60px; border-radius: 50%; display: flex;
+            justify-content: center; align-items: center; z-index: 1000;
+        }
+        .whatsapp img { width: 35px; }
 
-.lightbox{
-display:none;
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.9);
-justify-content:center;
-align-items:center;
-z-index:9999;
-}
-
-.lightbox img{
-max-width:90%;
-}
-
-/* MAP */
-
-.map iframe{
-width:100%;
-height:350px;
-border-radius:10px;
-border:0;
-}
-
-/* WHATSAPP */
-
-.whatsapp{
-position:fixed;
-bottom:25px;
-right:25px;
-background:#25D366;
-width:85px;
-height:85px;
-border-radius:50%;
-display:flex;
-justify-content:center;
-align-items:center;
-box-shadow:0 8px 25px rgba(0,0,0,0.3);
-}
-
-.whatsapp img{
-width:42px;
-}
-
-/* FOOTER */
-
-footer{
-background:#111827;
-color:white;
-padding:30px;
-text-align:center;
-}
-
-</style>
+        @media (max-width: 768px) {
+            header { flex-direction: column; text-align: center; }
+            nav { margin-top: 15px; }
+            nav a { margin: 0 10px; }
+        }
+    </style>
 </head>
-
 <body>
 
 <header>
-<h2>Madenciler Çelik</h2>
-<nav>
-<a href="#">Anasayfa</a>
-<a href="#">Hakkımızda</a>
-<a href="#">Hizmetler</a>
-<a href="#">Projeler</a>
-<a href="#">Referanslar</a>
-<a href="#">İletişim</a>
-</nav>
+    <h2>Madenciler Çelik</h2>
+    <nav>
+        <a href="#">Anasayfa</a>
+        <a href="#hizmetler">Hizmetler</a>
+        <a href="#projeler">Projeler</a>
+        <a href="#iletisim">İletişim</a>
+    </nav>
 </header>
 
 <section class="hero">
-<h2>Uzay Çatı ve Çelik Konstrüksiyon Sistemleri</h2>
+    <h1>Endüstriyel Çelik Çözümleri</h1>
 </section>
 
+<section class="section" id="hizmetler">
+    <h3>Hizmetlerimiz</h3>
+    <div class="grid">
 
-<!-- HAKKIMIZDA -->
+        <div class="service-box">
+            <div class="service-header">
+                <h4>Uzay Çatı</h4>
+                <div class="icon-arrow"></div>
+            </div>
+            <div class="service-content">
+                <ul>
+                    <li>Geniş Açıklıklı Sanayi Tesisleri</li>
+                    <li>Spor Tesisleri ve Stadyumlar</li>
+                    <li>Konser ve Sergi Salonları</li>
+                    <li>Uçak Hangarları</li>
+                    <li>Modern Pazar Yerleri</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="service-box">
+            <div class="service-header">
+                <h4>Çelik Konstrüksiyon</h4>
+                <div class="icon-arrow"></div>
+            </div>
+            <div class="service-content">
+                <ul>
+                    <li>Ağır Sanayi Yapıları</li>
+                    <li>Çelik Kolon ve Kiriş İmalatı</li>
+                    <li>Çok Katlı Çelik Ofisler</li>
+                    <li>Asma Kat Tasarımları</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="service-box">
+            <div class="service-header">
+                <h4>Çatı Kaplamaları</h4>
+                <div class="icon-arrow"></div>
+            </div>
+            <div class="service-content">
+                <ul>
+                    <li>Sandviç Panel Uygulamaları</li>
+                    <li>Kenet Çatı Sistemleri</li>
+                    <li>Membran Su Yalıtımı</li>
+                    <li>Isı ve Ses İzolasyonu</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="service-box">
+            <div class="service-header">
+                <h4>Özel İmalat</h4>
+                <div class="icon-arrow"></div>
+            </div>
+            <div class="service-content">
+                <ul>
+                    <li>Proje Bazlı Çelik Üretimi</li>
+                    <li>Kaynaklı İmalat Çözümleri</li>
+                    <li>Hassas Kesim ve Şekillendirme</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="service-box">
+            <div class="service-header">
+                <h4>Montaj Hizmetleri</h4>
+                <div class="icon-arrow"></div>
+            </div>
+            <div class="service-content">
+                <ul>
+                    <li>Yerinde Hızlı ve Güvenli Montaj</li>
+                    <li>Vinçli Kurulum Operasyonları</li>
+                    <li>Anahtar Teslim Proje Yönetimi</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="section" id="projeler">
+    <h3>Projelerimiz</h3>
+    <div class="grid gallery">
+        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1470&auto=format&fit=crop" onclick="alert('Görsel Detayı Yakında!')">
+        <img src="https://images.unsplash.com/photo-1581094288338-2314dddb7ecc?q=80&w=1470&auto=format&fit=crop" onclick="alert('Görsel Detayı Yakında!')">
+        <img src="https://images.unsplash.com/photo-1516937941344-00b4e0337589?q=80&w=1470&auto=format&fit=crop" onclick="alert('Görsel Detayı Yakında!')">
+    </div>
+</section>
 
 <section class="section">
-<h3>Hakkımızda</h3>
-
-<div class="grid">
-
-<div class="box">
-Madenciler Çelik Konstrüksiyon, 2010 yılında kurulmuş olup uzay çatı sistemleri, çelik konstrüksiyon, çatı kaplamaları, imalat ve montaj alanlarında faaliyet göstermektedir. Kurulduğu günden bu yana mühendislik kalitesi, güvenilir hizmet anlayışı ve profesyonel uygulama süreçleri ile sektörde saygın bir konuma ulaşmıştır.
-</div>
-
-<div class="box">
-Modern üretim teknikleri ve deneyimli teknik kadrosu ile sanayi tesislerinden spor komplekslerine, ticari yapılardan fuar alanlarına kadar birçok projeyi başarıyla tamamlamıştır. Kalite, güven ve müşteri memnuniyeti firmamızın temel prensipleridir.
-</div>
-
-</div>
-
+    <h3>Referanslarımız</h3>
+    <div class="grid">
+        <div class="ref-box">DÜNDAR İNŞAAT A.Ş</div>
+        <div class="ref-box">2.M PROJE MÜHENDİSLİK</div>
+        <div class="ref-box">ZETAŞ ZEMİN ETÜT A.Ş</div>
+        <div class="ref-box">CEMAK YAPI LTD.ŞTİ</div>
+        <div class="ref-box">PİMAŞ A.Ş</div>
+        <div class="ref-box">BAHAR MADENCİLİK A.Ş</div>
+    </div>
 </section>
 
-
-<!-- HİZMETLER -->
-
-<section class="section">
-<h3>Hizmetlerimiz</h3>
-
-<div class="grid">
-
-<div class="box">
-<div class="service-title">Uzay Çatı</div>
-<div class="service-content">
-<ul>
-<li>Sanayi Tesisleri</li>
-<li>Spor Tesisleri</li>
-<li>Konser Salonları</li>
-<li>Hangarlar</li>
-<li>Fuar Alanları</li>
-<li>Pazar Yerleri</li>
-</ul>
-</div>
-</div>
-
-<div class="box">
-<div class="service-title">Çelik Konstrüksiyon</div>
-<div class="service-content">
-<ul>
-<li>Sanayi Yapıları</li>
-<li>Kolon ve Kirişler</li>
-<li>Otoparklar</li>
-<li>Asma Katlar</li>
-</ul>
-</div>
-</div>
-
-<div class="box">
-<div class="service-title">Çatı Kaplamaları</div>
-<div class="service-content">
-<ul>
-<li>Sandviç Panel</li>
-<li>Membran</li>
-<li>Isı Yalıtımı</li>
-</ul>
-</div>
-</div>
-
-<div class="box">
-<div class="service-title">İmalat</div>
-<div class="service-content">
-<ul>
-<li>Çelik üretimi</li>
-<li>Özel imalat</li>
-</ul>
-</div>
-</div>
-
-<div class="box">
-<div class="service-title">Montaj</div>
-<div class="service-content">
-<ul>
-<li>Çelik montaj</li>
-<li>Anahtar teslim kurulum</li>
-</ul>
-</div>
-</div>
-
-</div>
-
+<section class="section" id="iletisim" style="background: #f3f4f6;">
+    <h3>İletişim</h3>
+    <div style="text-align: center; max-width: 600px; margin: 0 auto;">
+        <p><strong>Merkez Ofis:</strong> İstanbul, Türkiye</p>
+        <p><strong>Telefon:</strong> +90 533 481 55 90</p>
+        <p><strong>Email:</strong> madencilercelik@gmail.com</p>
+    </div>
 </section>
-
-
-<!-- PROJELER -->
-
-<section class="section">
-<h3>Tamamlanan Projelerimiz</h3>
-
-<div class="grid gallery">
-
-<script>
-for(let i=1;i<=15;i++){
-document.write(`<img src="images/proje${i}.jpg" onclick="openLightbox(this.src)">`);
-}
-</script>
-
-</div>
-
-</section>
-
-
-<!-- REFERANSLAR -->
-
-<section class="section">
-<h3>Referanslarımız</h3>
-
-<div class="grid">
-
-<div class="box">DÜNDAR İNŞAAT A.Ş</div>
-<div class="box">2.M PROJE MÜHENDİSLİK</div>
-<div class="box">ZETAŞ ZEMİN ETÜT A.Ş</div>
-<div class="box">ANKAS GRUP VE FEMA İNŞ.A.Ş</div>
-<div class="box">37 BURAK İNŞ.LTD.ŞTİ</div>
-<div class="box">CEMAK YAPI LTD.ŞTİ</div>
-<div class="box">KOÇ MÜHENDİSLİK LTD.ŞTİ</div>
-<div class="box">MERVE GROUP LTD.ŞTİ</div>
-<div class="box">UZUNYOL PASLANMAZ LTD.ŞTİ</div>
-<div class="box">NORM HAVUZCULUK LTD.ŞTİ</div>
-<div class="box">PİMAŞ A.Ş</div>
-<div class="box">BAHAR MADENCİLİK A.Ş</div>
-<div class="box">SKC MÜHENDİSLİK</div>
-<div class="box">SERHAT YAPI NİLTAŞ A.Ş</div>
-<div class="box">URFA KARÇELİK BORU</div>
-<div class="box">ÖZ NAKLİYAT KARA TAŞIMACILIK A.Ş</div>
-
-</div>
-
-</section>
-
-
-<!-- MAP -->
-
-<section class="section map">
-<h3>Konum</h3>
-<iframe src="https://www.google.com/maps?q=Ömerli+Koçullu+Mah.+Bağcı+Sk.+No:14+Çekmeköy+İstanbul&output=embed"></iframe>
-</section>
-
-
-<!-- İLETİŞİM -->
-
-<section class="section">
-<h3>İletişim</h3>
-<p>Telefon: +90 0533 481 55 90</p>
-<p>Telefon: +90 0531 914 29 16</p>
-<p>Email: madencilercelik@gmail.com</p>
-</section>
-
 
 <footer>
-© 2026 Madenciler Çelik
+    © 2026 Madenciler Çelik - Güvenle İnşa Eder.
 </footer>
 
-
-<div class="lightbox" id="lightbox" onclick="this.style.display='none'">
-<img id="lightbox-img">
-</div>
-
-
 <a href="https://wa.me/905319142916" class="whatsapp">
-<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
 </a>
 
-
 <script>
-
-document.querySelectorAll(".service-title").forEach(function(title){
-
-title.addEventListener("click", function(){
-
-let content=this.nextElementSibling;
-
-content.style.display=
-content.style.display==="block"?"none":"block";
-
-});
-
-});
-
-function openLightbox(src){
-
-document.getElementById("lightbox-img").src=src;
-document.getElementById("lightbox").style.display="flex";
-
-}
-w
+    // BAĞIMSIZ AKORDİYON MANTIĞI
+    document.querySelectorAll(".service-header").forEach(header => {
+        header.addEventListener("click", function() {
+            // Tıklanan başlığın üst kapsayıcısını bul (service-box)
+            const parent = this.parentElement;
+            
+            // Sadece bu kutuyu aç/kapat (toggle)
+            parent.classList.toggle("active");
+            
+            // OPSİYONEL: Biri açılınca diğerleri kapansın istiyorsan aşağıdaki satırları aktif et:
+            /*
+            document.querySelectorAll(".service-box").forEach(box => {
+                if (box !== parent) box.classList.remove("active");
+            });
+            */
+        });
+    });
 </script>
-
 
 </body>
 </html>
