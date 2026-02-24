@@ -19,7 +19,7 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Poppins', sans-serif; overflow-x: hidden; background-color: var(--light-gray); }
+        body { font-family: 'Poppins', sans-serif; overflow-x: hidden; background-color: var(--light-gray); scroll-behavior: smooth; }
 
         /* --- NAVBAR --- */
         header {
@@ -28,7 +28,7 @@
             display: flex; justify-content: space-between; align-items: center;
             box-shadow: 0 2px 10px rgba(0,0,0,0.3);
         }
-        .logo { font-family: 'Montserrat'; color: var(--white); font-weight: 800; font-size: 20px; }
+        .logo { font-family: 'Montserrat'; color: var(--white); font-weight: 800; font-size: 20px; text-decoration: none; }
         .logo span { color: var(--accent); }
 
         nav ul { display: flex; list-style: none; }
@@ -36,16 +36,18 @@
         nav ul li a { color: var(--white); text-decoration: none; font-size: 13px; font-weight: 600; text-transform: uppercase; transition: 0.3s; }
         nav ul li a:hover { color: var(--accent); }
 
-        /* Dropdown */
+        /* Dropdown Menü Tasarımı */
         .dropdown-menu {
             position: absolute; top: 100%; left: 0; background: var(--primary);
-            width: 240px; display: none; padding: 15px 0; border-top: 3px solid var(--accent);
+            width: 250px; display: none; padding: 15px 0; border-top: 3px solid var(--accent);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
         }
         .dropdown:hover .dropdown-menu { display: block; }
         .dropdown-menu li { margin: 0; width: 100%; }
         .dropdown-menu li a { padding: 10px 20px; display: block; text-transform: capitalize; font-size: 13px; }
+        .dropdown-menu li a:hover { background: rgba(255,255,255,0.05); color: var(--accent); }
 
-        /* --- HERO (Baskın Bant) --- */
+        /* --- HERO (Baskın Bant Tasarımı) --- */
         .hero {
             height: 100vh;
             background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1541888946425-d81bb19480c5?q=80&w=2000') no-repeat center center/cover;
@@ -58,35 +60,36 @@
             backdrop-filter: blur(8px);
         }
         .hero-banner h1 {
-            color: var(--white); font-family: 'Montserrat'; font-size: clamp(22px, 5vw, 45px);
+            color: var(--white); font-family: 'Montserrat'; font-size: clamp(20px, 5vw, 42px);
             letter-spacing: 2px; text-transform: uppercase; font-weight: 800;
         }
 
-        /* --- HAKKIMIZDA (3'lü Yapı) --- */
+        /* --- BÖLÜM AYARLARI --- */
         .section { padding: 100px 10%; }
         .section-title { text-align: center; margin-bottom: 60px; }
-        .section-title h2 { font-family: 'Montserrat'; font-size: 36px; position: relative; padding-bottom: 15px; }
+        .section-title h2 { font-family: 'Montserrat'; font-size: 36px; position: relative; padding-bottom: 15px; text-transform: uppercase; }
         .section-title h2::after { content: ''; width: 60px; height: 4px; background: var(--accent); position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); }
 
+        /* --- HAKKIMIZDA (3'lü Kart Yapısı) --- */
         .about-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
         .about-card { background: var(--white); padding: 40px; border-radius: 12px; transition: 0.4s; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
         .about-card:hover { transform: translateY(-10px); box-shadow: 0 15px 40px rgba(0,0,0,0.1); }
         .about-card i { font-size: 45px; color: var(--accent); margin-bottom: 25px; }
-        .about-card h3 { margin-bottom: 15px; font-family: 'Montserrat'; font-size: 22px; }
+        .about-card h3 { margin-bottom: 15px; font-family: 'Montserrat'; font-size: 22px; color: var(--primary); }
         .about-card p { font-size: 14.5px; line-height: 1.7; color: var(--gray); text-align: justify; }
 
-        /* --- İLETİŞİM --- */
+        /* --- İLETİŞİM ALANI --- */
         .contact-container { display: flex; flex-wrap: wrap; gap: 30px; margin-top: 40px; }
         .contact-info { flex: 1; min-width: 320px; background: var(--primary); color: white; padding: 50px; border-radius: 12px; }
-        .contact-info h3 { font-family: 'Montserrat'; font-size: 24px; margin-bottom: 30px; color: var(--accent); }
+        .contact-info h3 { font-family: 'Montserrat'; font-size: 24px; margin-bottom: 30px; color: var(--accent); text-transform: uppercase; }
         .contact-info p { margin-bottom: 25px; display: flex; align-items: flex-start; gap: 15px; font-size: 15px; }
         .contact-info i { color: var(--accent); font-size: 20px; margin-top: 4px; }
-        .contact-info strong { color: var(--white); display: block; margin-bottom: 5px; }
+        .contact-info strong { color: var(--white); display: block; margin-bottom: 5px; font-size: 16px; }
 
         .map-box { flex: 1.5; min-width: 320px; height: 450px; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
         .map-box iframe { width: 100%; height: 100%; border: none; }
 
-        /* --- WHATSAPP --- */
+        /* --- WHATSAPP BUTONU --- */
         .whatsapp {
             position: fixed; bottom: 30px; right: 30px; background: #25d366;
             width: 65px; height: 65px; border-radius: 50%; display: flex;
@@ -101,13 +104,14 @@
             header { padding: 15px 5%; }
             nav { display: none; }
             .section { padding: 60px 5%; }
+            .hero-banner h1 { font-size: 18px; padding: 0 10px; }
         }
     </style>
 </head>
 <body>
 
 <header>
-    <div class="logo">MADENCİLER <span>UZAY ÇATI</span></div>
+    <a href="index.html" class="logo">MADENCİLER <span>UZAY ÇATI</span></a>
     <nav>
         <ul>
             <li><a href="index.html">Anasayfa</a></li>
@@ -120,11 +124,11 @@
                 </ul>
             </li>
             <li class="dropdown">
-                <a href="#">Hizmetler <i class="fa fa-chevron-down" style="font-size: 10px;"></i></a>
+                <a href="hizmetler.html">Hizmetler <i class="fa fa-chevron-down" style="font-size: 10px;"></i></a>
                 <ul class="dropdown-menu">
-                    <li><a href="hizmetler.html#ozel-kafes">Özel Kafes Sistemleri</a></li>
-                    <li><a href="hizmetler.html#celik-cati">Çelik Çatılar</a></li>
-                    <li><a href="hizmetler.html#cati-kaplama">Çatı Kaplamaları</a></li>
+                    <li><a href="hizmetler.html#uzay-kafes">Uzay Kafes Sistemleri</a></li>
+                    <li><a href="hizmetler.html#celik-konstruksiyon">Çelik Konstrüksiyon</a></li>
+                    <li><a href="hizmetler.html#cati-kaplama">Çatı Kaplama</a></li>
                     <li><a href="hizmetler.html#imalat">İmalat</a></li>
                     <li><a href="hizmetler.html#montaj">Montaj</a></li>
                 </ul>
@@ -150,17 +154,17 @@
         <div class="about-card" data-aos="fade-up" data-aos-delay="100">
             <i class="fa-solid fa-eye"></i>
             <h3>Vizyonumuz</h3>
-            <p>Faaliyet gösterdiğimiz her alanda güvenilir, saygın ve tercih edilen bir firma olmaktır. Çevreye ve topluma saygıyı temel ilke benimseyerek, planlı ve istikrarlı büyüme ile kalite ve güvenin temsilcisi olmayı amaçlıyoruz.</p>
+            <p>Faaliyet gösterdiğimiz her alanda güvenilir, saygın ve tercih edilen bir firma olmaktır. Çevreye ve topluma saygıyı temel ilke olarak benimseyerek, planlı ve istikrarlı büyüme ile sektörümüzde kalite ve güvenin temsilcisi olmayı amaçlıyoruz.</p>
         </div>
         <div class="about-card" data-aos="fade-up" data-aos-delay="200">
             <i class="fa-solid fa-bullseye"></i>
             <h3>Misyonumuz</h3>
-            <p>Geçmişten gelen deneyimimizi ve güçlü teknik kadromuzu en verimli şekilde kullanarak müşterilerimize yüksek kalite standartlarında hizmet sunmaktır. Çözüm odaklı yaklaşımımızla sektörde kalıcı değerler üretmek temel hedefimizdir.</p>
+            <p>İnşaat, metal ve çelik sektöründe, geçmişten gelen deneyimimizi ve güçlü teknik kadromuzu en verimli şekilde kullanarak müşterilerimize yüksek kalite standartlarında hizmet sunmaktır. Çözüm odaklı ve profesyonel yaklaşımımızla kalıcı değerler üretmek temel hedefimizdir.</p>
         </div>
         <div class="about-card" data-aos="fade-up" data-aos-delay="300">
             <i class="fa-solid fa-award"></i>
             <h3>Kalite Politikamız</h3>
-            <p>Müşteri beklentilerini doğru analiz ederek, güvenilir, yüksek standartlarda ve sürdürülebilir çözümler sunarız. Kalite bilincini tüm süreçlerimize yayarak müşteri memnuniyetini en üst seviyede tutmayı taahhüt ederiz.</p>
+            <p>Müşteri beklentilerini doğru analiz ederek, güvenilir ve sürdürülebilir çözümler sunarız. Kalite bilincinin tüm çalışanlarımız tarafından benimsenmesini sağlayarak müşteri memnuniyetini en üst seviyede tutmak ve güvenin simgesi olmak temel amacımızdır.</p>
         </div>
     </div>
 </section>
@@ -175,28 +179,30 @@
             <p>
                 <i class="fa-solid fa-phone"></i>
                 <span>
-                    <strong>Telefon:</strong>
-                    +90 533 481 55 90 <span style="color:var(--accent)">|</span> +90 531 914 29 16
+                    <strong>Telefon Numaralarımız:</strong>
+                    +90 533 481 55 90 <span style="color:var(--accent); font-weight: bold;">|</span> +90 531 914 29 16
                 </span>
             </p>
             <p>
                 <i class="fa-solid fa-envelope"></i>
                 <span>
-                    <strong>E-posta:</strong>
+                    <strong>E-posta Adresimiz:</strong>
                     madencilercelik@gmail.com
                 </span>
             </p>
             <p>
                 <i class="fa-solid fa-location-dot"></i>
                 <span>
-                    <strong>Adres:</strong>
+                    <strong>Adres Bilgimiz:</strong>
                     Ömerli Koçullu Mah. Bağcı Sk. NO:14<br>
                     Çekmeköy / İstanbul
                 </span>
             </p>
         </div>
         <div class="map-box" data-aos="fade-left">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3010.428570387532!2d29.3456363!3d41.0963337!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDA1JzQ2LjgiTiAyOcKwMjAnNDQuMyJF!5e0!3m2!1str!2str!4v1700000000000"></iframe>
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12034.406981146714!2d29.3514757!3d41.0558667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cad052c537d995%3A0xc62260655d8f36c5!2zS2_Dp3VsbHUsIDM0ODU1IMOHZWttZWvDtnkvSXPYW5idWw!5e0!3m2!1str!2str!4v1700000000000!5m2!1str!2str" 
+                allowfullscreen="" loading="lazy"></iframe>
         </div>
     </div>
 </section>
@@ -211,7 +217,10 @@
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-    AOS.init({ duration: 1000, once: true });
+    AOS.init({ 
+        duration: 1000, 
+        once: true 
+    });
 </script>
 
 </body>
