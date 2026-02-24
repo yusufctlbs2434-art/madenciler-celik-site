@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hizmetlerimiz | Madenciler Uzay Çatı</title>
+    <title>Hizmet Showroom | Madenciler Uzay Çatı</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -17,59 +17,56 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Poppins', sans-serif; background-color: var(--light-bg); color: var(--primary); line-height: 1.6; }
+        body { font-family: 'Poppins', sans-serif; background-color: var(--light-bg); color: var(--primary); overflow-x: hidden; }
 
-        /* Navbar */
-        header { position: fixed; top: 0; width: 100%; z-index: 1000; background: #0f172a; padding: 15px 8%; display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-family: 'Montserrat'; color: white; font-weight: 800; font-size: 20px; text-decoration: none; }
+        /* Navbar İnceldi */
+        header { position: fixed; top: 0; width: 100%; z-index: 1000; background: rgba(15, 23, 42, 0.95); padding: 12px 8%; display: flex; justify-content: space-between; align-items: center; backdrop-filter: blur(10px); }
+        .logo { font-family: 'Montserrat'; color: white; font-weight: 800; font-size: 18px; text-decoration: none; }
         .logo span { color: var(--accent); }
         nav ul { display: flex; list-style: none; }
-        nav ul li { margin-left: 25px; }
-        nav ul li a { color: white; text-decoration: none; font-size: 12px; font-weight: 600; text-transform: uppercase; }
+        nav ul li { margin-left: 20px; }
+        nav ul li a { color: white; text-decoration: none; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
 
-        .page-header { padding: 140px 8% 50px; background: #0f172a; color: white; text-align: center; border-bottom: 5px solid var(--accent); }
+        /* Sayfa Başlığı Daha Kompakt */
+        .page-header { padding: 100px 8% 40px; background: #0f172a; color: white; text-align: left; }
+        .page-header h1 { font-family: 'Montserrat'; font-size: 28px; border-left: 4px solid var(--accent); padding-left: 20px; text-transform: uppercase; }
 
-        /* Showroom Tasarımı */
-        .showroom-container { max-width: 1300px; margin: 50px auto; padding: 0 20px; }
+        /* Showroom Tasarımı (Full Width Mantığı) */
+        .showroom-section { display: grid; grid-template-columns: 45% 55%; min-height: 85vh; background: var(--white); }
 
-        .elite-card {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            background: var(--white);
-            border: 1px solid #e2e8f0;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
-            min-height: 600px;
+        /* Sol Taraf: Zengin İçerik */
+        .content-side { padding: 60px 8%; display: flex; flex-direction: column; gap: 40px; border-right: 1px solid #eee; overflow-y: auto; }
+        
+        .service-item { transition: 0.3s; }
+        .service-item h2 { font-family: 'Montserrat'; font-size: 24px; color: var(--primary); margin-bottom: 15px; display: flex; align-items: center; gap: 15px; }
+        .service-item h2 i { color: var(--accent); font-size: 20px; }
+        .service-item p { color: var(--gray); font-size: 14px; line-height: 1.7; margin-bottom: 15px; }
+        
+        /* Kullanım Alanları Etiketleri */
+        .usage-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+        .tag { background: #f1f5f9; color: var(--primary); padding: 5px 12px; border-radius: 4px; font-size: 11px; font-weight: 600; border: 1px solid #e2e8f0; }
+
+        /* Sağ Taraf: Dev Görsel Panel */
+        .visual-side { position: relative; background: #000; overflow: hidden; }
+        .slide-img { 
+            position: absolute; width: 100%; height: 100%; 
+            object-fit: cover; opacity: 0; transition: opacity 1.2s ease-in-out; 
+            filter: brightness(0.8);
         }
+        .slide-img.active { opacity: 1; }
 
-        .info-side { padding: 60px; display: flex; flex-direction: column; justify-content: center; }
-        .info-side h2 { font-family: 'Montserrat'; font-size: 32px; margin-bottom: 25px; position: relative; }
-        .info-side h2::after { content: ''; position: absolute; left: 0; bottom: -10px; width: 50px; height: 4px; background: var(--accent); }
-        .info-side p { color: var(--gray); font-size: 15px; margin-bottom: 20px; }
+        /* Alt Bölüm: İmalat & Montaj (Vurucu Grid) */
+        .tech-footer { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: #eee; border-top: 1px solid #eee; }
+        .tech-card { background: white; padding: 50px 8%; }
+        .tech-card h3 { font-family: 'Montserrat'; margin-bottom: 20px; font-size: 20px; color: var(--primary); }
+        .tech-card p { font-size: 14px; color: var(--gray); margin-bottom: 25px; }
+        .mini-gal { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+        .mini-gal img { width: 100%; height: 120px; object-fit: cover; border-radius: 2px; }
 
-        /* Slider Alanı (Patlamaz Sürüm) */
-        .slider-side { position: relative; overflow: hidden; background: #1e293b; border-left: 10px solid var(--accent); }
-        .slide-frame { display: flex; width: 100%; height: 100%; position: relative; }
-        .my-slide {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
-            object-fit: cover;
-        }
-        .my-slide.active { opacity: 1; }
-
-        /* Alt Hizmetler */
-        .bottom-sections { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 50px; padding-bottom: 80px; }
-        .bottom-box { background: white; padding: 40px; border-top: 4px solid var(--primary); box-shadow: 0 10px 20px rgba(0,0,0,0.03); }
-        .bottom-box h3 { font-family: 'Montserrat'; margin-bottom: 15px; }
-        .img-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 20px; }
-        .img-row img { width: 100%; height: 130px; object-fit: cover; border-radius: 4px; }
-
-        @media (max-width: 992px) {
-            .elite-card { grid-template-columns: 1fr; }
-            .slider-side { min-height: 350px; border-left: 0; border-top: 10px solid var(--accent); }
-            .bottom-sections { grid-template-columns: 1fr; }
+        @media (max-width: 1024px) {
+            .showroom-section { grid-template-columns: 1fr; }
+            .visual-side { height: 400px; order: -1; }
+            .tech-footer { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -80,72 +77,90 @@
     <nav>
         <ul>
             <li><a href="index.html">Anasayfa</a></li>
-            <li><a href="hizmetler.html" style="color: var(--accent);">Hizmetler</a></li>
+            <li><a href="hizmetler.html">Hizmetler</a></li>
             <li><a href="projeler.html">Projeler</a></li>
             <li><a href="index.html#iletisim">İletişim</a></li>
         </ul>
     </nav>
 </header>
 
-<div class="page-header"><h1>Hizmet <span>Showroom</span></h1></div>
+<div class="page-header">
+    <h1>Hizmet <span>Standartlarımız</span></h1>
+</div>
 
-<section class="showroom-container">
-    <div class="elite-card">
-        <div class="info-side">
-            <h2>Hizmetlerimiz</h2>
-            <p><b>Uzay Kafes Sistemleri:</b> Geniş açıklıkları kolonsuz geçen, hafif ve yüksek güvenlikli mimari çözümler sunuyoruz.</p>
-            <p><b>Çelik Konstrüksiyon:</b> Fabrika ve ağır sanayi yapıları için dayanıklı, hızlı kurulumlu çelik yapılar inşa ediyoruz.</p>
-            <p><b>Çatı Kaplamaları:</b> Isı ve su yalıtımında üst düzey performans sağlayan modern kaplama çözümleri.</p>
-            <p style="font-style: italic; font-size: 13px; margin-top: 20px;">* Uygulama örneklerimizi sağdaki panelden takip edebilirsiniz.</p>
+<section class="showroom-section">
+    <div class="content-side">
+        
+        <div class="service-item">
+            <h2><i class="fa-solid fa-draw-polygon"></i> Uzay Kafes Sistemleri</h2>
+            <p>Geniş açıklıklı yapıların estetik ve deprem güvenliği odaklı çözümüdür. Prefabrik yapısı sayesinde şantiyede kaynak gerektirmeden, yüksek hızda montaj avantajı sağlar.</p>
+            <div class="usage-tags">
+                <span class="tag">Fabrikalar</span> <span class="tag">Spor Salonları</span> 
+                <span class="tag">Pazar Yerleri</span> <span class="tag">Hangarlar</span>
+            </div>
         </div>
 
-        <div class="slider-side">
-            <img src="images/proje5.png" class="my-slide active">
-            <img src="images/proje6.jpg" class="my-slide">
-            <img src="images/proje7.png" class="my-slide">
-            <img src="images/proje8.jpg" class="my-slide">
-            <img src="images/proje9.png" class="my-slide">
-            <img src="images/proje10.png" class="my-slide">
-            <img src="images/proje11.png" class="my-slide">
+        <div class="service-item">
+            <h2><i class="fa-solid fa-faucets-horizontal"></i> Çelik Konstrüksiyon</h2>
+            <p>Endüstriyel hız ve dayanıklılığın modern mimari ile birleşimi. Ağır sanayi yapılarından asma kat çözümlerine kadar esnek ve uzun ömürlü çelik yapılar sunuyoruz.</p>
+            <div class="usage-tags">
+                <span class="tag">Sanayi Yapıları</span> <span class="tag">Depolar</span> 
+                <span class="tag">Asma Katlar</span> <span class="tag">Çelik Çatılar</span>
+            </div>
         </div>
+
+        <div class="service-item">
+            <h2><i class="fa-solid fa-layer-group"></i> Çatı Kaplamaları</h2>
+            <p>Yapılarınızı dış etkenlerden koruyan, yüksek ısı ve su yalıtımı sağlayan profesyonel kabuk çözümleri. Sızdırmazlık garantili ve enerji verimliliği odaklı uygulamalar.</p>
+            <div class="usage-tags">
+                <span class="tag">Sandviç Panel</span> <span class="tag">Kenet Sistem</span> 
+                <span class="tag">Polikarbon</span> <span class="tag">Trapez Sac</span>
+            </div>
+        </div>
+
     </div>
 
-    <div class="bottom-sections">
-        <div class="bottom-box">
-            <h3>İmalat Teknolojisi</h3>
-            <p>Modern tesislerimizde bilgisayar destekli üretimle boru ve küre mekanizmalarını kusursuz işliyoruz.</p>
-            <div class="img-row">
-                <img src="images/proje12.jpg">
-                <img src="images/proje13.jpg">
-                <img src="images/proje14.jpg">
-            </div>
-        </div>
-        <div class="bottom-box">
-            <h3>Montaj Gücü</h3>
-            <p>Somun anahtarı teknolojisi ile şantiyede kaynak gerektirmeyen, hızlı ve güvenli montaj uygulamaları.</p>
-            <div class="img-row">
-                <img src="images/proje15.jpg">
-                <img src="images/proje16.jpg">
-                <img src="images/proje17.jpg">
-            </div>
-        </div>
+    <div class="visual-side">
+        <img src="images/proje5.png" class="slide-img active">
+        <img src="images/proje6.jpg" class="slide-img">
+        <img src="images/proje7.png" class="slide-img">
+        <img src="images/proje8.jpg" class="slide-img">
+        <img src="images/proje9.png" class="slide-img">
+        <img src="images/proje10.png" class="slide-img">
+        <img src="images/proje11.png" class="slide-img">
     </div>
 </section>
 
-<footer><p>© 2026 Madenciler Uzay Çatı Sistemleri.</p></footer>
+<div class="tech-footer">
+    <div class="tech-card">
+        <h3>İmalat Teknolojisi</h3>
+        <p>Bilgisayar destekli üretim hattımızda boru, küre ve cıvata mekanizmalarını mikron düzeyinde hassasiyetle işliyoruz.</p>
+        <div class="mini-gal">
+            <img src="images/proje12.jpg">
+            <img src="images/proje13.jpg">
+            <img src="images/proje14.jpg">
+        </div>
+    </div>
+    <div class="tech-card">
+        <h3>Montaj Gücü</h3>
+        <p>Sadece somun anahtarı teknolojisi ile şantiyede kaynak zahmetine girmeden, yüksek iş güvenliği ile hızlı kurulum sağlıyoruz.</p>
+        <div class="mini-gal">
+            <img src="images/proje15.jpg">
+            <img src="images/proje16.jpg">
+            <img src="images/proje17.jpg">
+        </div>
+    </div>
+</div>
 
 <script>
-    // Basit ve Patlamaz Slider Scripti
-    let currentIndex = 0;
-    const slides = document.querySelectorAll('.my-slide');
-
-    function nextSlide() {
-        slides[currentIndex].classList.remove('active');
-        currentIndex = (currentIndex + 1) % slides.length;
-        slides[currentIndex].classList.add('active');
+    let current = 0;
+    const items = document.querySelectorAll('.slide-img');
+    function next() {
+        items[current].classList.remove('active');
+        current = (current + 1) % items.length;
+        items[current].classList.add('active');
     }
-
-    setInterval(nextSlide, 3000); // 3 saniyede bir değişir
+    setInterval(next, 3000);
 </script>
 
 </body>
