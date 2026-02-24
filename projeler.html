@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeler & Referanslar | Madenciler Uzay Çatı</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #0f172a; 
+            --accent: #f59e0b;  
+            --white: #ffffff;
+            --gray: #64748b;
+            --light-bg: #f8fafc;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; background-color: var(--light-bg); color: var(--primary); scroll-behavior: smooth; }
+
+        /* --- NAVBAR --- */
+        header {
+            position: fixed; top: 0; width: 100%; z-index: 1000;
+            background: rgba(15, 23, 42, 1); padding: 15px 8%;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .logo { font-family: 'Montserrat'; color: var(--white); font-weight: 800; font-size: 20px; text-decoration: none; }
+        .logo span { color: var(--accent); }
+        nav ul { display: flex; list-style: none; }
+        nav ul li { margin-left: 25px; }
+        nav ul li a { color: var(--white); text-decoration: none; font-size: 13px; font-weight: 600; text-transform: uppercase; transition: 0.3s; }
+        nav ul li a:hover { color: var(--accent); }
+
+        /* --- SAYFA BAŞLIĞI --- */
+        .page-header {
+            padding: 160px 8% 60px; background: var(--primary); color: var(--white); text-align: center;
+            border-bottom: 4px solid var(--accent);
+        }
+        .page-header h1 { font-family: 'Montserrat'; font-size: clamp(24px, 5vw, 36px); text-transform: uppercase; letter-spacing: 2px; }
+        .page-header span { color: var(--accent); }
+
+        .section-padding { padding: 80px 10%; }
+        .section-title { text-align: center; margin-bottom: 60px; font-family: 'Montserrat'; font-size: 32px; position: relative; padding-bottom: 15px; }
+        .section-title::after { content: ''; width: 50px; height: 3px; background: var(--accent); position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); }
+        .section-title span { color: var(--accent); }
+
+        /* --- PROJELER GALERİSİ --- */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+        }
+        .project-card {
+            background: var(--white); border-radius: 15px; overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.4s;
+        }
+        .project-card:hover { transform: translateY(-10px); }
+        .project-img { width: 100%; height: 240px; background: #e2e8f0; overflow: hidden; }
+        .project-img img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+        .project-card:hover .project-img img { scale: 1.1; }
+        .project-details { padding: 25px; text-align: center; }
+        .project-details h3 { font-family: 'Montserrat'; font-size: 18px; margin-bottom: 10px; color: var(--primary); }
+        .project-details p { color: var(--gray); font-size: 14px; display: flex; align-items: center; justify-content: center; gap: 8px; }
+
+        /* --- REFERANSLAR ALANI --- */
+        #referanslar { background: var(--white); scroll-margin-top: 80px; }
+        .ref-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .ref-item {
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            transition: 0.3s;
+        }
+        .ref-item:hover {
+            border-left-color: var(--accent);
+            background: #fff;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transform: translateX(5px);
+        }
+        .ref-item i { color: var(--accent); font-size: 18px; }
+        .ref-item span { font-weight: 600; font-size: 14px; color: var(--primary); text-transform: uppercase; }
+
+        footer { background: #020617; color: #64748b; padding: 40px; text-align: center; font-size: 14px; }
+
+        @media (max-width: 768px) {
+            .section-padding { padding: 60px 5%; }
+            header { padding: 15px 5%; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="index.html" class="logo">MADENCİLER <span>UZAY ÇATI</span></a>
+    <nav>
+        <ul>
+            <li><a href="index.html">Anasayfa</a></li>
+            <li><a href="hizmetler.html">Hizmetler</a></li>
+            <li><a href="#projeler">Projeler</a></li>
+            <li><a href="#referanslar">Referanslar</a></li>
+            <li><a href="index.html#iletisim">İletişim</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="page-header">
+    <h1 data-aos="zoom-in">Projeler & <span>Referanslar</span></h1>
+</div>
+
+<section id="projeler" class="section-padding">
+    <div class="section-title" data-aos="fade-up">Tamamlanan <span>Projelerimiz</span></div>
+    <div class="projects-grid">
+        <div class="project-card" data-aos="fade-up">
+            <div class="project-img">
+                <img src="images/proje1.jpg" alt="Uzay Çatı Projesi">
+            </div>
+            <div class="project-details">
+                <h3>Endüstriyel Tesis Uzay Kafes</h3>
+                <p><i class="fa-solid fa-location-dot"></i> İstanbul</p>
+            </div>
+        </div>
+        <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="project-img">
+                <img src="images/proje2.jpg" alt="Çelik Konstrüksiyon">
+            </div>
+            <div class="project-details">
+                <h3>Kapalı Pazar Yeri Uygulaması</h3>
+                <p><i class="fa-solid fa-location-dot"></i> Kocaeli</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="referanslar" class="section-padding">
+    <div class="section-title" data-aos="fade-up">Güçlü <span>Referanslarımız</span></div>
+    <div class="ref-container">
+        <div class="ref-item" data-aos="fade-right"><i class="fa-solid fa-building"></i><span>Dündar İnşaat A.Ş</span></div>
+        <div class="ref-item" data-aos="fade-right" data-aos-delay="50"><i class="fa-solid fa-building"></i><span>2.M Proje Mühendislik</span></div>
+        <div class="ref-item" data-aos="fade-right" data-aos-delay="100"><i class="fa-solid fa-building"></i><span>Zetaş Zemin Etüt A.Ş</span></div>
+        <div class="ref-item" data-aos="fade-right" data-aos-delay="150"><i class="fa-solid fa-building"></i><span>Ankas Grup ve Fema İnş. A.Ş</span></div>
+        <div class="ref-item" data-aos="fade-right" data-aos-delay="200"><i class="fa-solid fa-building"></i><span>37 Burak İnş. Ltd. Şti</span></div>
+        <div class="ref-item" data-aos="fade-right" data-aos-delay="250"><i class="fa-solid fa-building"></i><span>Cemak Yapı Ltd. Şti</span></div>
+        <div class="ref-item" data-aos="fade-right" data-aos-delay="300"><i class="fa-solid fa-building"></i><span>Koç Mühendislik Ltd. Şti</span></div>
+        <div class="ref-item" data-aos="fade-right" data-aos-delay="350"><i class="fa-solid fa-building"></i><span>Merve Group Ltd. Şti</span></div>
+        <div class="ref-item" data-aos="fade-right" data-aos-delay="400"><i class="fa-solid fa-building"></i><span>Uzunyol Paslanmaz Ltd. Şti</span></div>
+        <div class="ref-item" data-aos="fade-right" data-aos-delay="450"><i class="fa-solid fa-building"></i><span>Norm Havuzculuk Ltd. Şti</span></div>
+        <div class="ref-item" data-aos="fade-right" data-aos-delay="500"><i class="fa-solid fa-building"></i><span>Pimaş A.Ş</span></div>
+        <div class="ref-item" data-aos="fade-right" data-aos-delay="550"><i class="fa-solid fa-building"></i><span>Bahar Madencilik A.Ş</span></div>
+        <div class="ref-item" data-aos="fade-right" data-aos-delay="600"><i class="fa-solid fa-building"></i><span>SKC Mühendislik</span></div>
+        <div class="ref-item" data-aos="fade-right" data-aos-delay="650"><i class="fa-solid fa-building"></i><span>Serhat Yapı Niltaş A.Ş</span></div>
+        <div class="ref-item" data-aos="fade-right" data-aos-delay="700"><i class="fa-solid fa-building"></i><span>Urfa Karçelik Boru</span></div>
+        <div class="ref-item" data-aos="fade-right" data-aos-delay="750"><i class="fa-solid fa-building"></i><span>Öz Nakliyat Kara Taşımacılık A.Ş</span></div>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Madenciler Uzay Çatı Sistemleri. Tüm Hakları Saklıdır.</p>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init({ duration: 800, once: true });</script>
+
+</body>
+</html>
