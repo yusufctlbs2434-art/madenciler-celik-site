@@ -8,83 +8,53 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        :root { 
-            --primary: #0f172a; 
-            --accent: #f59e0b; 
-            --white: #ffffff; 
-            --gray: #64748b; 
-            --light-bg: #f8fafc;
-        }
-
+        :root { --primary: #0f172a; --accent: #f59e0b; --white: #ffffff; --gray: #64748b; --light-bg: #f8fafc; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Poppins', sans-serif; background-color: var(--light-bg); color: var(--primary); }
+        body { font-family: 'Poppins', sans-serif; background-color: var(--light-bg); color: var(--primary); line-height: 1.8; }
 
         header { position: fixed; top: 0; width: 100%; z-index: 1000; background: #0f172a; padding: 15px 8%; display: flex; justify-content: space-between; align-items: center; }
         .logo { font-family: 'Montserrat'; color: white; font-weight: 800; font-size: 20px; text-decoration: none; }
         .logo span { color: var(--accent); }
         nav ul { display: flex; list-style: none; }
-        nav ul li { margin-left: 20px; }
-        nav ul li a { color: white; text-decoration: none; font-size: 12px; font-weight: 600; text-transform: uppercase; }
+        nav ul li { margin-left: 25px; }
+        nav ul li a { color: white; text-decoration: none; font-size: 13px; font-weight: 600; text-transform: uppercase; }
 
-        .page-header { padding: 140px 8% 40px; background: #0f172a; color: white; text-align: center; }
+        .page-banner { padding: 160px 8% 80px; background: linear-gradient(rgba(15,23,42,0.9), rgba(15,23,42,0.9)), url('images/proje5.png'); background-size: cover; color: white; text-align: center; }
+        .page-banner h1 { font-family: 'Montserrat'; font-size: 42px; text-transform: uppercase; letter-spacing: 2px; }
+        .page-banner p { opacity: 0.8; font-size: 18px; max-width: 700px; margin: 20px auto 0; }
 
-        /* --- INTERAKTIF KARTLAR --- */
-        .services-grid { 
-            max-width: 1200px; 
-            margin: 50px auto; 
-            display: grid; 
-            grid-template-columns: repeat(3, 1fr); 
-            gap: 25px; 
-            padding: 0 20px;
-        }
-
-        .service-card {
-            background: var(--white);
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            cursor: pointer;
-            position: relative;
-            border: 1px solid #e2e8f0;
-        }
-
-        .card-img-wrapper { width: 100%; height: 300px; overflow: hidden; position: relative; }
-        .card-img-wrapper img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
-        .service-card:hover .card-img-wrapper img { transform: scale(1.1); }
-
-        .card-header { padding: 25px; text-align: center; background: white; border-top: 4px solid var(--accent); }
-        .card-header h3 { font-family: 'Montserrat'; font-size: 18px; text-transform: uppercase; }
-        .card-header span { font-size: 12px; color: var(--gray); font-weight: 600; display: block; margin-top: 5px; }
-
-        /* Detay Alanı (Başlangıçta Kapalı) */
-        .card-detail { 
-            max-height: 0; 
-            overflow: hidden; 
-            transition: max-height 0.5s ease-out, padding 0.3s ease; 
-            background: #fdfdfd; 
-            padding: 0 25px;
-        }
-
-        .service-card.active { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
-        .service-card.active .card-detail { max-height: 600px; padding: 25px; border-top: 1px solid #eee; }
-
-        .detail-content h4 { font-family: 'Montserrat'; font-size: 14px; margin-bottom: 10px; color: var(--accent); }
-        .detail-content p { font-size: 13px; color: var(--gray); line-height: 1.6; margin-bottom: 15px; }
+        /* Hizmet Bölümleri (Zigzag) */
+        .service-row { display: flex; align-items: center; min-height: 600px; padding: 80px 8%; gap: 60px; }
+        .service-row:nth-child(even) { flex-direction: row-reverse; background-color: var(--white); }
         
-        .usage-tags { display: flex; flex-wrap: wrap; gap: 8px; }
-        .tag { background: #f1f5f9; padding: 4px 10px; border-radius: 4px; font-size: 11px; font-weight: 600; border: 1px solid #cbd5e1; }
+        .service-info { flex: 1; }
+        .service-info h2 { font-family: 'Montserrat'; font-size: 32px; margin-bottom: 25px; color: var(--primary); border-left: 6px solid var(--accent); padding-left: 20px; }
+        .service-info p { font-size: 16px; color: var(--gray); margin-bottom: 30px; text-align: justify; }
+        
+        .usage-area { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 30px; }
+        .usage-item { display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 14px; color: var(--primary); }
+        .usage-item i { color: var(--accent); }
 
-        /* Alt İmalat/Montaj */
-        .bottom-fixed { max-width: 1200px; margin: 40px auto 80px; display: grid; grid-template-columns: 1fr 1fr; gap: 30px; padding: 0 20px; }
-        .static-box { background: white; padding: 30px; border-radius: 12px; border-top: 6px solid var(--primary); }
-        .static-box h3 { font-family: 'Montserrat'; margin-bottom: 15px; }
-        .static-box p { font-size: 14px; color: var(--gray); margin-bottom: 20px; }
-        .img-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
-        .img-strip img { width: 100%; height: 100px; object-fit: cover; border-radius: 6px; }
+        /* Slider Alanı */
+        .service-slider { flex: 1; position: relative; height: 450px; border-radius: 20px; overflow: hidden; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.15); }
+        .slide-track { display: flex; width: 100%; height: 100%; position: relative; }
+        .slide-img { position: absolute; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1s ease-in-out; }
+        .slide-img.active { opacity: 1; }
+
+        /* Sabit Alt Bölüm (İmalat & Montaj) */
+        .bottom-tech { padding: 80px 8%; background: #f1f5f9; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        .tech-card { background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+        .tech-card h3 { font-family: 'Montserrat'; margin-bottom: 20px; font-size: 22px; }
+        .tech-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 25px; }
+        .tech-gallery img { width: 100%; height: 120px; object-fit: cover; border-radius: 8px; }
+
+        footer { background: #020617; color: #64748b; padding: 40px; text-align: center; }
 
         @media (max-width: 992px) {
-            .services-grid, .bottom-fixed { grid-template-columns: 1fr; }
+            .service-row, .service-row:nth-child(even) { flex-direction: column; padding: 40px 5%; text-align: center; }
+            .service-info h2 { border-left: 0; border-bottom: 4px solid var(--accent); padding-left: 0; padding-bottom: 10px; }
+            .service-slider { width: 100%; height: 300px; }
+            .bottom-tech { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -95,81 +65,98 @@
     <nav><ul><li><a href="index.html">Anasayfa</a></li><li><a href="hizmetler.html">Hizmetler</a></li><li><a href="projeler.html">Projeler</a></li></ul></nav>
 </header>
 
-<div class="page-header"><h1>Uzmanlık <span>Alanlarımız</span></h1><p style="margin-top:10px; font-size:13px; opacity:0.8;">Detaylar için kartlara tıklayınız.</p></div>
-
-<div class="services-grid">
-    <div class="service-card" onclick="toggleCard(this)">
-        <div class="card-img-wrapper"><img src="images/proje5.png"></div>
-        <div class="card-header"><h3>Uzay Kafes Sistemleri</h3><span>Mimari Estetik & Statik Güç</span></div>
-        <div class="card-detail">
-            <div class="detail-content">
-                <h4>Hizmet Hakkında</h4>
-                <p>Geniş açıklıklı yapıları en az malzeme ile en güvenli şekilde geçebilen üç boyutlu mühendislik harikalarıdır. Yüksek deprem dayanımı sunar.</p>
-                <h4>Kullanım Alanları</h4>
-                <div class="usage-tags">
-                    <span class="tag">Sanayi Tesisleri</span><span class="tag">Spor Salonları</span><span class="tag">Hangarlar</span>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="service-card" onclick="toggleCard(this)">
-        <div class="card-img-wrapper"><img src="images/proje6.jpg"></div>
-        <div class="card-header"><h3>Çelik Konstrüksiyon</h3><span>Hızlı Kurulum & Uzun Ömür</span></div>
-        <div class="card-detail">
-            <div class="detail-content">
-                <h4>Hizmet Hakkında</h4>
-                <p>Endüstriyel yapılardan modern yaşam alanlarına kadar, çeliğin gücünü hızla birleştiriyoruz. Korozyona dayanıklı ve geri dönüştürülebilir.</p>
-                <h4>Kullanım Alanları</h4>
-                <div class="usage-tags">
-                    <span class="tag">Fabrikalar</span><span class="tag">Asma Katlar</span><span class="tag">Depolar</span>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="service-card" onclick="toggleCard(this)">
-        <div class="card-img-wrapper"><img src="images/proje7.png"></div>
-        <div class="card-header"><h3>Çatı Kaplama</h3><span>Maksimum Yalıtım & Koruma</span></div>
-        <div class="card-detail">
-            <div class="detail-content">
-                <h4>Hizmet Hakkında</h4>
-                <p>Isı, ses ve su yalıtımı standartlarını en üst seviyeye taşıyarak enerji tasarrufu sağlarız. Sızdırmazlık garantili profesyonel uygulamalar.</p>
-                <h4>Kullanım Alanları</h4>
-                <div class="usage-tags">
-                    <span class="tag">Sandviç Panel</span><span class="tag">Kenet Çatı</span><span class="tag">Polikarbon</span>
-                </div>
-            </div>
-        </div>
-    </div>
+<div class="page-banner">
+    <h1>Hizmet Standartlarımız</h1>
+    <p>Modern mühendislik çözümlerimizle geniş açıklıkları güvenle geçiyor, yapılarınıza değer katıyoruz.</p>
 </div>
 
-<div class="bottom-fixed">
-    <div class="static-box">
-        <h3>İmalat Süreci</h3>
-        <p>Bilgisayar destekli modern atölyemizde yüksek hassasiyetle üretim.</p>
-        <div class="img-strip">
+<section class="service-row">
+    <div class="service-info">
+        <h2>Uzay Kafes Sistemleri</h2>
+        <p>Uzay kafes sistemleri, üç boyutlu düğüm noktaları sayesinde yükü tüm yüzeye homojen bir şekilde dağıtan, mühendislik açısından en verimli yapı formudur. Geniş açıklıkları kolonsuz geçme kabiliyeti sayesinde iç mekanda maksimum kullanım alanı sunar. Statik hesaplamalarımızda yüksek deprem güvenliği ve rüzgar yükü dayanımı önceliğimizdir.</p>
+        <div class="usage-area">
+            <div class="usage-item"><i class="fa-solid fa-check-double"></i> Endüstriyel Tesisler</div>
+            <div class="usage-item"><i class="fa-solid fa-check-double"></i> Spor Kompleksleri</div>
+            <div class="usage-item"><i class="fa-solid fa-check-double"></i> Alışveriş Merkezleri</div>
+            <div class="usage-item"><i class="fa-solid fa-check-double"></i> Terminal Binaları</div>
+            <div class="usage-item"><i class="fa-solid fa-check-double"></i> Lojistik Depolar</div>
+            <div class="usage-item"><i class="fa-solid fa-check-double"></i> Sergi Alanları</div>
+        </div>
+    </div>
+    <div class="service-slider" data-images="proje5.png,proje6.jpg,proje7.png">
+        <img src="images/proje5.png" class="slide-img active">
+        <img src="images/proje6.jpg" class="slide-img">
+        <img src="images/proje7.png" class="slide-img">
+    </div>
+</section>
+
+<section class="service-row">
+    <div class="service-info">
+        <h2>Çelik Konstrüksiyon</h2>
+        <p>Hız, dayanıklılık ve estetiğin buluştuğu çelik konstrüksiyon çözümlerimizle projelerinizi zamandan tasarruf ederek tamamlıyoruz. Ağır sanayi yapılarından modern ofis binalarına kadar geniş bir yelpazede, korozyona dayanıklı ve yüksek taşıma kapasiteli çelik karkaslar inşa ediyoruz. Esnek yapısı sayesinde mimari yaratıcılığa imkan tanıyan sistemlerimiz, sürdürülebilir inşaatın temel taşıdır.</p>
+        <div class="usage-area">
+            <div class="usage-item"><i class="fa-solid fa-check-double"></i> Çok Katlı Çelik Yapılar</div>
+            <div class="usage-item"><i class="fa-solid fa-check-double"></i> Fabrika Ana Karkasları</div>
+            <div class="usage-item"><i class="fa-solid fa-check-double"></i> Köprü ve Geçitler</div>
+            <div class="usage-item"><i class="fa-solid fa-check-double"></i> Otopark Tesisleri</div>
+        </div>
+    </div>
+    <div class="service-slider">
+        <img src="images/proje8.jpg" class="slide-img active">
+        <img src="images/proje9.png" class="slide-img">
+        <img src="images/proje10.png" class="slide-img">
+    </div>
+</section>
+
+<section class="service-row">
+    <div class="service-info">
+        <h2>Çatı Kaplama Çözümleri</h2>
+        <p>Yapılarınızın dış kabuğunu en zorlu hava koşullarına karşı koruma altına alıyoruz. Isı, ses ve su yalıtımı standartlarını en üst seviyeye taşıyan sandviç panel, kenet sistem ve polikarbon uygulamalarımızla enerji verimliliği sağlıyoruz. Uzay kafes ve çelik sistemlerimize tam entegre sızdırmazlık detaylarımızla, yapı ömrünü uzatan profesyonel kaplamalar sunuyoruz.</p>
+        <div class="usage-area">
+            <div class="usage-item"><i class="fa-solid fa-check-double"></i> Isı Yalıtımlı Paneller</div>
+            <div class="usage-item"><i class="fa-solid fa-check-double"></i> Kenet Çatı Sistemleri</div>
+            <div class="usage-item"><i class="fa-solid fa-check-double"></i> Doğal Işıklıklar</div>
+            <div class="usage-item"><i class="fa-solid fa-check-double"></i> Havalandırma Kapakları</div>
+        </div>
+    </div>
+    <div class="service-slider">
+        <img src="images/proje11.png" class="slide-img active">
+        <img src="images/proje5.png" class="slide-img">
+        <img src="images/proje6.jpg" class="slide-img">
+    </div>
+</section>
+
+<div class="bottom-tech">
+    <div class="tech-card">
+        <h3>İmalat Teknolojisi</h3>
+        <p>Bilgisayar destekli CNC hatlarımızda boru, küre ve cıvata bileşenleri hatasız olarak üretilir.</p>
+        <div class="tech-gallery">
             <img src="images/proje12.jpg"><img src="images/proje13.jpg"><img src="images/proje14.jpg">
         </div>
     </div>
-    <div class="static-box">
-        <h3>Saha & Montaj</h3>
-        <p>Hızlı, güvenli ve somun anahtarı teknolojisi ile yerinde kurulum.</p>
-        <div class="img-strip">
+    <div class="tech-card">
+        <h3>Saha & Montaj Gücü</h3>
+        <p>Deneyimli montaj ekiplerimizle, iş güvenliğinden ödün vermeden en zorlu şantiye koşullarında hızlı kurulum.</p>
+        <div class="tech-gallery">
             <img src="images/proje15.jpg"><img src="images/proje16.jpg"><img src="images/proje17.jpg">
         </div>
     </div>
 </div>
 
+<footer><p>© 2026 Madenciler Uzay Çatı Sistemleri.</p></footer>
+
 <script>
-    function toggleCard(card) {
-        // Diğer açık kartları kapat
-        document.querySelectorAll('.service-card').forEach(c => {
-            if (c !== card) c.classList.remove('active');
-        });
-        // Tıklanan kartı aç/kapat
-        card.classList.toggle('active');
-    }
+    // Her slider alanını kendi içinde döndüren script
+    const sliders = document.querySelectorAll('.service-slider');
+    sliders.forEach(slider => {
+        const imgs = slider.querySelectorAll('.slide-img');
+        let current = 0;
+        setInterval(() => {
+            imgs[current].classList.remove('active');
+            current = (current + 1) % imgs.length;
+            imgs[current].classList.add('active');
+        }, 3500);
+    });
 </script>
 
 </body>
