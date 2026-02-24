@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hizmetlerimiz | Madenciler Uzay Çatı Sistemleri</title>
+    <title>Hizmetlerimiz | Madenciler Uzay Çatı</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     
     <style>
         :root {
@@ -19,8 +20,9 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Poppins', sans-serif; background-color: var(--light-bg); color: var(--primary); scroll-behavior: smooth; }
+        body { font-family: 'Poppins', sans-serif; background-color: var(--light-bg); color: var(--primary); scroll-behavior: smooth; overflow-x: hidden; }
 
+        /* --- NAVBAR --- */
         header {
             position: fixed; top: 0; width: 100%; z-index: 1000;
             background: rgba(15, 23, 42, 1); padding: 15px 8%;
@@ -28,40 +30,51 @@
         }
         .logo { font-family: 'Montserrat'; color: var(--white); font-weight: 800; font-size: 20px; text-decoration: none; }
         .logo span { color: var(--accent); }
-
         nav ul { display: flex; list-style: none; }
-        nav ul li { position: relative; margin-left: 25px; }
+        nav ul li { margin-left: 25px; }
         nav ul li a { color: var(--white); text-decoration: none; font-size: 13px; font-weight: 600; text-transform: uppercase; transition: 0.3s; }
-        
-        .dropdown-menu {
-            position: absolute; top: 100%; left: 0; background: var(--primary);
-            width: 260px; display: none; padding: 15px 0; border-top: 3px solid var(--accent);
-        }
-        .dropdown:hover .dropdown-menu { display: block; }
-        .dropdown-menu li a { padding: 10px 20px; display: block; }
+        nav ul li a:hover { color: var(--accent); }
 
+        /* --- HEADER --- */
         .page-header {
-            padding: 160px 8% 60px; background: #0f172a; color: var(--white); text-align: center;
+            padding: 160px 8% 60px; background: var(--primary); color: var(--white); text-align: center;
         }
-        .page-header h1 { font-family: 'Montserrat'; font-size: 42px; text-transform: uppercase; }
+        .page-header h1 { font-family: 'Montserrat'; font-size: 38px; text-transform: uppercase; }
         .page-header span { color: var(--accent); }
 
-        .services-container { padding: 60px 8%; }
+        /* --- HİZMET KONTEYNER --- */
+        .services-container { padding: 80px 10%; }
+        
         .service-section { 
-            background: var(--white); border-radius: 15px; padding: 40px; 
-            margin-bottom: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            display: grid; grid-template-columns: 1fr 1.5fr; gap: 40px; scroll-margin-top: 100px;
+            background: var(--white); border-radius: 20px; padding: 0; 
+            margin-bottom: 60px; box-shadow: 0 15px 45px rgba(0,0,0,0.05);
+            display: grid; grid-template-columns: 1fr 1fr; gap: 0; overflow: hidden;
+            min-height: 450px;
         }
-        .service-info h2 { font-family: 'Montserrat'; margin-bottom: 20px; border-left: 5px solid var(--accent); padding-left: 15px; }
-        .usage-areas { background: #f1f5f9; padding: 25px; border-radius: 10px; }
-        .usage-areas ul { display: grid; grid-template-columns: 1fr 1fr; list-style: none; gap: 10px; }
-        .usage-areas li { font-size: 13px; display: flex; align-items: center; gap: 8px; }
-        .usage-areas li::before { content: "✔"; color: var(--accent); }
 
-        .whatsapp { position: fixed; bottom: 30px; right: 30px; background: #25d366; width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 30px; color: white; z-index: 2000; }
-        footer { background: #020617; color: #64748b; padding: 30px; text-align: center; }
+        /* Metin Alanı */
+        .service-info { padding: 60px; display: flex; flex-direction: column; justify-content: center; }
+        .service-info h2 { font-family: 'Montserrat'; font-size: 28px; margin-bottom: 20px; position: relative; padding-left: 20px; }
+        .service-info h2::before { content: ''; width: 6px; height: 100%; background: var(--accent); position: absolute; left: 0; top: 0; border-radius: 3px; }
+        .service-info p { color: var(--gray); font-size: 15px; line-height: 1.8; text-align: justify; }
 
-        @media (max-width: 992px) { .service-section { grid-template-columns: 1fr; } }
+        /* Slider Alanı */
+        .service-slider { width: 100%; height: 100%; position: relative; }
+        .swiper { width: 100%; height: 100%; }
+        .swiper-slide img { width: 100%; height: 100%; object-fit: cover; }
+        
+        /* Klasik Alanlar için Statik Görsel (İmalat/Montaj dışındakiler) */
+        .service-static-img { width: 100%; height: 100%; background: #e2e8f0; }
+        .service-static-img img { width: 100%; height: 100%; object-fit: cover; }
+
+        footer { background: #020617; color: #64748b; padding: 40px; text-align: center; }
+
+        /* Mobil Düzen */
+        @media (max-width: 992px) {
+            .service-section { grid-template-columns: 1fr; }
+            .service-slider { height: 300px; }
+            .service-info { padding: 40px 25px; }
+        }
     </style>
 </head>
 <body>
@@ -71,88 +84,89 @@
     <nav>
         <ul>
             <li><a href="index.html">Anasayfa</a></li>
-            <li class="dropdown">
-                <a href="index.html#hakkimizda">Hakkımızda</a>
-                <ul class="dropdown-menu"><li><a href="index.html#hakkimizda">Kurumsal</a></li></ul>
-            </li>
-            <li class="dropdown">
-                <a href="hizmetler.html" style="color: var(--accent);">Hizmetler</a>
-                <ul class="dropdown-menu">
-                    <li><a href="#uzay-kafes">Uzay Kafes Sistemleri</a></li>
-                    <li><a href="#celik-konstruksiyon">Çelik Konstrüksiyon</a></li>
-                    <li><a href="#cati-kaplama">Çatı Kaplama</a></li>
-                    <li><a href="#imalat">İmalat</a></li>
-                    <li><a href="#montaj">Montaj</a></li>
-                </ul>
-            </li>
+            <li><a href="hizmetler.html" style="color: var(--accent);">Hizmetler</a></li>
             <li><a href="projeler.html">Projeler</a></li>
-            <li><a href="referanslar.html">Referanslar</a></li>
             <li><a href="index.html#iletisim">İletişim</a></li>
         </ul>
     </nav>
 </header>
 
-<div class="page-header"><h1>Hizmet<span>lerimiz</span></h1></div>
+<div class="page-header">
+    <h1>Hizmet<span>lerimiz</span></h1>
+</div>
 
 <section class="services-container">
-    <div id="uzay-kafes" class="service-section" data-aos="fade-up">
-        <div class="service-info">
-            <h2>Uzay Kafes Sistemleri</h2>
-            <p>Geniş açıklıklı yapıların en estetik ve ekonomik çözümü...</p>
-        </div>
-        <div class="usage-areas">
-            <h4>KULLANIM ALANLARI</h4>
-            <ul>
-                <li>Sanayi Tesisleri</li><li>Spor Tesisleri</li><li>Pazar Yerleri</li><li>Uçak Hangarları</li>
-            </ul>
-        </div>
-    </div>
-
-    <div id="celik-konstruksiyon" class="service-section" data-aos="fade-up">
-        <div class="service-info">
-            <h2>Çelik Konstrüksiyon</h2>
-            <p>Dayanıklı ve hızlı kurulum avantajı sunan çelik yapılar...</p>
-        </div>
-        <div class="usage-areas">
-            <h4>KULLANIM ALANLARI</h4>
-            <ul>
-                <li>Otoparklar</li><li>Sanayi Yapıları</li><li>Asma Katlar</li><li>Çatı Girişleri</li>
-            </ul>
-        </div>
-    </div>
-
-    <div id="cati-kaplama" class="service-section" data-aos="fade-up">
-        <div class="service-info">
-            <h2>Çatı Kaplama</h2>
-            <p>Yüksek yalıtım performanslı panel ve membran uygulamaları...</p>
-        </div>
-        <div class="usage-areas">
-            <h4>UYGULAMA ALANLARI</h4>
-            <ul>
-                <li>Sandviç Paneller</li><li>Membranlar</li><li>Isı Yalıtımı</li><li>Toprak Altı Yalıtım</li>
-            </ul>
-        </div>
-    </div>
 
     <div id="imalat" class="service-section" data-aos="fade-up">
         <div class="service-info">
             <h2>İmalat</h2>
-            <p>İmalatın tamamı atölyede hazırlanıp şantiyede montajı yapılacak şekilde dizayn edilmektedir. Sistem boru, küre, cıvata aşık ve mesnet elemanlarından oluşmaktadır.</p>
+            <p>Uzay kafes sistemlerimizin tüm parçaları, bilgisayar destekli modern tesislerimizde yüksek hassasiyetle üretilmektedir. Boru, küre ve cıvata mekanizmalarımız, en zorlu statik şartlara dayanacak şekilde imal edilir.</p>
+        </div>
+        <div class="service-slider">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="images/proje12.jpg" alt="İmalat Süreci 1"></div>
+                    <div class="swiper-slide"><img src="images/proje13.jpg" alt="İmalat Süreci 2"></div>
+                    <div class="swiper-slide"><img src="images/proje14.jpg" alt="İmalat Süreci 3"></div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
         </div>
     </div>
 
     <div id="montaj" class="service-section" data-aos="fade-up">
         <div class="service-info">
             <h2>Montaj</h2>
-            <p>Sadece somun anahtarı kullanılarak binlerce metrekarelik montaj hatasız gerçekleştirilir.</p>
+            <p>Hızlı ve güvenli kurulumun adresi. Uzman ekiplerimiz, sadece somun anahtarı teknolojisiyle binlerce metrekarelik alanları kısa sürede kapatır. İş güvenliği standartlarından ödün vermeden yerinde montaj yapıyoruz.</p>
+        </div>
+        <div class="service-slider">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="images/proje15.jpg" alt="Montaj Süreci 1"></div>
+                    <div class="swiper-slide"><img src="images/proje16.jpg" alt="Montaj Süreci 2"></div>
+                    <div class="swiper-slide"><img src="images/proje17.jpg" alt="Montaj Süreci 3"></div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
         </div>
     </div>
+
+    <div id="uzay-kafes" class="service-section" data-aos="fade-up">
+        <div class="service-info">
+            <h2>Uzay Kafes Sistemleri</h2>
+            <p>Geniş açıklıklı yapıların estetik ve ekonomik çözümü. Hafif yapısı sayesinde temele az yük bindirir, depreme karşı maksimum dayanıklılık sağlar.</p>
+        </div>
+        <div class="service-static-img">
+            <img src="images/proje1.jpg" alt="Uzay Kafes">
+        </div>
+    </div>
+
 </section>
 
-<a href="https://wa.me/905334815590" class="whatsapp" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
 <footer><p>© 2026 Madenciler Uzay Çatı Sistemleri. Tüm Hakları Saklıdır.</p></footer>
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>AOS.init({ duration: 1000, once: true });</script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+    // AOS Animasyon Başlatma
+    AOS.init({ duration: 1000, once: true });
+
+    // Swiper Slider Ayarları
+    var swiper = new Swiper(".mySwiper", {
+      loop: true,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      effect: "fade", // Daha profesyonel geçiş için fade efekti
+      fadeEffect: { crossFade: true }
+    });
+</script>
+
 </body>
 </html>
