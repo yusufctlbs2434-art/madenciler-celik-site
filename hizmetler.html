@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hizmetlerimiz | Madenciler Uzay Çatı Sistemleri</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #0f172a; 
+            --accent: #f59e0b;  
+            --white: #ffffff;
+            --gray: #64748b;
+            --light-bg: #f8fafc;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; background-color: var(--light-bg); color: var(--primary); scroll-behavior: smooth; }
+
+        /* --- NAVBAR --- */
+        header {
+            position: fixed; top: 0; width: 100%; z-index: 1000;
+            background: rgba(15, 23, 42, 1); padding: 15px 8%;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .logo { font-family: 'Montserrat'; color: var(--white); font-weight: 800; font-size: 20px; text-decoration: none; }
+        .logo span { color: var(--accent); }
+
+        nav ul { display: flex; list-style: none; }
+        nav ul li { position: relative; margin-left: 25px; }
+        nav ul li a { color: var(--white); text-decoration: none; font-size: 13px; font-weight: 600; text-transform: uppercase; transition: 0.3s; }
+        nav ul li a:hover { color: var(--accent); }
+        
+        .dropdown-menu {
+            position: absolute; top: 100%; left: 0; background: var(--primary);
+            width: 260px; display: none; padding: 15px 0; border-top: 3px solid var(--accent);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        .dropdown:hover .dropdown-menu { display: block; }
+        .dropdown-menu li a { padding: 10px 20px; display: block; text-transform: capitalize; }
+
+        /* --- SAYFA BAŞLIĞI --- */
+        .page-header {
+            padding: 160px 8% 60px; background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.9)), url('https://images.unsplash.com/photo-1517089535819-f485e2192cc7?q=80&w=2000') no-repeat center center/cover;
+            color: var(--white); text-align: center;
+        }
+        .page-header h1 { font-family: 'Montserrat'; font-size: 42px; text-transform: uppercase; letter-spacing: 2px; }
+        .page-header span { color: var(--accent); }
+
+        /* --- HİZMET KARTLARI --- */
+        .services-container { padding: 80px 10%; }
+        .service-section { 
+            background: var(--white); border-radius: 20px; padding: 50px; 
+            margin-bottom: 50px; box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+            display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px; align-items: start;
+            scroll-margin-top: 120px; border: 1px solid #edf2f7;
+        }
+        .service-info h2 { font-family: 'Montserrat'; font-size: 28px; color: var(--primary); margin-bottom: 25px; position: relative; padding-left: 20px; }
+        .service-info h2::before { content: ''; width: 6px; height: 100%; background: var(--accent); position: absolute; left: 0; top: 0; border-radius: 3px; }
+        .service-
