@@ -1,281 +1,392 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Madenciler Çelik | Uzay Çatı & Çelik Yapı Mühendisliği</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
-    <style>
-        :root {
-            --primary: #0f172a; /* Gece Mavisi/Siyah */
-            --accent: #f59e0b;  /* İnşaat Sarısı/Altın */
-            --light-bg: #f8fafc;
-            --white: #ffffff;
-            --text-dark: #1e293b;
-            --transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Madenciler Çelik | Uzay Çatı & Çelik Konstrüksiyon</title>
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
-            font-family: 'Poppins', sans-serif; 
-            background-color: var(--light-bg); 
-            color: var(--text-dark);
-            overflow-x: hidden;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-        /* --- HEADER --- */
-        header {
-            position: fixed;
-            top: 0; width: 100%;
-            padding: 20px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-            transition: var(--transition);
-            background: rgba(15, 23, 42, 0.9);
-            backdrop-filter: blur(10px);
-        }
+<style>
 
-        .logo { 
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700; color: var(--white); font-size: 24px; letter-spacing: 1px;
-        }
-        .logo span { color: var(--accent); }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
 
-        nav a {
-            color: var(--white); text-decoration: none; margin-left: 30px;
-            font-size: 14px; font-weight: 500; text-transform: uppercase;
-            transition: var(--transition);
-        }
-        nav a:hover { color: var(--accent); }
+body{
+background:#f4f6f9;
+color:#333;
+}
 
-        /* --- HERO SECTION --- */
-        .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.7)),
-                        url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2000&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: var(--white);
-            padding: 0 20px;
-        }
+/* HEADER */
 
-        .hero h1 { 
-            font-family: 'Montserrat', sans-serif;
-            font-size: clamp(35px, 6vw, 70px); 
-            line-height: 1.1; margin-bottom: 20px;
-        }
-        .hero p { font-size: 18px; max-width: 700px; margin-bottom: 30px; opacity: 0.9; }
-        .btn-main {
-            padding: 15px 40px; background: var(--accent); color: var(--primary);
-            text-decoration: none; font-weight: 700; border-radius: 50px;
-            transition: var(--transition);
-        }
-        .btn-main:hover { transform: scale(1.05); background: var(--white); }
+header{
+background:#111827;
+padding:20px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+color:white;
+}
 
-        /* --- SECTION GENEL --- */
-        section { padding: 100px 10%; }
-        .section-title {
-            text-align: center; margin-bottom: 60px;
-        }
-        .section-title h2 { font-size: 36px; color: var(--primary); font-family: 'Montserrat'; }
-        .section-title .bar { 
-            width: 60px; height: 4px; background: var(--accent); margin: 15px auto;
-        }
+nav a{
+color:white;
+text-decoration:none;
+margin-left:25px;
+font-size:15px;
+}
 
-        /* --- HİZMETLER (Düzeltilmiş Bağımsız Yapı) --- */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            align-items: start; /* Yan yana uzamayı engeller */
-        }
+/* HERO */
 
-        .s-card {
-            background: var(--white);
-            border-radius: 20px;
-            padding: 40px 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            transition: var(--transition);
-            cursor: pointer;
-            border-bottom: 4px solid transparent;
-            position: relative;
-        }
+.hero{
+height:90vh;
+background:linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),
+url('https://images.unsplash.com/photo-1581093588401-12a41c66a47b');
+background-size:cover;
+background-position:center;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+color:white;
+}
 
-        .s-card:hover { border-bottom-color: var(--accent); transform: translateY(-10px); }
+.hero h2{
+font-size:42px;
+}
 
-        .s-card h4 { font-size: 20px; margin-bottom: 15px; color: var(--primary); }
-        
-        .s-content {
-            max-height: 0; overflow: hidden;
-            transition: max-height 0.6s ease;
-            font-size: 15px; color: #64748b;
-        }
+/* SECTION */
 
-        .s-card.active .s-content {
-            max-height: 400px;
-            margin-top: 20px;
-        }
+.section{
+padding:90px 8%;
+text-align:center;
+}
 
-        .s-content ul { list-style: none; border-top: 1px solid #f1f5f9; padding-top: 15px; }
-        .s-content li { margin-bottom: 10px; display: flex; align-items: center; }
-        .s-content li::before { content: "✔"; color: var(--accent); margin-right: 10px; font-weight: bold; }
+.section h3{
+font-size:32px;
+margin-bottom:50px;
+color:#111827;
+}
 
-        /* --- ISTATISTIKLER --- */
-        .stats { background: var(--primary); color: var(--white); display: flex; flex-wrap: wrap; justify-content: space-around; text-align: center; }
-        .stat-item h3 { font-size: 48px; color: var(--accent); }
-        .stat-item p { text-transform: uppercase; font-size: 12px; letter-spacing: 2px; }
+/* GRID */
 
-        /* --- WHATSAPP & FOOTER --- */
-        .whatsapp {
-            position: fixed; bottom: 30px; right: 30px; background: #25d366;
-            width: 60px; height: 60px; border-radius: 50%; display: flex;
-            justify-content: center; align-items: center; z-index: 1000;
-            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.4);
-        }
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
 
-        footer { background: #020617; color: #94a3b8; padding: 50px 10%; text-align: center; }
-        
-        @media (max-width: 768px) {
-            nav { display: none; }
-            section { padding: 60px 5%; }
-        }
-    </style>
+/* BOX */
+
+.box{
+background:white;
+padding:30px;
+border-radius:12px;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+text-align:left;
+line-height:1.7;
+}
+
+/* SERVICES */
+
+.service-title{
+cursor:pointer;
+font-weight:600;
+font-size:18px;
+}
+
+.service-content{
+display:none;
+margin-top:15px;
+}
+
+.service-content ul{
+padding-left:20px;
+}
+
+/* GALLERY */
+
+.gallery img{
+width:100%;
+height:260px;
+object-fit:cover;
+border-radius:10px;
+cursor:pointer;
+}
+
+.lightbox{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
+justify-content:center;
+align-items:center;
+z-index:9999;
+}
+
+.lightbox img{
+max-width:90%;
+}
+
+/* MAP */
+
+.map iframe{
+width:100%;
+height:350px;
+border-radius:10px;
+border:0;
+}
+
+/* WHATSAPP */
+
+.whatsapp{
+position:fixed;
+bottom:25px;
+right:25px;
+background:#25D366;
+width:85px;
+height:85px;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+box-shadow:0 8px 25px rgba(0,0,0,0.3);
+}
+
+.whatsapp img{
+width:42px;
+}
+
+/* FOOTER */
+
+footer{
+background:#111827;
+color:white;
+padding:30px;
+text-align:center;
+}
+
+</style>
 </head>
+
 <body>
 
 <header>
-    <div class="logo">MADENCİLER<span>ÇELİK</span></div>
-    <nav>
-        <a href="#home">Anasayfa</a>
-        <a href="#hizmetler">Hizmetler</a>
-        <a href="#projeler">Projeler</a>
-        <a href="#iletisim">İletişim</a>
-    </nav>
+<h2>Madenciler Çelik</h2>
+<nav>
+<a href="#">Anasayfa</a>
+<a href="#">Hakkımızda</a>
+<a href="#">Hizmetler</a>
+<a href="#">Projeler</a>
+<a href="#">Referanslar</a>
+<a href="#">İletişim</a>
+</nav>
 </header>
 
-<div class="hero" id="home">
-    <h1 data-aos="fade-up">Çeliğin Gücü,<br>Mühendisliğin Estetiği</h1>
-    <p data-aos="fade-up" data-aos-delay="200">15 yılı aşkın süredir uzay çatı ve çelik konstrüksiyon alanında Türkiye'nin dört bir yanında güven inşa ediyoruz.</p>
-    <a href="#hizmetler" class="btn-main" data-aos="zoom-in" data-aos-delay="400">Hizmetlerimizi Keşfedin</a>
+<section class="hero">
+<h2>Uzay Çatı ve Çelik Konstrüksiyon Sistemleri</h2>
+</section>
+
+
+<!-- HAKKIMIZDA -->
+
+<section class="section">
+<h3>Hakkımızda</h3>
+
+<div class="grid">
+
+<div class="box">
+Madenciler Çelik Konstrüksiyon, 2010 yılında kurulmuş olup uzay çatı sistemleri, çelik konstrüksiyon, çatı kaplamaları, imalat ve montaj alanlarında faaliyet göstermektedir. Kurulduğu günden bu yana mühendislik kalitesi, güvenilir hizmet anlayışı ve profesyonel uygulama süreçleri ile sektörde saygın bir konuma ulaşmıştır.
 </div>
 
-<section class="stats">
-    <div class="stat-item" data-aos="zoom-in"><h3>150+</h3><p>Tamamlanan Proje</p></div>
-    <div class="stat-item" data-aos="zoom-in" data-aos-delay="100"><h3>25k+</h3><p>m² Montaj</p></div>
-    <div class="stat-item" data-aos="zoom-in" data-aos-delay="200"><h3>100%</h3><p>Müşteri Memnuniyeti</p></div>
+<div class="box">
+Modern üretim teknikleri ve deneyimli teknik kadrosu ile sanayi tesislerinden spor komplekslerine, ticari yapılardan fuar alanlarına kadar birçok projeyi başarıyla tamamlamıştır. Kalite, güven ve müşteri memnuniyeti firmamızın temel prensipleridir.
+</div>
+
+</div>
+
 </section>
 
-<section id="hizmetler">
-    <div class="section-title" data-aos="fade-up">
-        <h2>Hizmetlerimiz</h2>
-        <div class="bar"></div>
-    </div>
 
-    <div class="services-grid">
-        <div class="s-card" data-aos="fade-up">
-            <h4>Uzay Çatı Sistemleri</h4>
-            <p>Geniş alanlar için estetik ve hafif çözümler.</p>
-            <div class="s-content">
-                <ul>
-                    <li>Spor Tesisleri & Stadyumlar</li>
-                    <li>Fuar ve Sergi Alanları</li>
-                    <li>Endüstriyel Depolar</li>
-                </ul>
-            </div>
-        </div>
+<!-- HİZMETLER -->
 
-        <div class="s-card" data-aos="fade-up" data-aos-delay="100">
-            <h4>Çelik Konstrüksiyon</h4>
-            <p>Dayanıklı ve modüler endüstriyel yapılar.</p>
-            <div class="s-content">
-                <ul>
-                    <li>Fabrika Binaları</li>
-                    <li>Asma Kat & Sundurma</li>
-                    <li>Ağır Çelik Karkas Sistemler</li>
-                </ul>
-            </div>
-        </div>
+<section class="section">
+<h3>Hizmetlerimiz</h3>
 
-        <div class="s-card" data-aos="fade-up" data-aos-delay="200">
-            <h4>Kaplama & İzolasyon</h4>
-            <p>Yapılarınızı dış etkenlerden koruyoruz.</p>
-            <div class="s-content">
-                <ul>
-                    <li>Sandviç Panel Uygulama</li>
-                    <li>Kenet Çatı Sistemleri</li>
-                    <li>PVC Membran Çözümleri</li>
-                </ul>
-            </div>
-        </div>
+<div class="grid">
 
-        <div class="s-card" data-aos="fade-up" data-aos-delay="300">
-            <h4>Mühendislik & İmalat</h4>
-            <p>Sıfırdan tasarlıyor, yerinde üretiyoruz.</p>
-            <div class="s-content">
-                <ul>
-                    <li>Statik Hesaplama & Projelendirme</li>
-                    <li>Hassas Kaynak İşçiliği</li>
-                    <li>Özel Çelik İmalatlar</li>
-                </ul>
-            </div>
-        </div>
-    </div>
+<div class="box">
+<div class="service-title">Uzay Çatı</div>
+<div class="service-content">
+<ul>
+<li>Sanayi Tesisleri</li>
+<li>Spor Tesisleri</li>
+<li>Konser Salonları</li>
+<li>Hangarlar</li>
+<li>Fuar Alanları</li>
+<li>Pazar Yerleri</li>
+</ul>
+</div>
+</div>
+
+<div class="box">
+<div class="service-title">Çelik Konstrüksiyon</div>
+<div class="service-content">
+<ul>
+<li>Sanayi Yapıları</li>
+<li>Kolon ve Kirişler</li>
+<li>Otoparklar</li>
+<li>Asma Katlar</li>
+</ul>
+</div>
+</div>
+
+<div class="box">
+<div class="service-title">Çatı Kaplamaları</div>
+<div class="service-content">
+<ul>
+<li>Sandviç Panel</li>
+<li>Membran</li>
+<li>Isı Yalıtımı</li>
+</ul>
+</div>
+</div>
+
+<div class="box">
+<div class="service-title">İmalat</div>
+<div class="service-content">
+<ul>
+<li>Çelik üretimi</li>
+<li>Özel imalat</li>
+</ul>
+</div>
+</div>
+
+<div class="box">
+<div class="service-title">Montaj</div>
+<div class="service-content">
+<ul>
+<li>Çelik montaj</li>
+<li>Anahtar teslim kurulum</li>
+</ul>
+</div>
+</div>
+
+</div>
+
 </section>
 
-<section id="iletisim" style="background: #f1f5f9;">
-    <div class="section-title" data-aos="fade-up">
-        <h2>Bize Ulaşın</h2>
-        <div class="bar"></div>
-    </div>
-    <div style="text-align: center;" data-aos="fade-up">
-        <p style="font-size: 20px; color: var(--primary); font-weight: 600;">+90 531 914 29 16</p>
-        <p>madencilercelik@gmail.com</p>
-        <p>İstanbul / Türkiye</p>
-    </div>
+
+<!-- PROJELER -->
+
+<section class="section">
+<h3>Tamamlanan Projelerimiz</h3>
+
+<div class="grid gallery">
+
+<script>
+for(let i=1;i<=15;i++){
+document.write(`<img src="images/proje${i}.jpg" onclick="openLightbox(this.src)">`);
+}
+</script>
+
+</div>
+
 </section>
+
+
+<!-- REFERANSLAR -->
+
+<section class="section">
+<h3>Referanslarımız</h3>
+
+<div class="grid">
+
+<div class="box">DÜNDAR İNŞAAT A.Ş</div>
+<div class="box">2.M PROJE MÜHENDİSLİK</div>
+<div class="box">ZETAŞ ZEMİN ETÜT A.Ş</div>
+<div class="box">ANKAS GRUP VE FEMA İNŞ.A.Ş</div>
+<div class="box">37 BURAK İNŞ.LTD.ŞTİ</div>
+<div class="box">CEMAK YAPI LTD.ŞTİ</div>
+<div class="box">KOÇ MÜHENDİSLİK LTD.ŞTİ</div>
+<div class="box">MERVE GROUP LTD.ŞTİ</div>
+<div class="box">UZUNYOL PASLANMAZ LTD.ŞTİ</div>
+<div class="box">NORM HAVUZCULUK LTD.ŞTİ</div>
+<div class="box">PİMAŞ A.Ş</div>
+<div class="box">BAHAR MADENCİLİK A.Ş</div>
+<div class="box">SKC MÜHENDİSLİK</div>
+<div class="box">SERHAT YAPI NİLTAŞ A.Ş</div>
+<div class="box">URFA KARÇELİK BORU</div>
+<div class="box">ÖZ NAKLİYAT KARA TAŞIMACILIK A.Ş</div>
+
+</div>
+
+</section>
+
+
+<!-- MAP -->
+
+<section class="section map">
+<h3>Konum</h3>
+<iframe src="https://www.google.com/maps?q=Ömerli+Koçullu+Mah.+Bağcı+Sk.+No:14+Çekmeköy+İstanbul&output=embed"></iframe>
+</section>
+
+
+<!-- İLETİŞİM -->
+
+<section class="section">
+<h3>İletişim</h3>
+<p>Telefon: +90 0533 481 55 90</p>
+<p>Telefon: +90 0531 914 29 16</p>
+<p>Email: madencilercelik@gmail.com</p>
+</section>
+
 
 <footer>
-    <p>© 2026 Madenciler Çelik Konstrüksiyon. Tüm Hakları Saklıdır.</p>
+© 2026 Madenciler Çelik
 </footer>
 
-<a href="https://wa.me/905319142916" class="whatsapp" target="_blank">
-    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" width="30">
+
+<div class="lightbox" id="lightbox" onclick="this.style.display='none'">
+<img id="lightbox-img">
+</div>
+
+
+<a href="https://wa.me/905319142916" class="whatsapp">
+<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
 </a>
 
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
 <script>
-    // Animasyonları Başlat
-    AOS.init({ duration: 1000, once: true });
 
-    // Bağımsız Hizmet Kartı Açma
-    document.querySelectorAll('.s-card').forEach(card => {
-        card.addEventListener('click', () => {
-            card.classList.toggle('active');
-        });
-    });
+document.querySelectorAll(".service-title").forEach(function(title){
 
-    // Scroll Header Efekti
-    window.addEventListener('scroll', () => {
-        const header = document.querySelector('header');
-        if (window.scrollY > 50) {
-            header.style.padding = '10px 8%';
-            header.style.background = '#0f172a';
-        } else {
-            header.style.padding = '20px 8%';
-            header.style.background = 'rgba(15, 23, 42, 0.9)';
-        }
-    });
+title.addEventListener("click", function(){
+
+let content=this.nextElementSibling;
+
+content.style.display=
+content.style.display==="block"?"none":"block";
+
+});
+
+});
+
+function openLightbox(src){
+
+document.getElementById("lightbox-img").src=src;
+document.getElementById("lightbox").style.display="flex";
+
+}
+
 </script>
+
 
 </body>
 </html>
