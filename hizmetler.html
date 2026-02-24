@@ -8,45 +8,59 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        :root { --primary: #0f172a; --accent: #f59e0b; --white: #ffffff; --gray: #64748b; --light-bg: #f8fafc; }
+        :root { --primary: #0f172a; --accent: #f59e0b; --white: #ffffff; --gray: #64748b; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Poppins', sans-serif; background-color: var(--light-bg); color: var(--primary); line-height: 1.8; }
 
-        header { position: fixed; top: 0; width: 100%; z-index: 1000; background: #0f172a; padding: 15px 8%; display: flex; justify-content: space-between; align-items: center; }
+        /* TÜM SAYFA ARKA PLANI AYARI */
+        body { 
+            font-family: 'Poppins', sans-serif; 
+            color: var(--primary); 
+            line-height: 1.8;
+            /* Görseli buraya mühürledik */
+            background: linear-gradient(rgba(248, 250, 252, 0.92), rgba(248, 250, 252, 0.92)), url('images/proje1.png');
+            background-attachment: fixed; /* Görsel sabit kalır, içerik kayar */
+            background-size: cover;
+            background-position: center;
+        }
+
+        header { position: fixed; top: 0; width: 100%; z-index: 1000; background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(10px); padding: 15px 8%; display: flex; justify-content: space-between; align-items: center; }
         .logo { font-family: 'Montserrat'; color: white; font-weight: 800; font-size: 20px; text-decoration: none; }
         .logo span { color: var(--accent); }
         nav ul { display: flex; list-style: none; }
         nav ul li { margin-left: 25px; }
         nav ul li a { color: white; text-decoration: none; font-size: 13px; font-weight: 600; text-transform: uppercase; }
 
-        .page-banner { padding: 160px 8% 80px; background: linear-gradient(rgba(15,23,42,0.85), rgba(15,23,42,0.85)), url('images/proje1.png'); background-size: cover; background-position: center; color: white; text-align: center; border-bottom: 5px solid var(--accent); }
-        .page-banner h1 { font-family: 'Montserrat'; font-size: 42px; text-transform: uppercase; letter-spacing: 2px; }
+        .page-banner { padding: 160px 8% 80px; text-align: center; }
+        .page-banner h1 { font-family: 'Montserrat'; font-size: 42px; text-transform: uppercase; letter-spacing: 2px; color: var(--primary); }
 
-        /* Ana Hizmet Bölümleri (Zigzag) */
+        /* Hizmet Rowları - Arka planları hafif transparan beyaz yapıyoruz ki içerik okunsun */
         .service-row { display: flex; align-items: center; min-height: 650px; padding: 80px 8%; gap: 60px; }
-        .service-row:nth-child(even) { flex-direction: row-reverse; background-color: var(--white); }
+        .service-row:nth-child(even) { 
+            flex-direction: row-reverse; 
+            background: rgba(255, 255, 255, 0.6); /* Hafif kırık beyaz katman */
+        }
         
         .service-info { flex: 1.2; }
         .service-info h2 { font-family: 'Montserrat'; font-size: 32px; margin-bottom: 25px; color: var(--primary); border-left: 8px solid var(--accent); padding-left: 25px; }
-        .service-info p { font-size: 15px; color: var(--gray); margin-bottom: 30px; text-align: justify; }
+        .service-info p { font-size: 15px; color: #334155; margin-bottom: 30px; text-align: justify; font-weight: 500; }
         
         .usage-area { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-        .usage-item { display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 12px; background: #f1f5f9; padding: 10px; border-radius: 6px; border-left: 3px solid var(--accent); text-transform: uppercase; }
+        .usage-item { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 12px; background: rgba(241, 245, 249, 0.8); padding: 10px; border-radius: 6px; border-left: 3px solid var(--accent); text-transform: uppercase; color: var(--primary); box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
 
-        .service-slider { flex: 1; position: relative; height: 450px; border-radius: 4px; overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,0.2); border: 12px solid white; outline: 1px solid #ddd; }
+        .service-slider { flex: 1; position: relative; height: 450px; border-radius: 4px; overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,0.15); border: 12px solid white; outline: 1px solid #ddd; }
         .slide-img { position: absolute; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1.5s ease-in-out; }
         .slide-img.active { opacity: 1; }
 
-        /* İMALAT & MONTAJ - %20 BÜYÜTÜLMÜŞ */
-        .tech-section { padding: 80px 8%; background: #0f172a; color: white; }
+        /* İMALAT & MONTAJ BÖLÜMÜ */
+        .tech-section { padding: 80px 8%; background: rgba(15, 23, 42, 0.93); color: white; backdrop-filter: blur(5px); }
         .tech-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; max-width: 1400px; margin: 0 auto; }
         
-        .tech-card { background: rgba(255,255,255,0.04); padding: 45px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.1); }
+        .tech-card { background: rgba(255,255,255,0.05); padding: 45px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.1); }
         .tech-card h3 { font-family: 'Montserrat'; font-size: 26px; color: var(--accent); margin-bottom: 20px; text-transform: uppercase; }
-        .tech-card p { font-size: 15px; opacity: 0.8; margin-bottom: 25px; min-height: 80px; }
+        .tech-card p { font-size: 15px; opacity: 0.9; margin-bottom: 25px; min-height: 80px; }
         
         .tech-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
-        .tech-gallery img { width: 100%; height: 140px; object-fit: cover; border-radius: 8px; filter: brightness(0.8); transition: 0.3s; }
+        .tech-gallery img { width: 100%; height: 140px; object-fit: cover; border-radius: 8px; filter: brightness(0.9); transition: 0.3s; }
         .tech-gallery img:hover { filter: brightness(1); transform: translateY(-5px); }
 
         footer { background: #020617; color: #64748b; padding: 40px; text-align: center; }
