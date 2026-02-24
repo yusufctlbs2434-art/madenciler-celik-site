@@ -4,77 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hizmetlerimiz | Madenciler Uzay Çatı</title>
-    
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    
     <style>
-        :root {
-            --primary: #0f172a; 
-            --accent: #f59e0b;  
-            --white: #ffffff;
-            --gray: #64748b;
-            --light-bg: #f8fafc;
-        }
-
+        :root { --primary: #0f172a; --accent: #f59e0b; --white: #ffffff; --gray: #64748b; --light-bg: #f8fafc; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Poppins', sans-serif; background-color: var(--light-bg); color: var(--primary); scroll-behavior: smooth; overflow-x: hidden; }
-
-        /* --- NAVBAR --- */
-        header {
-            position: fixed; top: 0; width: 100%; z-index: 1000;
-            background: rgba(15, 23, 42, 1); padding: 15px 8%;
-            display: flex; justify-content: space-between; align-items: center;
-        }
-        .logo { font-family: 'Montserrat'; color: var(--white); font-weight: 800; font-size: 20px; text-decoration: none; }
+        body { font-family: 'Poppins', sans-serif; background-color: var(--light-bg); color: var(--primary); line-height: 1.6; }
+        
+        header { position: fixed; top: 0; width: 100%; z-index: 1000; background: #0f172a; padding: 15px 8%; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Montserrat'; color: white; font-weight: 800; font-size: 20px; text-decoration: none; }
         .logo span { color: var(--accent); }
         nav ul { display: flex; list-style: none; }
         nav ul li { margin-left: 25px; }
-        nav ul li a { color: var(--white); text-decoration: none; font-size: 13px; font-weight: 600; text-transform: uppercase; transition: 0.3s; }
-        nav ul li a:hover { color: var(--accent); }
+        nav ul li a { color: white; text-decoration: none; font-size: 13px; font-weight: 600; text-transform: uppercase; }
 
-        /* --- HEADER --- */
-        .page-header {
-            padding: 160px 8% 60px; background: var(--primary); color: var(--white); text-align: center;
-        }
-        .page-header h1 { font-family: 'Montserrat'; font-size: 38px; text-transform: uppercase; }
-        .page-header span { color: var(--accent); }
-
-        /* --- HİZMET KONTEYNER --- */
-        .services-container { padding: 80px 10%; }
+        .page-header { padding: 140px 8% 40px; background: #0f172a; color: white; text-align: center; }
+        .services-container { padding: 40px 8%; max-width: 1200px; margin: 0 auto; }
         
-        .service-section { 
-            background: var(--white); border-radius: 20px; padding: 0; 
-            margin-bottom: 60px; box-shadow: 0 15px 45px rgba(0,0,0,0.05);
-            display: grid; grid-template-columns: 1fr 1fr; gap: 0; overflow: hidden;
-            min-height: 450px;
-        }
-
-        /* Metin Alanı */
-        .service-info { padding: 60px; display: flex; flex-direction: column; justify-content: center; }
-        .service-info h2 { font-family: 'Montserrat'; font-size: 28px; margin-bottom: 20px; position: relative; padding-left: 20px; }
-        .service-info h2::before { content: ''; width: 6px; height: 100%; background: var(--accent); position: absolute; left: 0; top: 0; border-radius: 3px; }
-        .service-info p { color: var(--gray); font-size: 15px; line-height: 1.8; text-align: justify; }
-
-        /* Slider Alanı */
-        .service-slider { width: 100%; height: 100%; position: relative; }
-        .swiper { width: 100%; height: 100%; }
-        .swiper-slide img { width: 100%; height: 100%; object-fit: cover; }
+        .service-box { background: white; border-radius: 15px; margin-bottom: 40px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); display: flex; flex-direction: column; }
+        .service-content { padding: 30px; }
+        .service-content h2 { font-family: 'Montserrat'; color: var(--primary); margin-bottom: 15px; border-left: 5px solid var(--accent); padding-left: 15px; }
         
-        /* Klasik Alanlar için Statik Görsel (İmalat/Montaj dışındakiler) */
-        .service-static-img { width: 100%; height: 100%; background: #e2e8f0; }
-        .service-static-img img { width: 100%; height: 100%; object-fit: cover; }
+        /* Görsel Alanı */
+        .image-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; padding: 0 30px 30px; }
+        .image-gallery img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; background: #eee; }
 
-        footer { background: #020617; color: #64748b; padding: 40px; text-align: center; }
-
-        /* Mobil Düzen */
-        @media (max-width: 992px) {
-            .service-section { grid-template-columns: 1fr; }
-            .service-slider { height: 300px; }
-            .service-info { padding: 40px 25px; }
-        }
+        footer { background: #020617; color: #64748b; padding: 30px; text-align: center; margin-top: 50px; }
+        @media (max-width: 768px) { .image-gallery { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
@@ -84,89 +40,51 @@
     <nav>
         <ul>
             <li><a href="index.html">Anasayfa</a></li>
-            <li><a href="hizmetler.html" style="color: var(--accent);">Hizmetler</a></li>
+            <li><a href="hizmetler.html">Hizmetler</a></li>
             <li><a href="projeler.html">Projeler</a></li>
             <li><a href="index.html#iletisim">İletişim</a></li>
         </ul>
     </nav>
 </header>
 
-<div class="page-header">
-    <h1>Hizmet<span>lerimiz</span></h1>
+<div class="page-header"><h1>Hizmet<span>lerimiz</span></h1></div>
+
+<div class="services-container">
+    
+    <div class="service-box">
+        <div class="service-content">
+            <h2>İmalat</h2>
+            <p>İmalatın tamamı modern atölyemizde bilgisayar destekli sistemlerle hazırlanır. Sistemimiz boru, küre, cıvata, aşık ve mesnet elemanlarından oluşmaktadır. Bütün çubuklar, statik yönden en ekonomik ve dayanıklı olan boru kesitli elemanlardır.</p>
+        </div>
+        <div class="image-gallery">
+            <img src="images/proje12.jpg" alt="İmalat 1">
+            <img src="images/proje13.jpg" alt="İmalat 2">
+            <img src="images/proje14.jpg" alt="İmalat 3">
+        </div>
+    </div>
+
+    <div class="service-box">
+        <div class="service-content">
+            <h2>Montaj</h2>
+            <p>Uzay sistemlerimizin montajı son derece hızlı ve pratiktir. Sadece somun anahtarı kullanılarak binlerce metrekarelik alanlar çok kısa sürelerde güvenle kurulur. Uzman montaj ekibimiz, iş güvenliği kurallarına tam uyum sağlar.</p>
+        </div>
+        <div class="image-gallery">
+            <img src="images/proje15.jpg" alt="Montaj 1">
+            <img src="images/proje16.jpg" alt="Montaj 2">
+            <img src="images/proje17.jpg" alt="Montaj 3">
+        </div>
+    </div>
+
+    <div class="service-box">
+        <div class="service-content">
+            <h2>Uzay Kafes Sistemleri</h2>
+            <p>Geniş açıklıklı yapıların en estetik, hafif ve güvenli çözümü olan Uzay Kafes Sistemleri, mimari özgürlüğü mühendislik hassasiyetiyle buluşturur.</p>
+        </div>
+    </div>
+
 </div>
 
-<section class="services-container">
-
-    <div id="imalat" class="service-section" data-aos="fade-up">
-        <div class="service-info">
-            <h2>İmalat</h2>
-            <p>Uzay kafes sistemlerimizin tüm parçaları, bilgisayar destekli modern tesislerimizde yüksek hassasiyetle üretilmektedir. Boru, küre ve cıvata mekanizmalarımız, en zorlu statik şartlara dayanacak şekilde imal edilir.</p>
-        </div>
-        <div class="service-slider">
-            <div class="swiper mySwiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img src="images/proje12.jpg" alt="İmalat Süreci 1"></div>
-                    <div class="swiper-slide"><img src="images/proje13.jpg" alt="İmalat Süreci 2"></div>
-                    <div class="swiper-slide"><img src="images/proje14.jpg" alt="İmalat Süreci 3"></div>
-                </div>
-                <div class="swiper-pagination"></div>
-            </div>
-        </div>
-    </div>
-
-    <div id="montaj" class="service-section" data-aos="fade-up">
-        <div class="service-info">
-            <h2>Montaj</h2>
-            <p>Hızlı ve güvenli kurulumun adresi. Uzman ekiplerimiz, sadece somun anahtarı teknolojisiyle binlerce metrekarelik alanları kısa sürede kapatır. İş güvenliği standartlarından ödün vermeden yerinde montaj yapıyoruz.</p>
-        </div>
-        <div class="service-slider">
-            <div class="swiper mySwiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img src="images/proje15.jpg" alt="Montaj Süreci 1"></div>
-                    <div class="swiper-slide"><img src="images/proje16.jpg" alt="Montaj Süreci 2"></div>
-                    <div class="swiper-slide"><img src="images/proje17.jpg" alt="Montaj Süreci 3"></div>
-                </div>
-                <div class="swiper-pagination"></div>
-            </div>
-        </div>
-    </div>
-
-    <div id="uzay-kafes" class="service-section" data-aos="fade-up">
-        <div class="service-info">
-            <h2>Uzay Kafes Sistemleri</h2>
-            <p>Geniş açıklıklı yapıların estetik ve ekonomik çözümü. Hafif yapısı sayesinde temele az yük bindirir, depreme karşı maksimum dayanıklılık sağlar.</p>
-        </div>
-        <div class="service-static-img">
-            <img src="images/proje1.jpg" alt="Uzay Kafes">
-        </div>
-    </div>
-
-</section>
-
-<footer><p>© 2026 Madenciler Uzay Çatı Sistemleri. Tüm Hakları Saklıdır.</p></footer>
-
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-<script>
-    // AOS Animasyon Başlatma
-    AOS.init({ duration: 1000, once: true });
-
-    // Swiper Slider Ayarları
-    var swiper = new Swiper(".mySwiper", {
-      loop: true,
-      autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-      },
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-      effect: "fade", // Daha profesyonel geçiş için fade efekti
-      fadeEffect: { crossFade: true }
-    });
-</script>
+<footer><p>© 2026 Madenciler Uzay Çatı Sistemleri.</p></footer>
 
 </body>
 </html>
