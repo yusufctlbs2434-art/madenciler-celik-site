@@ -28,31 +28,25 @@
         
         .service-info { flex: 1.2; }
         .service-info h2 { font-family: 'Montserrat'; font-size: 32px; margin-bottom: 25px; color: var(--primary); border-left: 8px solid var(--accent); padding-left: 25px; }
-        .service-info p { font-size: 16px; color: var(--gray); margin-bottom: 30px; text-align: justify; }
+        .service-info p { font-size: 15px; color: var(--gray); margin-bottom: 30px; text-align: justify; }
         
-        .usage-area { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
-        .usage-item { display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 14px; background: #f1f5f9; padding: 12px; border-radius: 6px; border-left: 3px solid var(--accent); }
+        .usage-area { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .usage-item { display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 12px; background: #f1f5f9; padding: 10px; border-radius: 6px; border-left: 3px solid var(--accent); text-transform: uppercase; }
 
         .service-slider { flex: 1; position: relative; height: 450px; border-radius: 4px; overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,0.2); border: 12px solid white; outline: 1px solid #ddd; }
         .slide-img { position: absolute; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1.5s ease-in-out; }
         .slide-img.active { opacity: 1; }
 
-        /* İMALAT & MONTAJ - %20 BÜYÜTÜLMÜŞ VE DENGELENMİŞ */
+        /* İMALAT & MONTAJ - %20 BÜYÜTÜLMÜŞ */
         .tech-section { padding: 80px 8%; background: #0f172a; color: white; }
         .tech-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; max-width: 1400px; margin: 0 auto; }
         
-        .tech-card { 
-            background: rgba(255,255,255,0.04); 
-            padding: 45px; /* %20 daha geniş iç alan */
-            border-radius: 15px; 
-            border: 1px solid rgba(255,255,255,0.1); 
-            transition: 0.3s;
-        }
+        .tech-card { background: rgba(255,255,255,0.04); padding: 45px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.1); }
         .tech-card h3 { font-family: 'Montserrat'; font-size: 26px; color: var(--accent); margin-bottom: 20px; text-transform: uppercase; }
         .tech-card p { font-size: 15px; opacity: 0.8; margin-bottom: 25px; min-height: 80px; }
         
         .tech-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
-        .tech-gallery img { width: 100%; height: 140px; /* Görsel kalitesini bozmayan ideal yükseklik */ object-fit: cover; border-radius: 8px; transition: 0.3s; filter: brightness(0.8); }
+        .tech-gallery img { width: 100%; height: 140px; object-fit: cover; border-radius: 8px; filter: brightness(0.8); transition: 0.3s; }
         .tech-gallery img:hover { filter: brightness(1); transform: translateY(-5px); }
 
         footer { background: #020617; color: #64748b; padding: 40px; text-align: center; }
@@ -61,6 +55,7 @@
             .service-row { flex-direction: column !important; padding: 50px 5%; }
             .service-slider { width: 100%; height: 350px; }
             .tech-grid { grid-template-columns: 1fr; }
+            .usage-area { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -71,34 +66,42 @@
     <nav><ul><li><a href="index.html">Anasayfa</a></li><li><a href="hizmetler.html">Hizmetler</a></li><li><a href="projeler.html">Projeler</a></li></ul></nav>
 </header>
 
-<div class="page-banner"><h1>Hizmetler & Mühendislik</h1></div>
+<div class="page-banner"><h1>Uzmanlık Alanlarımız</h1></div>
 
 <section class="service-row">
     <div class="service-info">
         <h2>Uzay Kafes Sistemleri</h2>
-        <p>Uzay kafes sistemleri, üç boyutlu statik çalışma prensibi sayesinde modern mimarinin en güçlü taşıyıcı formudur. Milimetrik hassasiyetle ürettiğimiz küre ve boru mekanizmalarıyla, 100 metreye varan açıklıkları herhangi bir ara kolon kullanmadan geçebiliyoruz.</p>
+        <p>Uzay kafes sistemleri, düğüm noktaları ve taşıyıcı çubukların üç boyutlu geometrik dizilimi ile oluşan, mühendislik açısından dünyanın en verimli statik yapılarından biridir. Bu sistem, yükü tek bir noktaya bindirmek yerine tüm yüzeye yayarak inanılmaz bir taşıma kapasitesi sunar. Mimari açıdan kolonsuz ve geniş açıklıklar (100 metreye kadar) sunması, iç mekan planlamasında sınırsız özgürlük sağlar. Hafifliği sayesinde temel maliyetlerini düşürürken, fabrikasyon üretimi montaj sürecini hızlandırır ve deprem gibi dinamik yüklere karşı konvansiyonel sistemlerden çok daha esnek ve güvenli bir yapı sunar.</p>
         <div class="usage-area">
-            <div class="usage-item"><i class="fa-solid fa-check"></i> Havalimanı Terminalleri</div>
-            <div class="usage-item"><i class="fa-solid fa-check"></i> Spor Kompleksleri</div>
-            <div class="usage-item"><i class="fa-solid fa-check"></i> Sanayi Tesisleri</div>
-            <div class="usage-item"><i class="fa-solid fa-check"></i> Fuar Alanları</div>
+            <div class="usage-item"><i class="fa-solid fa-check"></i> SANAYİ TESİSLERİ (Fabrika, Depo, Antrepo)</div>
+            <div class="usage-item"><i class="fa-solid fa-check"></i> SPOR TESİSLERİ</div>
+            <div class="usage-item"><i class="fa-solid fa-check"></i> ÇOK AMAÇLI SALONLAR</div>
+            <div class="usage-item"><i class="fa-solid fa-check"></i> TİYATRO VE KONSER SALONLARI</div>
+            <div class="usage-item"><i class="fa-solid fa-check"></i> SİNEMA VE SERGİ SALONLARI</div>
+            <div class="usage-item"><i class="fa-solid fa-check"></i> UÇAK HANGARLARI</div>
+            <div class="usage-item"><i class="fa-solid fa-check"></i> FUAR STANDLARI VE İŞ İSKELELERİ</div>
+            <div class="usage-item"><i class="fa-solid fa-check"></i> FUAR MERKEZLERİ VE MAĞAZALAR</div>
         </div>
     </div>
     <div class="service-slider">
         <img src="images/proje1.png" class="slide-img active">
         <img src="images/proje7.png" class="slide-img">
-        <img src="images/proje2.jpg" class="slide-img"> </div>
+        <img src="images/proje2.jpg" class="slide-img">
+    </div>
 </section>
 
 <section class="service-row">
     <div class="service-info">
         <h2>Çelik Konstrüksiyon</h2>
-        <p>Endüstriyel yapıların hız ve dayanıklılık gereksinimlerini profesyonel çelik çözümlerimizle karşılıyoruz. Modüler yapısı sayesinde şantiyede montaj süresini kısaltır ve yatırımın hızlıca geri dönmesini sağlar.</p>
+        <p>Endüstriyel gelişimin temel taşı olan çelik konstrüksiyon, yüksek mukavemeti ve sürdürülebilirliği ile modern inşaat teknolojisinin zirvesini temsil eder. S235 ve S355 kalite standartlarında hazırladığımız karkas yapılar, milimetrik toleranslarla projelendirilerek şantiye ortamında hızlıca birleştirilir. Çelik, betonarmeye kıyasla çok daha hafif olmasına rağmen çekme ve basınç kuvvetlerine karşı üstün direnç gösterir. Geri dönüştürülebilir olmasıyla çevre dostudur ve esnek yapısı sayesinde deprem kuşağındaki yapılar için en güvenli tercihtir. Korozyona karşı uyguladığımız özel boya ve kaplama teknikleri ile yapılarınızın ömrünü nesiller boyu koruyoruz.</p>
         <div class="usage-area">
-            <div class="usage-item"><i class="fa-solid fa-check"></i> Fabrika Karkasları</div>
-            <div class="usage-item"><i class="fa-solid fa-check"></i> Lojistik Depolar</div>
-            <div class="usage-item"><i class="fa-solid fa-check"></i> Asma Katlar</div>
-            <div class="usage-item"><i class="fa-solid fa-check"></i> Vinç Yolları</div>
+            <div class="usage-item"><i class="fa-solid fa-check"></i> ÇATI GİRİŞLERİ</div>
+            <div class="usage-item"><i class="fa-solid fa-check"></i> DÖŞEME KİRİŞLERİ</div>
+            <div class="usage-item"><i class="fa-solid fa-check"></i> KOLONLAR</div>
+            <div class="usage-item"><i class="fa-solid fa-check"></i> OTOPARKLAR</div>
+            <div class="usage-item"><i class="fa-solid fa-check"></i> SANAYİ YAPILARI</div>
+            <div class="usage-item"><i class="fa-solid fa-check"></i> ASMA KATLAR</div>
+            <div class="usage-item"><i class="fa-solid fa-check"></i> ÖZEL ÇELİK UYGULAMALARI</div>
         </div>
     </div>
     <div class="service-slider">
@@ -111,12 +114,16 @@
 <section class="service-row">
     <div class="service-info">
         <h2>Çatı Kaplama Çözümleri</h2>
-        <p>Yapıların dış dünyaya karşı en kritik kalkanı olan çatı kaplamalarında, sızdırmazlık ve yalıtımı odağımıza alıyoruz. Isı köprülerini ortadan kaldıran detay çözümlerimizle enerji tasarrufu sağlıyoruz.</p>
+        <p>Bir yapının konforu ve dayanıklılığı, dış dünyaya karşı duran kabuğunda başlar. Profesyonel kaplama hizmetlerimiz, yapınızın sadece görsel estetiğini tamamlamakla kalmaz, aynı zamanda ısı, ses ve su yalıtımında maksimum performans sunar. Özellikle sanayi yapılarında enerji maliyetlerini düşüren sandviç panel çözümlerinden, kompleks çatı formları için esnek membran uygulamalarına kadar geniş bir yelpazede hizmet veriyoruz. Kullanılan her katman, yapınızın ömrünü uzatmak, nem ve korozyonu engellemek üzere yüksek kalite standartlarında (TS EN) seçilir. Sızdırmazlık garantili detay çözümlerimizle, her mevsim güvenli ve verimli alanlar yaratıyoruz.</p>
         <div class="usage-area">
-            <div class="usage-item"><i class="fa-solid fa-check"></i> Sandviç Panel</div>
-            <div class="usage-item"><i class="fa-solid fa-check"></i> Kenet Çatı</div>
-            <div class="usage-item"><i class="fa-solid fa-check"></i> Polikarbon Işıklık</div>
-            <div class="usage-item"><i class="fa-solid fa-check"></i> Yalıtım Çözümleri</div>
+            <div class="usage-item"><i class="fa-solid fa-check"></i> POLİSTREN / POLİÜRETAN DOLGULU PANELLER</div>
+            <div class="usage-item"><i class="fa-solid fa-check"></i> TAŞ YÜNÜ DOLGULU SANDVİÇ PANELLER</div>
+            <div class="usage-item"><i class="fa-solid fa-check"></i> BITULINE EXTRA MEMBRANLAR</div>
+            <div class="usage-item"><i class="fa-solid fa-check"></i> ALÜMİNYUM FOLYOLU KEÇELİ MEMBRAN</div>
+            <div class="usage-item"><i class="fa-solid fa-check"></i> ARDUVAZLI ( KUMLU ) MEMBRANLAR</div>
+            <div class="usage-item"><i class="fa-solid fa-check"></i> TOPRAK ALTI DIŞARIDAN YALITIM</div>
+            <div class="usage-item"><i class="fa-solid fa-check"></i> TERAS ÇATILARDA ISI YALITIMI</div>
+            <div class="usage-item"><i class="fa-solid fa-check"></i> DIŞARDAN DUVAR YALITIMI</div>
         </div>
     </div>
     <div class="service-slider">
@@ -130,7 +137,7 @@
     <div class="tech-grid">
         <div class="tech-card">
             <h3>İmalat Teknolojisi</h3>
-            <p>Bilgisayar destekli (CNC) hatlarımızda boru, küre ve cıvata bileşenleri hatasız olarak üretilir. Her parça sevk öncesi kalite kontrol testlerinden geçer.</p>
+            <p>Modern tesislerimizde bilgisayar kontrollü (CNC) üretim bantları kullanarak hata payını sıfıra indiriyoruz. Üretilen her küre ve boru elemanı, sevk öncesi uluslararası standartlarda statik testlere tabi tutulmaktadır.</p>
             <div class="tech-gallery">
                 <img src="images/proje12.jpg">
                 <img src="images/proje13.jpg">
@@ -140,7 +147,7 @@
 
         <div class="tech-card">
             <h3>Saha & Montaj Gücü</h3>
-            <p>Deneyimli ekiplerimizle, sadece somun anahtarı teknolojisiyle kaynak zahmetine girmeden yüksek iş güvenliği ile hızlı kurulum sağlıyoruz.</p>
+            <p>Eğitimli ve sertifikalı saha personelimizle, iş güvenliğinden taviz vermeden montaj sürecini tamamlıyoruz. Somun anahtarı teknolojisi sayesinde yerinde kaynak gerektirmeyen, hızlı ve güvenli kurulum yapıyoruz.</p>
             <div class="tech-gallery">
                 <img src="images/proje15.jpg">
                 <img src="images/proje16.jpg">
@@ -150,7 +157,7 @@
     </div>
 </div>
 
-<footer><p>© 2026 Madenciler Uzay Çatı Sistemleri.</p></footer>
+<footer><p>© 2026 Madenciler Uzay Çatı Sistemleri. Güçlü Yapılar, Modern Çözümler.</p></footer>
 
 <script>
     document.querySelectorAll('.service-slider').forEach(slider => {
