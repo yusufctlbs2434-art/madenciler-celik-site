@@ -21,7 +21,6 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Poppins', sans-serif; background-color: var(--light-bg); color: var(--primary); scroll-behavior: smooth; }
 
-        /* --- NAVBAR --- */
         header {
             position: fixed; top: 0; width: 100%; z-index: 1000;
             background: rgba(15, 23, 42, 1); padding: 15px 8%;
@@ -33,32 +32,64 @@
         nav ul { display: flex; list-style: none; }
         nav ul li { position: relative; margin-left: 25px; }
         nav ul li a { color: var(--white); text-decoration: none; font-size: 13px; font-weight: 600; text-transform: uppercase; transition: 0.3s; }
-        nav ul li a:hover { color: var(--accent); }
         
         .dropdown-menu {
             position: absolute; top: 100%; left: 0; background: var(--primary);
             width: 260px; display: none; padding: 15px 0; border-top: 3px solid var(--accent);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
         }
         .dropdown:hover .dropdown-menu { display: block; }
-        .dropdown-menu li a { padding: 10px 20px; display: block; text-transform: capitalize; }
+        .dropdown-menu li a { padding: 10px 20px; display: block; }
 
-        /* --- SAYFA BAŞLIĞI --- */
         .page-header {
-            padding: 160px 8% 60px; background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.9)), url('https://images.unsplash.com/photo-1517089535819-f485e2192cc7?q=80&w=2000') no-repeat center center/cover;
-            color: var(--white); text-align: center;
+            padding: 160px 8% 60px; background: #0f172a; color: var(--white); text-align: center;
         }
-        .page-header h1 { font-family: 'Montserrat'; font-size: 42px; text-transform: uppercase; letter-spacing: 2px; }
+        .page-header h1 { font-family: 'Montserrat'; font-size: 42px; text-transform: uppercase; }
         .page-header span { color: var(--accent); }
 
-        /* --- HİZMET KARTLARI --- */
-        .services-container { padding: 80px 10%; }
+        .services-container { padding: 60px 8%; }
         .service-section { 
-            background: var(--white); border-radius: 20px; padding: 50px; 
-            margin-bottom: 50px; box-shadow: 0 10px 40px rgba(0,0,0,0.05);
-            display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px; align-items: start;
-            scroll-margin-top: 120px; border: 1px solid #edf2f7;
+            background: var(--white); border-radius: 15px; padding: 40px; 
+            margin-bottom: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            display: grid; grid-template-columns: 1fr 1.5fr; gap: 40px; scroll-margin-top: 100px;
         }
-        .service-info h2 { font-family: 'Montserrat'; font-size: 28px; color: var(--primary); margin-bottom: 25px; position: relative; padding-left: 20px; }
-        .service-info h2::before { content: ''; width: 6px; height: 100%; background: var(--accent); position: absolute; left: 0; top: 0; border-radius: 3px; }
-        .service-
+        .service-info h2 { font-family: 'Montserrat'; margin-bottom: 20px; border-left: 5px solid var(--accent); padding-left: 15px; }
+        .usage-areas { background: #f1f5f9; padding: 25px; border-radius: 10px; }
+        .usage-areas ul { display: grid; grid-template-columns: 1fr 1fr; list-style: none; gap: 10px; }
+        .usage-areas li { font-size: 13px; display: flex; align-items: center; gap: 8px; }
+        .usage-areas li::before { content: "✔"; color: var(--accent); }
+
+        .whatsapp { position: fixed; bottom: 30px; right: 30px; background: #25d366; width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 30px; color: white; z-index: 2000; }
+        footer { background: #020617; color: #64748b; padding: 30px; text-align: center; }
+
+        @media (max-width: 992px) { .service-section { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="index.html" class="logo">MADENCİLER <span>UZAY ÇATI</span></a>
+    <nav>
+        <ul>
+            <li><a href="index.html">Anasayfa</a></li>
+            <li class="dropdown">
+                <a href="index.html#hakkimizda">Hakkımızda</a>
+                <ul class="dropdown-menu"><li><a href="index.html#hakkimizda">Kurumsal</a></li></ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" style="color: var(--accent);">Hizmetler</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#uzay-kafes">Uzay Kafes Sistemleri</a></li>
+                    <li><a href="#celik-konstruksiyon">Çelik Konstrüksiyon</a></li>
+                    <li><a href="#cati-kaplama">Çatı Kaplama</a></li>
+                    <li><a href="#imalat">İmalat</a></li>
+                    <li><a href="#montaj">Montaj</a></li>
+                </ul>
+            </li>
+            <li><a href="projeler.html">Projeler</a></li>
+            <li><a href="referanslar.html">Referanslar</a></li>
+            <li><a href="index.html#iletisim">İletişim</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class
