@@ -6,6 +6,7 @@
     <title>Hizmetlerimiz | Madenciler Uzay Çatı</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         :root { --primary: #0f172a; --accent: #f59e0b; --white: #ffffff; --gray: #64748b; --light-bg: #f8fafc; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -16,21 +17,37 @@
         .logo span { color: var(--accent); }
         nav ul { display: flex; list-style: none; }
         nav ul li { margin-left: 25px; }
-        nav ul li a { color: white; text-decoration: none; font-size: 13px; font-weight: 600; text-transform: uppercase; }
+        nav ul li a { color: white; text-decoration: none; font-size: 13px; font-weight: 600; text-transform: uppercase; transition: 0.3s; }
+        nav ul li a:hover { color: var(--accent); }
 
-        .page-header { padding: 140px 8% 40px; background: #0f172a; color: white; text-align: center; }
-        .services-container { padding: 40px 8%; max-width: 1200px; margin: 0 auto; }
-        
-        .service-box { background: white; border-radius: 15px; margin-bottom: 40px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); display: flex; flex-direction: column; }
-        .service-content { padding: 30px; }
-        .service-content h2 { font-family: 'Montserrat'; color: var(--primary); margin-bottom: 15px; border-left: 5px solid var(--accent); padding-left: 15px; }
-        
-        /* Görsel Alanı */
-        .image-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; padding: 0 30px 30px; }
-        .image-gallery img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; background: #eee; }
+        .page-header { padding: 160px 8% 60px; background: #0f172a; color: white; text-align: center; }
+        .page-header h1 { font-family: 'Montserrat'; font-size: 36px; text-transform: uppercase; }
+        .page-header span { color: var(--accent); }
 
-        footer { background: #020617; color: #64748b; padding: 30px; text-align: center; margin-top: 50px; }
-        @media (max-width: 768px) { .image-gallery { grid-template-columns: 1fr; } }
+        .services-container { padding: 60px 8%; max-width: 1200px; margin: 0 auto; }
+        
+        /* Hizmet Kutuları */
+        .service-box { background: white; border-radius: 20px; margin-bottom: 50px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid #f1f5f9; }
+        .service-content { padding: 40px; }
+        .service-content h2 { font-family: 'Montserrat'; color: var(--primary); margin-bottom: 20px; border-left: 6px solid var(--accent); padding-left: 20px; font-size: 24px; }
+        .service-content p { color: var(--gray); margin-bottom: 25px; font-size: 15px; }
+
+        /* Kullanım Alanları Grid */
+        .usage-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; background: #f8fafc; padding: 25px; border-radius: 12px; }
+        .usage-item { display: flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 600; color: var(--primary); }
+        .usage-item i { color: var(--accent); font-size: 16px; }
+
+        /* Görsel Galerisi (İmalat ve Montaj İçin) */
+        .image-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; padding: 0 40px 40px; }
+        .image-gallery img { width: 100%; height: 220px; object-fit: cover; border-radius: 12px; transition: 0.3s; border: 1px solid #e2e8f0; }
+        .image-gallery img:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+
+        footer { background: #020617; color: #64748b; padding: 40px; text-align: center; }
+
+        @media (max-width: 768px) {
+            .image-gallery { grid-template-columns: 1fr; }
+            .service-content { padding: 30px 20px; }
+        }
     </style>
 </head>
 <body>
@@ -40,21 +57,64 @@
     <nav>
         <ul>
             <li><a href="index.html">Anasayfa</a></li>
-            <li><a href="hizmetler.html">Hizmetler</a></li>
+            <li><a href="hizmetler.html" style="color: var(--accent);">Hizmetler</a></li>
             <li><a href="projeler.html">Projeler</a></li>
             <li><a href="index.html#iletisim">İletişim</a></li>
         </ul>
     </nav>
 </header>
 
-<div class="page-header"><h1>Hizmet<span>lerimiz</span></h1></div>
+<div class="page-header">
+    <h1>Hizmet<span>lerimiz</span></h1>
+</div>
 
 <div class="services-container">
     
-    <div class="service-box">
+    <div class="service-box" data-aos="fade-up">
         <div class="service-content">
-            <h2>İmalat</h2>
-            <p>İmalatın tamamı modern atölyemizde bilgisayar destekli sistemlerle hazırlanır. Sistemimiz boru, küre, cıvata, aşık ve mesnet elemanlarından oluşmaktadır. Bütün çubuklar, statik yönden en ekonomik ve dayanıklı olan boru kesitli elemanlardır.</p>
+            <h2>Uzay Kafes Sistemleri</h2>
+            <p>Geniş açıklıklı alanları kolonsuz geçebilen, estetik ve güvenli bir yapı çözümüdür. Prefabrik elemanların üç boyutlu birleşimiyle yüksek deprem dayanımı ve mimari esneklik sunar.</p>
+            <div class="usage-grid">
+                <div class="usage-item"><i class="fa-solid fa-check"></i> Sanayi Tesisleri</div>
+                <div class="usage-item"><i class="fa-solid fa-check"></i> Spor Tesisleri</div>
+                <div class="usage-item"><i class="fa-solid fa-check"></i> Pazar Yerleri</div>
+                <div class="usage-item"><i class="fa-solid fa-check"></i> Uçak Hangarları</div>
+                <div class="usage-item"><i class="fa-solid fa-check"></i> Sergi Salonları</div>
+                <div class="usage-item"><i class="fa-solid fa-check"></i> Depo Alanları</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="service-box" data-aos="fade-up">
+        <div class="service-content">
+            <h2>Çelik Konstrüksiyon</h2>
+            <p>Dayanıklılığın ve hızın birleştiği çelik yapılarımızla, ağır sanayi yapılarından modern ofis binalarına kadar her türlü projede güvenilir çözümler üretiyoruz.</p>
+            <div class="usage-grid">
+                <div class="usage-item"><i class="fa-solid fa-check"></i> Fabrika Binaları</div>
+                <div class="usage-item"><i class="fa-solid fa-check"></i> Otoparklar</div>
+                <div class="usage-item"><i class="fa-solid fa-check"></i> Asma Katlar</div>
+                <div class="usage-item"><i class="fa-solid fa-check"></i> Çelik Konutlar</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="service-box" data-aos="fade-up">
+        <div class="service-content">
+            <h2>Çatı Kaplamaları</h2>
+            <p>Yapılarınızı dış etkenlerden koruyan, ısı ve su yalıtımı yüksek kaplama sistemlerimizle uzun ömürlü çatılar inşa ediyoruz.</p>
+            <div class="usage-grid">
+                <div class="usage-item"><i class="fa-solid fa-check"></i> Sandviç Panel</div>
+                <div class="usage-item"><i class="fa-solid fa-check"></i> Kenet Sistemler</div>
+                <div class="usage-item"><i class="fa-solid fa-check"></i> Polikarbon Uygulamaları</div>
+                <div class="usage-item"><i class="fa-solid fa-check"></i> Membran Kaplama</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="imalat" class="service-box" data-aos="fade-up">
+        <div class="service-content">
+            <h2>İmalat Sürecimiz</h2>
+            <p>İmalatın tamamı atölyede hazırlanıp şantiyede montajı yapılacak şekilde dizayn edilmektedir. Sistem boru, küre, cıvata aşık ve mesnet elemanlarından oluşmaktadır. Boru kesitli elemanlar statik yönden en yüksek verimi sağlar.</p>
         </div>
         <div class="image-gallery">
             <img src="images/proje12.jpg" alt="İmalat 1">
@@ -63,10 +123,10 @@
         </div>
     </div>
 
-    <div class="service-box">
+    <div id="montaj" class="service-box" data-aos="fade-up">
         <div class="service-content">
-            <h2>Montaj</h2>
-            <p>Uzay sistemlerimizin montajı son derece hızlı ve pratiktir. Sadece somun anahtarı kullanılarak binlerce metrekarelik alanlar çok kısa sürelerde güvenle kurulur. Uzman montaj ekibimiz, iş güvenliği kurallarına tam uyum sağlar.</p>
+            <h2>Montaj Uygulaması</h2>
+            <p>Sadece somun anahtarı kullanılarak binlerce metrekarelik montaj hatasız gerçekleştirilir. Uzman montaj ekiplerimizle projelerinizi en kısa sürede ve güvenli bir şekilde tamamlıyoruz.</p>
         </div>
         <div class="image-gallery">
             <img src="images/proje15.jpg" alt="Montaj 1">
@@ -75,16 +135,13 @@
         </div>
     </div>
 
-    <div class="service-box">
-        <div class="service-content">
-            <h2>Uzay Kafes Sistemleri</h2>
-            <p>Geniş açıklıklı yapıların en estetik, hafif ve güvenli çözümü olan Uzay Kafes Sistemleri, mimari özgürlüğü mühendislik hassasiyetiyle buluşturur.</p>
-        </div>
-    </div>
-
 </div>
 
-<footer><p>© 2026 Madenciler Uzay Çatı Sistemleri.</p></footer>
+<footer>
+    <p>© 2026 Madenciler Uzay Çatı Sistemleri. Tüm Hakları Saklıdır.</p>
+</footer>
 
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init({ duration: 1000, once: true });</script>
 </body>
 </html>
