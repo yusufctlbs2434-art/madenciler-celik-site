@@ -43,29 +43,40 @@
         .page-header span { color: var(--accent); }
 
         .section-padding { padding: 80px 10%; }
-        .section-title { text-align: center; margin-bottom: 60px; font-family: 'Montserrat'; font-size: 32px; position: relative; padding-bottom: 15px; }
+        .section-title { text-align: center; margin-bottom: 60px; font-family: 'Montserrat'; font-size: 32px; position: relative; padding-bottom: 15px; text-transform: uppercase; font-weight: 800; }
         .section-title::after { content: ''; width: 50px; height: 3px; background: var(--accent); position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); }
         .section-title span { color: var(--accent); }
 
-        /* --- PROJELER GALERİSİ --- */
+        /* --- PROJELER GALERİSİ (PROFESYONEL BOX YAPISI) --- */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
             gap: 30px;
         }
         .project-card {
-            background: var(--white); border-radius: 15px; overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.4s;
+            background: var(--white); border-radius: 12px; overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05); transition: 0.4s;
+            position: relative; border: 1px solid #edf2f7;
         }
-        .project-card:hover { transform: translateY(-10px); }
-        .project-img { width: 100%; height: 240px; background: #e2e8f0; overflow: hidden; }
-        .project-img img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
-        .project-card:hover .project-img img { scale: 1.1; }
-        .project-details { padding: 25px; text-align: center; }
-        .project-details h3 { font-family: 'Montserrat'; font-size: 18px; margin-bottom: 10px; color: var(--primary); }
-        .project-details p { color: var(--gray); font-size: 14px; display: flex; align-items: center; justify-content: center; gap: 8px; }
+        .project-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        
+        .project-img { width: 100%; height: 260px; overflow: hidden; position: relative; }
+        .project-img img { width: 100%; height: 100%; object-fit: cover; transition: 0.6s; }
+        .project-card:hover .project-img img { transform: scale(1.1); }
+        
+        /* Box üzerindeki küçük etiket */
+        .project-tag {
+            position: absolute; top: 15px; left: 15px; background: var(--accent);
+            color: var(--primary); padding: 4px 12px; font-weight: 700; font-size: 11px;
+            border-radius: 4px; z-index: 2; text-transform: uppercase;
+        }
 
-        /* --- REFERANSLAR ALANI --- */
+        .project-details { padding: 25px; text-align: left; }
+        .project-details h3 { font-family: 'Montserrat'; font-size: 18px; margin-bottom: 10px; color: var(--primary); font-weight: 700; }
+        .project-details p { color: var(--gray); font-size: 13px; line-height: 1.6; display: flex; align-items: center; gap: 8px; }
+        .project-details i { color: var(--accent); }
+
+        /* --- REFERANSLAR ALANI (DOKUNULMADI) --- */
         #referanslar { background: var(--white); scroll-margin-top: 80px; }
         .ref-container {
             display: grid;
@@ -120,23 +131,95 @@
 
 <section id="projeler" class="section-padding">
     <div class="section-title" data-aos="fade-up">Tamamlanan <span>Projelerimiz</span></div>
+    
     <div class="projects-grid">
         <div class="project-card" data-aos="fade-up">
-            <div class="project-img">
-                <img src="images/proje1.jpg" alt="Uzay Çatı Projesi">
-            </div>
+            <div class="project-tag">Uzay Kafes</div>
+            <div class="project-img"><img src="images/proje1.png" alt="Proje 1"></div>
             <div class="project-details">
-                <h3>Endüstriyel Tesis Uzay Kafes</h3>
+                <h3>Endüstriyel Tesis Uygulaması</h3>
+                <p><i class="fa-solid fa-location-dot"></i> İstanbul Bölgesi</p>
+            </div>
+        </div>
+
+        <div class="project-card" data-aos="fade-up" data-aos-delay="50">
+            <div class="project-tag">Çelik Yapı</div>
+            <div class="project-img"><img src="images/proje2.jpg" alt="Proje 2"></div>
+            <div class="project-details">
+                <h3>Kapalı Pazar Yeri Projesi</h3>
+                <p><i class="fa-solid fa-location-dot"></i> Kocaeli / İzmit</p>
+            </div>
+        </div>
+
+        <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="project-tag">Uzay Çatı</div>
+            <div class="project-img"><img src="images/proje3.jpg" alt="Proje 3"></div>
+            <div class="project-details">
+                <h3>Spor Salonu Çatı Sistemi</h3>
+                <p><i class="fa-solid fa-location-dot"></i> Bursa</p>
+            </div>
+        </div>
+
+        <div class="project-card" data-aos="fade-up" data-aos-delay="150">
+            <div class="project-tag">İmalat</div>
+            <div class="project-img"><img src="images/proje4.png" alt="Proje 4"></div>
+            <div class="project-details">
+                <h3>Lojistik Depo Konstrüksiyonu</h3>
+                <p><i class="fa-solid fa-location-dot"></i> Sakarya</p>
+            </div>
+        </div>
+
+        <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="project-tag">Çelik Konstrüksiyon</div>
+            <div class="project-img"><img src="images/proje5.png" alt="Proje 5"></div>
+            <div class="project-details">
+                <h3>Fabrika İdari Bina Yapısı</h3>
+                <p><i class="fa-solid fa-location-dot"></i> Gebze OSB</p>
+            </div>
+        </div>
+
+        <div class="project-card" data-aos="fade-up" data-aos-delay="250">
+            <div class="project-tag">Uzay Kafes</div>
+            <div class="project-img"><img src="images/proje6.jpg" alt="Proje 6"></div>
+            <div class="project-details">
+                <h3>Geniş Açıklıklı Antrepo</h3>
+                <p><i class="fa-solid fa-location-dot"></i> Tekirdağ</p>
+            </div>
+        </div>
+
+        <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="project-tag">Montaj</div>
+            <div class="project-img"><img src="images/proje7.png" alt="Proje 7"></div>
+            <div class="project-details">
+                <h3>Özel Tasarım Çelik Çatı</h3>
+                <p><i class="fa-solid fa-location-dot"></i> Ankara</p>
+            </div>
+        </div>
+
+        <div class="project-card" data-aos="fade-up" data-aos-delay="350">
+            <div class="project-tag">Uzay Çatı</div>
+            <div class="project-img"><img src="images/proje9.png" alt="Proje 9"></div>
+            <div class="project-details">
+                <h3>Alışveriş Merkezi Işıklık Sistemi</h3>
                 <p><i class="fa-solid fa-location-dot"></i> İstanbul</p>
             </div>
         </div>
-        <div class="project-card" data-aos="fade-up" data-aos-delay="100">
-            <div class="project-img">
-                <img src="images/proje2.jpg" alt="Çelik Konstrüksiyon">
-            </div>
+
+        <div class="project-card" data-aos="fade-up" data-aos-delay="400">
+            <div class="project-tag">Endüstriyel Yapı</div>
+            <div class="project-img"><img src="images/proje10.png" alt="Proje 10"></div>
             <div class="project-details">
-                <h3>Kapalı Pazar Yeri Uygulaması</h3>
-                <p><i class="fa-solid fa-location-dot"></i> Kocaeli</p>
+                <h3>Üretim Tesisi Ek Bina Projesi</h3>
+                <p><i class="fa-solid fa-location-dot"></i> Yalova</p>
+            </div>
+        </div>
+
+        <div class="project-card" data-aos="fade-up" data-aos-delay="450">
+            <div class="project-tag">Çelik İskelet</div>
+            <div class="project-img"><img src="images/proje18.jpg" alt="Proje 18"></div>
+            <div class="project-details">
+                <h3>Hangar ve Depolama Alanı</h3>
+                <p><i class="fa-solid fa-location-dot"></i> Eskişehir</p>
             </div>
         </div>
     </div>
