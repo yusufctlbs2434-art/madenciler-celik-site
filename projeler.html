@@ -29,10 +29,22 @@
         }
         .logo { font-family: 'Montserrat'; color: var(--white); font-weight: 800; font-size: 20px; text-decoration: none; }
         .logo span { color: var(--accent); }
+        
         nav ul { display: flex; list-style: none; }
-        nav ul li { margin-left: 25px; }
+        nav ul li { position: relative; margin-left: 25px; }
         nav ul li a { color: var(--white); text-decoration: none; font-size: 13px; font-weight: 600; text-transform: uppercase; transition: 0.3s; }
         nav ul li a:hover { color: var(--accent); }
+
+        /* Dropdown Menü Tasarımı (Index ile senkronize) */
+        .dropdown-menu {
+            position: absolute; top: 100%; left: 0; background: var(--primary);
+            width: 250px; display: none; padding: 15px 0; border-top: 3px solid var(--accent);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        .dropdown:hover .dropdown-menu { display: block; }
+        .dropdown-menu li { margin: 0; width: 100%; }
+        .dropdown-menu li a { padding: 10px 20px; display: block; text-transform: capitalize; font-size: 13px; }
+        .dropdown-menu li a:hover { background: rgba(255,255,255,0.05); color: var(--accent); }
 
         .page-header {
             padding: 160px 8% 60px; background: var(--primary); color: var(--white); text-align: center;
@@ -67,7 +79,7 @@
         .project-details h3 { font-family: 'Montserrat'; font-size: 17px; margin-bottom: 8px; color: var(--primary); font-weight: 700; text-transform: uppercase; }
         .project-details p { color: var(--accent); font-size: 14px; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 8px; }
 
-        /* --- REFERANSLAR ALANI (DOKUNULMADI) --- */
+        /* --- REFERANSLAR ALANI --- */
         #referanslar { background: var(--white); scroll-margin-top: 80px; }
         .ref-container {
             display: grid;
@@ -97,7 +109,24 @@
     <nav>
         <ul>
             <li><a href="index.html">Anasayfa</a></li>
-            <li><a href="hizmetler.html">Hizmetler</a></li>
+            <li class="dropdown">
+                <a href="index.html#hakkimizda">Hakkımızda <i class="fa fa-chevron-down" style="font-size: 10px;"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="index.html#hakkimizda">Vizyonumuz</a></li>
+                    <li><a href="index.html#hakkimizda">Misyonumuz</a></li>
+                    <li><a href="index.html#hakkimizda">Kalite Politikamız</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="hizmetler.html">Hizmetler <i class="fa fa-chevron-down" style="font-size: 10px;"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="hizmetler.html#uzay-kafes">Uzay Kafes Sistemleri</a></li>
+                    <li><a href="hizmetler.html#celik-konstruksiyon">Çelik Konstrüksiyon</a></li>
+                    <li><a href="hizmetler.html#cati-kaplama">Çatı Kaplama</a></li>
+                    <li><a href="hizmetler.html#imalat">İmalat</a></li>
+                    <li><a href="hizmetler.html#montaj">Montaj</a></li>
+                </ul>
+            </li>
             <li><a href="#projeler">Projeler</a></li>
             <li><a href="#referanslar">Referanslar</a></li>
             <li><a href="index.html#iletisim">İletişim</a></li>
