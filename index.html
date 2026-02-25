@@ -21,19 +21,19 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Poppins', sans-serif; overflow-x: hidden; background-color: var(--light-gray); scroll-behavior: smooth; }
 
-        /* --- LOGO VE UNVAN ANIMASYONU --- */
-        @keyframes logoReveal {
-            0% { transform: scale(0.6); opacity: 0; filter: blur(15px); }
+        /* --- APPLE TARZI PREMİUM LOGO GİRİŞ EFEKTİ --- */
+        @keyframes appleLogoEntrance {
+            0% { transform: scale(0.4); opacity: 0; filter: blur(20px); }
             100% { transform: scale(1); opacity: 1; filter: blur(0); }
         }
 
-        /* --- NAVBAR (VURUCU VE PRESTİJLİ) --- */
+        /* --- NAVBAR (SCROLL DOSTU VE ÇARPICI) --- */
         header {
             position: fixed; top: 0; width: 100%; z-index: 1000;
-            background: rgba(15, 23, 42, 0.97); padding: 12px 5%;
+            background: rgba(15, 23, 42, 0.98); padding: 15px 5%;
             display: flex; justify-content: space-between; align-items: center;
             backdrop-filter: blur(15px); border-bottom: 2px solid var(--accent);
-            box-shadow: 0 4px 30px rgba(0,0,0,0.5);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
         
         .brand-container { 
@@ -41,10 +41,11 @@
             align-items: center; 
             gap: 20px; 
             text-decoration: none; 
-            animation: logoReveal 1.2s cubic-bezier(0.16, 1, 0.3, 1); 
+            /* Giriş animasyonu burada */
+            animation: appleLogoEntrance 1.5s cubic-bezier(0.15, 1, 0.3, 1) forwards; 
         }
         
-        .logo-img { height: 90px; width: auto; object-fit: contain; } /* LOGO BÜYÜTÜLDÜ */
+        .logo-img { height: 100px; width: auto; object-fit: contain; } /* LOGO MAKSİMUM ÇARPICILIKTA */
         
         .logo-text { 
             font-family: 'Montserrat'; 
@@ -61,7 +62,7 @@
             font-size: 13px; 
             font-weight: 600;
             margin-top: 5px; 
-            letter-spacing: 2.5px;
+            letter-spacing: 3px;
         }
 
         nav ul { display: flex; list-style: none; }
@@ -69,7 +70,7 @@
         nav ul li a { color: var(--white); text-decoration: none; font-size: 13px; font-weight: 700; text-transform: uppercase; transition: 0.3s; }
         nav ul li a:hover { color: var(--accent); }
 
-        /* Dropdown */
+        /* Dropdown Menü (Scroll Yapısını Bozmaz) */
         .dropdown-menu {
             position: absolute; top: 100%; left: 0; background: var(--primary);
             width: 250px; display: none; padding: 15px 0; border-top: 3px solid var(--accent);
@@ -78,7 +79,7 @@
         .dropdown-menu li { margin: 0; width: 100%; }
         .dropdown-menu li a { padding: 10px 20px; display: block; }
 
-        /* --- HERO SLIDER (SHARP & CLEAN) --- */
+        /* --- HERO SLIDER (ŞERİTSİZ & MODERN) --- */
         .hero {
             height: 100vh; position: relative; overflow: hidden;
             display: flex; justify-content: center; align-items: center;
@@ -87,48 +88,32 @@
         .hero-slider { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
         .slide {
             position: absolute; width: 100%; height: 100%; opacity: 0;
-            transition: opacity 2s ease-in-out, transform 10s ease;
+            transition: opacity 2s ease-in-out, transform 12s linear;
             background-size: cover; background-position: center;
             transform: scale(1.1);
         }
-        .slide.active { opacity: 0.6; transform: scale(1); } /* Karartma ve hafif zoom efekti */
+        .slide.active { opacity: 0.6; transform: scale(1); }
+        .slide::after { content: ''; position: absolute; width: 100%; height: 100%; background: radial-gradient(circle, transparent 20%, #000 100%); }
 
         .hero-content {
-            position: relative; z-index: 2; text-align: center; max-width: 1100px; padding: 0 20px;
+            position: relative; z-index: 2; text-align: center; max-width: 1100px;
         }
         .hero-content h1 {
-            color: var(--white); font-family: 'Montserrat'; font-size: clamp(32px, 7vw, 75px);
+            color: var(--white); font-family: 'Montserrat'; font-size: clamp(35px, 8vw, 80px);
             font-weight: 900; text-transform: uppercase; line-height: 0.95; margin-bottom: 25px;
-            text-shadow: 0 10px 50px rgba(0,0,0,0.8);
         }
         .hero-content p {
             color: var(--accent); font-weight: 400; font-size: clamp(16px, 2.5vw, 26px);
-            letter-spacing: 10px; text-transform: uppercase;
-            text-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            letter-spacing: 12px; text-transform: uppercase;
         }
 
-        /* --- GENEL BÖLÜM AYARLARI --- */
+        /* --- İLETİŞİM & WHATSAPP --- */
         .section { padding: 120px 10%; }
-        .section-title { text-align: center; margin-bottom: 70px; }
-        .section-title h2 { font-family: 'Montserrat'; font-size: 38px; text-transform: uppercase; letter-spacing: 2px; position: relative; padding-bottom: 20px; }
-        .section-title h2::after { content: ''; width: 70px; height: 4px; background: var(--accent); position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); }
-
-        .about-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
-        .about-card { background: var(--white); padding: 45px; border-radius: 20px; transition: 0.5s; text-align: center; box-shadow: 0 15px 45px rgba(0,0,0,0.05); }
-        .about-card:hover { transform: translateY(-15px); box-shadow: 0 25px 60px rgba(0,0,0,0.1); }
-        .about-card i { font-size: 50px; color: var(--accent); margin-bottom: 30px; }
-
-        .contact-container { display: flex; flex-wrap: wrap; gap: 40px; margin-top: 50px; }
-        .contact-info { flex: 1; min-width: 350px; background: var(--primary); color: white; padding: 60px; border-radius: 25px; }
-        .map-box { flex: 1.5; min-width: 350px; height: 500px; border-radius: 25px; overflow: hidden; }
-
-        .whatsapp { position: fixed; bottom: 40px; right: 40px; background: #25d366; width: 70px; height: 70px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 40px; color: white; z-index: 2000; box-shadow: 0 15px 35px rgba(37,211,102,0.4); }
-
-        footer { background: #020617; color: #64748b; padding: 40px; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); }
+        .whatsapp { position: fixed; bottom: 40px; right: 40px; background: #25d366; width: 70px; height: 70px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 40px; color: white; z-index: 2000; }
+        footer { background: #020617; color: #64748b; padding: 40px; text-align: center; }
 
         @media (max-width: 1024px) {
-            header { padding: 15px 3%; }
-            .logo-img { height: 65px; }
+            .logo-img { height: 70px; }
             .logo-text { font-size: 15px; }
             nav { display: none; }
         }
@@ -147,21 +132,13 @@
         <ul>
             <li><a href="index.html">Anasayfa</a></li>
             <li class="dropdown">
-                <a href="#hakkimizda">Hakkımızda <i class="fa fa-chevron-down" style="font-size: 10px;"></i></a>
+                <a href="#hakkimizda">Kurumsal <i class="fa fa-chevron-down" style="font-size: 10px;"></i></a>
                 <ul class="dropdown-menu">
-                    <li><a href="#hakkimizda">Vizyonumuz</a></li>
-                    <li><a href="#hakkimizda">Misyonumuz</a></li>
-                    <li><a href="#hakkimizda">Kalite Politikamız</a></li>
+                    <li><a href="#hakkimizda">Vizyon & Misyon</a></li>
+                    <li><a href="#hakkimizda">Kalite Politikası</a></li>
                 </ul>
             </li>
-            <li class="dropdown">
-                <a href="hizmetler.html">Hizmetler <i class="fa fa-chevron-down" style="font-size: 10px;"></i></a>
-                <ul class="dropdown-menu">
-                    <li><a href="hizmetler.html#uzay-kafes">Uzay Kafes Sistemleri</a></li>
-                    <li><a href="hizmetler.html#celik-konstruksiyon">Çelik Konstrüksiyon</a></li>
-                    <li><a href="hizmetler.html#cati-kaplama">Çatı Kaplama</a></li>
-                </ul>
-            </li>
+            <li><a href="hizmetler.html">Hizmetler</a></li>
             <li><a href="projeler.html">Projeler</a></li>
             <li><a href="#iletisim">İletişim</a></li>
         </ul>
@@ -173,68 +150,23 @@
         <div class="slide active" style="background-image: url('images/proje1.png');"></div>
         <div class="slide" style="background-image: url('images/proje9.png');"></div>
         <div class="slide" style="background-image: url('images/proje3.jpg');"></div>
-        <div class="slide" style="background-image: url('https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHY5bXF6ZXZ3OHZ3OHZ3OHZ3OHZ3OHZ3OHZ3OHZ3OHZ3OHZ3OHZ3JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/3o7TKMGpxxyHlT9A9G/giphy.gif');"></div>
+        <div class="slide" style="background-image: url('images/imalat1.jpg');"></div>
     </div>
     
-    <div class="hero-content" data-aos="fade-up" data-aos-delay="600">
-        <h1>GELECEĞİN YAPILARINI<br>ÇELİKLE ŞEKİLLENDİRİYORUZ</h1>
-        <p>Sınırsız Çözümler, Sarsılmaz Güven</p>
+    <div class="hero-content" data-aos="zoom-out" data-aos-delay="500">
+        <h1>GELECEĞİN ÇELİK<br>MİMARİSİ</h1>
+        <p>Sarsılmaz Güven, Sınırsız Açıklık</p>
     </div>
 </section>
 
-<section id="hakkimizda" class="section">
-    <div class="section-title" data-aos="fade-up">
-        <h2>Kurumsal</h2>
-    </div>
-    <div class="about-grid">
-        <div class="about-card" data-aos="fade-up" data-aos-delay="100">
-            <i class="fa-solid fa-eye"></i>
-            <h3>Vizyonumuz</h3>
-            <p>Sektörümüzde kalite ve güvenin temsilcisi olmayı amaçlıyoruz. Faaliyet gösterdiğimiz her alanda saygın ve tercih edilen bir firma olmak temel ilkemizdir.</p>
-        </div>
-        <div class="about-card" data-aos="fade-up" data-aos-delay="200">
-            <i class="fa-solid fa-bullseye"></i>
-            <h3>Misyonumuz</h3>
-            <p>Geçmişten gelen deneyimimizi ve güçlü teknik kadromuzu en verimli şekilde kullanarak müşterilerimize yüksek standartlarda profesyonel çözümler sunmaktır.</p>
-        </div>
-        <div class="about-card" data-aos="fade-up" data-aos-delay="300">
-            <i class="fa-solid fa-award"></i>
-            <h3>Kalite Politikamız</h3>
-            <p>Müşteri beklentilerini doğru analiz ederek güvenilir ve sürdürülebilir çözümler sunarız. Kalite bilincini tüm süreçlerimize yansıtırız.</p>
-        </div>
-    </div>
-</section>
-
-<section id="iletisim" class="section" style="background: var(--white);">
-    <div class="section-title" data-aos="fade-up">
-        <h2>İletişim & Konum</h2>
-    </div>
-    <div class="contact-container">
-        <div class="contact-info" data-aos="fade-right">
-            <h3>Bize Ulaşın</h3>
-            <p><i class="fa-solid fa-phone"></i> <strong>+90 533 481 55 90</strong></p>
-            <p><i class="fa-solid fa-envelope"></i> madencilercelik@gmail.com</p>
-            <p><i class="fa-solid fa-location-dot"></i> Koçullu Mah. Bağcı Sk. No:14 Çekmeköy / İstanbul</p>
-        </div>
-        <div class="map-box" data-aos="fade-left">
-            <iframe src="https://www.google.com/maps/embed?pb=YOUR_MAP_ID" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-        </div>
-    </div>
-</section>
-
-<a href="https://wa.me/905319142916" class="whatsapp" target="_blank">
-    <i class="fa-brands fa-whatsapp"></i>
-</a>
-
-<footer>
-    <p>© 2026 Madenciler Uzay Çatı Sistemleri. Tüm Hakları Saklıdır.</p>
-</footer>
+<a href="https://wa.me/905319142916" class="whatsapp" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+<footer><p>© 2026 Madenciler Uzay Çatı Sistemleri. Tüm Hakları Saklıdır.</p></footer>
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
     AOS.init({ duration: 1500, once: true });
 
-    // --- PROFESYONEL HERO SLIDER ---
+    // --- HATASIZ SLIDER SCRİPT ---
     const slides = document.querySelectorAll('.slide');
     let currentSlide = 0;
 
@@ -243,8 +175,7 @@
         currentSlide = (currentSlide + 1) % slides.length;
         slides[currentSlide].classList.add('active');
     }
-
-    setInterval(nextSlide, 6000); // 6 saniyede bir değişim
+    setInterval(nextSlide, 6000); 
 </script>
 
 </body>
