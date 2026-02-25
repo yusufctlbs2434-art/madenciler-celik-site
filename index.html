@@ -24,26 +24,26 @@
         /* --- NAVBAR --- */
         header {
             position: fixed; top: 0; width: 100%; z-index: 1000;
-            background: rgba(15, 23, 42, 0.98); padding: 15px 5%;
+            background: rgba(15, 23, 42, 0.98); padding: 12px 5%;
             display: flex; justify-content: space-between; align-items: center;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.4);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
         }
         
-        /* LOGO VE UNVAN BÜYÜTÜLDÜ & DAHA ÇARPICI HALE GETİRİLDİ */
-        .brand-container { display: flex; align-items: center; gap: 25px; text-decoration: none; }
-        .logo-img { height: 110px; width: auto; object-fit: contain; filter: drop-shadow(0 0 5px rgba(245, 158, 11, 0.3)); }
+        /* LOGO VE UNVAN BÜYÜTÜLDÜ */
+        .brand-container { display: flex; align-items: center; gap: 20px; text-decoration: none; }
+        .logo-img { height: 85px; width: auto; object-fit: contain; }
         .logo-text { 
             font-family: 'Montserrat'; color: var(--white); font-weight: 900; 
-            font-size: 22px; line-height: 1.1; text-transform: uppercase; letter-spacing: 0.5px;
+            font-size: 18px; line-height: 1.2; text-transform: uppercase; 
         }
         .logo-text span { 
-            color: var(--accent); display: block; font-size: 14px; 
-            font-weight: 700; margin-top: 6px; letter-spacing: 1.5px;
+            color: var(--accent); display: block; font-size: 13px; 
+            font-weight: 700; margin-top: 4px; letter-spacing: 1px;
         }
 
         nav ul { display: flex; list-style: none; }
         nav ul li { position: relative; margin-left: 20px; }
-        nav ul li a { color: var(--white); text-decoration: none; font-size: 13px; font-weight: 600; text-transform: uppercase; transition: 0.3s; }
+        nav ul li a { color: var(--white); text-decoration: none; font-size: 12px; font-weight: 600; text-transform: uppercase; transition: 0.3s; }
         nav ul li a:hover { color: var(--accent); }
 
         .dropdown-menu {
@@ -56,7 +56,7 @@
         .dropdown-menu li a { padding: 10px 20px; display: block; text-transform: capitalize; font-size: 13px; }
         .dropdown-menu li a:hover { background: rgba(255,255,255,0.05); color: var(--accent); }
 
-        /* --- HERO SLIDER --- */
+      /* --- HERO SLIDER (YENİ GÖRÜNÜM) --- */
         .hero {
             height: 100vh; position: relative; overflow: hidden;
             display: flex; justify-content: center; align-items: center;
@@ -70,26 +70,27 @@
             background-size: cover; background-position: center;
         }
         .slide.active { opacity: 1; }
-        .slide::after { content: ''; position: absolute; width: 100%; height: 100%; background: rgba(0,0,0,0.45); }
+        .slide::after { content: ''; position: absolute; width: 100%; height: 100%; background: rgba(0,0,0,0.3); }
 
         .hero-content {
-            position: relative; z-index: 2; width: 100%; text-align: center;
+            position: relative; z-index: 10; width: 100%; text-align: center;
         }
         .hero-banner {
-            background: rgba(15, 23, 42, 0.85);
-            width: 100%; padding: 70px 0;
-            border-top: 5px solid var(--accent); border-bottom: 5px solid var(--accent);
-            backdrop-filter: blur(8px);
+            background: rgba(0, 0, 0, 0.65); /* Şerit siyahlığı */
+            width: 100%; 
+            padding: 50px 0;
+            backdrop-filter: blur(5px);
+            border-top: 2px solid var(--accent);
+            border-bottom: 2px solid var(--accent);
         }
-        /* YENİ SLOGAN GÜNCELLEMESİ */
         .hero-banner h1 {
-            color: var(--white); font-family: 'Montserrat'; font-size: clamp(24px, 5vw, 56px);
-            letter-spacing: 2px; text-transform: uppercase; font-weight: 900; margin-bottom: 15px;
-            padding: 0 5%; line-height: 1.2;
+            color: #ffffff; font-family: 'Montserrat'; font-size: clamp(28px, 6vw, 75px);
+            letter-spacing: 1px; text-transform: uppercase; font-weight: 900; margin-bottom: 10px;
+            line-height: 1.1;
         }
         .hero-banner p {
-            color: var(--accent); font-weight: 700; font-size: clamp(16px, 2.5vw, 24px);
-            text-transform: uppercase; letter-spacing: 5px;
+            color: var(--accent); font-weight: 700; font-size: clamp(16px, 2.5vw, 28px);
+            text-transform: uppercase; letter-spacing: 6px;
         }
 
         /* --- BÖLÜM AYARLARI --- */
@@ -127,15 +128,14 @@
 
         @media (max-width: 1024px) {
             header { padding: 10px 2%; }
-            .logo-img { height: 80px; }
-            .logo-text { font-size: 16px; }
+            .logo-text { font-size: 13px; }
             nav ul li { margin-left: 10px; }
         }
         @media (max-width: 768px) {
             nav { display: none; }
-            .logo-img { height: 70px; }
-            .logo-text { font-size: 14px; }
-            .hero-banner h1 { font-size: 24px; }
+            .logo-img { height: 60px; }
+            .logo-text { font-size: 11px; }
+            .hero-banner h1 { font-size: 20px; }
         }
     </style>
 </head>
@@ -185,9 +185,9 @@
     </div>
     
     <div class="hero-content">
-        <div class="hero-banner" data-aos="zoom-in">
-            <h1>GELECEĞİN YAPILARINI ÇELİKLE ŞEKİLLENDİRİYORUZ</h1>
-            <p>SINIRSIZ ÇÖZÜMLER, SARSILMAZ GÜVEN</p>
+       <div class="hero-banner" data-aos="zoom-in">
+        <h1>GELECEĞİN YAPILARINI<br>ÇELİKLE ŞEKİLLENDİRİYORUZ</h1>
+        <p>SINIRSIZ ÇÖZÜMLER, SARSILMAZ GÜVEN</p>
         </div>
     </div>
 </section>
@@ -247,7 +247,7 @@
         </div>
         <div class="map-box" data-aos="fade-left">
             <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3007.44754519665!2d29.3142728!3d41.0811267!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cad1396a8e805d%3A0xc399587a82b0e6e!2zS2_Dp3VsbHUsIEJhxJ9jxLEgU2suIE5vOjE0LCAzNDc5NyDDh2VrbWVrw7Z5L8Swc3RhbmJ1bA!5e0!3m2!1str!2str!4v1700000000000" 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3009.610217983054!2d29.3406563!3d41.1146208!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cad0509a259c7f%3A0x86134b22306915f0!2zS2_Dp3VsbHUsIEJhxJ9jxLEgU2suIE5vOjE0LCAzNDc5OSDDh2VrbWVrw7Z5L8Swc3RhbmJ1bA!5e0!3m2!1str!2str!4v1700000000000" 
                 allowfullscreen="" loading="lazy"></iframe>
         </div>
     </div>
@@ -265,6 +265,7 @@
 <script>
     AOS.init({ duration: 1000, once: true });
 
+    // --- HERO SLIDER SCRIPT ---
     const slides = document.querySelectorAll('.slide');
     let currentSlide = 0;
 
