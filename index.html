@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Madenciler Uzay Çatı Sistemleri | Çelik Yapı Mühendisliği</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
@@ -26,89 +26,104 @@
             position: fixed; top: 0; width: 100%; z-index: 1000;
             background: rgba(15, 23, 42, 0.98); padding: 10px 5%;
             display: flex; justify-content: space-between; align-items: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
         }
         
-        /* LOGO & UNVAN (İstediğin Gibi Büyük ve Striking) */
-        .brand-container { display: flex; align-items: center; gap: 20px; text-decoration: none; }
-        .logo-img { height: 100px; width: auto; object-fit: contain; } 
-        .logo-text { 
-            font-family: 'Montserrat'; color: var(--white); font-weight: 900; 
-            font-size: 20px; line-height: 1.1; text-transform: uppercase; 
-        }
-        .logo-text span { 
-            color: var(--accent); display: block; font-size: 13px; 
-            font-weight: 700; margin-top: 4px; letter-spacing: 2px;
-        }
+        .brand-container { display: flex; align-items: center; gap: 15px; text-decoration: none; }
+        .logo-img { height: 65px; width: auto; object-fit: contain; }
+        .logo-text { font-family: 'Montserrat'; color: var(--white); font-weight: 800; font-size: 14px; line-height: 1.2; text-transform: uppercase; }
+        .logo-text span { color: var(--accent); display: block; font-size: 11px; margin-top: 2px; }
 
         nav ul { display: flex; list-style: none; }
-        nav ul li { margin-left: 20px; }
-        nav ul li a { color: var(--white); text-decoration: none; font-size: 12.5px; font-weight: 700; text-transform: uppercase; transition: 0.3s; }
+        nav ul li { position: relative; margin-left: 20px; }
+        nav ul li a { color: var(--white); text-decoration: none; font-size: 12px; font-weight: 600; text-transform: uppercase; transition: 0.3s; }
         nav ul li a:hover { color: var(--accent); }
 
-        /* --- HERO SLIDER (STABİL YAPI) --- */
+        .dropdown-menu {
+            position: absolute; top: 100%; left: 0; background: var(--primary);
+            width: 250px; display: none; padding: 15px 0; border-top: 3px solid var(--accent);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        .dropdown:hover .dropdown-menu { display: block; }
+        .dropdown-menu li { margin: 0; width: 100%; }
+        .dropdown-menu li a { padding: 10px 20px; display: block; text-transform: capitalize; font-size: 13px; }
+        .dropdown-menu li a:hover { background: rgba(255,255,255,0.05); color: var(--accent); }
+
+        /* --- HERO SLIDER --- */
         .hero {
             height: 100vh; position: relative; overflow: hidden;
             display: flex; justify-content: center; align-items: center;
-            background: #000;
         }
-        .hero-slider { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
+        .hero-slider {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;
+        }
         .slide {
             position: absolute; width: 100%; height: 100%; opacity: 0;
             transition: opacity 1.5s ease-in-out;
             background-size: cover; background-position: center;
         }
-        .slide.active { opacity: 0.7; }
-        .slide::after { content: ''; position: absolute; width: 100%; height: 100%; background: rgba(0,0,0,0.4); }
+        .slide.active { opacity: 1; }
+        .slide::after { content: ''; position: absolute; width: 100%; height: 100%; background: rgba(0,0,0,0.5); }
 
-        /* --- SLOGAN BANDI (GÖRSELDEKİ TURUNCU ÇİZGİLİ YAPI) --- */
-        .hero-content { position: relative; z-index: 2; width: 100%; text-align: center; }
+        .hero-content {
+            position: relative; z-index: 2; width: 100%; text-align: center;
+        }
         .hero-banner {
-            background: rgba(0, 0, 0, 0.75);
+            background: rgba(15, 23, 42, 0.8);
             width: 100%; padding: 60px 0;
-            border-top: 5px solid var(--accent);
-            border-bottom: 5px solid var(--accent);
+            border-top: 5px solid var(--accent); border-bottom: 5px solid var(--accent);
             backdrop-filter: blur(5px);
         }
         .hero-banner h1 {
-            color: var(--white); font-family: 'Montserrat'; font-size: clamp(24px, 5vw, 54px);
-            font-weight: 900; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px;
+            color: var(--white); font-family: 'Montserrat'; font-size: clamp(22px, 4vw, 48px);
+            letter-spacing: 3px; text-transform: uppercase; font-weight: 800; margin-bottom: 10px;
         }
         .hero-banner p {
-            color: var(--accent); font-weight: 700; font-size: clamp(14px, 2vw, 22px);
-            text-transform: uppercase; letter-spacing: 6px;
+            color: var(--accent); font-weight: 600; font-size: clamp(14px, 2vw, 20px);
+            text-transform: uppercase; letter-spacing: 4px;
         }
 
-        /* --- BÖLÜMLER (VİZYON/MİSYON & İLETİŞİM) --- */
+        /* --- BÖLÜM AYARLARI --- */
         .section { padding: 100px 10%; }
         .section-title { text-align: center; margin-bottom: 60px; }
-        .section-title h2 { font-family: 'Montserrat'; font-size: 36px; text-transform: uppercase; position: relative; padding-bottom: 15px; }
+        .section-title h2 { font-family: 'Montserrat'; font-size: 36px; position: relative; padding-bottom: 15px; text-transform: uppercase; }
         .section-title h2::after { content: ''; width: 60px; height: 4px; background: var(--accent); position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); }
 
         .about-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .about-card { background: var(--white); padding: 40px; border-radius: 12px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.3s; }
-        .about-card:hover { transform: translateY(-10px); }
+        .about-card { background: var(--white); padding: 40px; border-radius: 12px; transition: 0.4s; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .about-card:hover { transform: translateY(-10px); box-shadow: 0 15px 40px rgba(0,0,0,0.1); }
         .about-card i { font-size: 45px; color: var(--accent); margin-bottom: 25px; }
-        .about-card h3 { font-family: 'Montserrat'; margin-bottom: 15px; }
-        .about-card p { font-size: 14.5px; line-height: 1.7; color: var(--gray); }
+        .about-card h3 { margin-bottom: 15px; font-family: 'Montserrat'; font-size: 22px; color: var(--primary); }
+        .about-card p { font-size: 14.5px; line-height: 1.7; color: var(--gray); text-align: justify; }
 
         .contact-container { display: flex; flex-wrap: wrap; gap: 30px; margin-top: 40px; }
         .contact-info { flex: 1; min-width: 320px; background: var(--primary); color: white; padding: 50px; border-radius: 12px; }
-        .contact-info h3 { color: var(--accent); font-family: 'Montserrat'; margin-bottom: 20px; }
-        .contact-info p { margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
-        
-        .map-box { flex: 1.5; min-width: 320px; height: 450px; border-radius: 12px; overflow: hidden; }
+        .contact-info h3 { font-family: 'Montserrat'; font-size: 24px; margin-bottom: 30px; color: var(--accent); text-transform: uppercase; }
+        .contact-info p { margin-bottom: 25px; display: flex; align-items: flex-start; gap: 15px; font-size: 15px; }
+        .contact-info i { color: var(--accent); font-size: 20px; margin-top: 4px; }
+        .contact-info strong { color: var(--white); display: block; margin-bottom: 5px; font-size: 16px; }
 
-        .whatsapp { position: fixed; bottom: 30px; right: 30px; background: #25d366; width: 65px; height: 65px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 35px; color: white; z-index: 2000; box-shadow: 0 10px 25px rgba(37,211,102,0.4); transition: 0.3s; }
+        .map-box { flex: 1.5; min-width: 320px; height: 450px; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .map-box iframe { width: 100%; height: 100%; border: none; }
+
+        .whatsapp {
+            position: fixed; bottom: 30px; right: 30px; background: #25d366;
+            width: 65px; height: 65px; border-radius: 50%; display: flex;
+            justify-content: center; align-items: center; font-size: 35px; color: white; z-index: 2000;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4); transition: 0.3s;
+        }
         .whatsapp:hover { transform: scale(1.1); }
 
-        footer { background: #020617; color: #64748b; padding: 30px; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); }
+        footer { background: #020617; color: #64748b; padding: 30px; text-align: center; font-size: 14px; border-top: 1px solid rgba(255,255,255,0.05); }
 
+        @media (max-width: 1024px) {
+            header { padding: 10px 2%; }
+            .logo-text { font-size: 11px; }
+            nav ul li { margin-left: 10px; }
+        }
         @media (max-width: 768px) {
             nav { display: none; }
-            .logo-img { height: 70px; }
-            .logo-text { font-size: 14px; }
-            .hero-banner { padding: 40px 10px; }
+            .hero-banner h1 { font-size: 20px; }
         }
     </style>
 </head>
@@ -123,27 +138,44 @@
     </a>
     <nav>
         <ul>
-            <li><a href="index.html">ANASAYFA</a></li>
-            <li><a href="#hakkimizda">HAKKIMIZDA</a></li>
-            <li><a href="hizmetler.html">HİZMETLER</a></li>
-            <li><a href="projeler.html">PROJELER</a></li>
-            <li><a href="#iletisim">İLETİŞİM</a></li>
+            <li><a href="index.html">Anasayfa</a></li>
+            <li class="dropdown">
+                <a href="#hakkimizda">Hakkımızda <i class="fa fa-chevron-down" style="font-size: 10px;"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#hakkimizda">Vizyonumuz</a></li>
+                    <li><a href="#hakkimizda">Misyonumuz</a></li>
+                    <li><a href="#hakkimizda">Kalite Politikamız</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="hizmetler.html">Hizmetler <i class="fa fa-chevron-down" style="font-size: 10px;"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="hizmetler.html#uzay-kafes">Uzay Kafes Sistemleri</a></li>
+                    <li><a href="hizmetler.html#celik-konstruksiyon">Çelik Konstrüksiyon</a></li>
+                    <li><a href="hizmetler.html#cati-kaplama">Çatı Kaplama</a></li>
+                    <li><a href="hizmetler.html#imalat">İmalat</a></li>
+                    <li><a href="hizmetler.html#montaj">Montaj</a></li>
+                </ul>
+            </li>
+            <li><a href="projeler.html">Projeler</a></li>
+            <li><a href="projeler.html#referanslar">Referanslar</a></li>
+            <li><a href="#iletisim">İletişim</a></li>
         </ul>
     </nav>
 </header>
 
 <section class="hero">
     <div class="hero-slider">
-        <div class="slide active" style="background-image: url('images/proje18.jpg');"></div>
-        <div class="slide" style="background-image: url('images/proje1.png');"></div>
+        <div class="slide active" style="background-image: url('images/proje1.png');"></div>
         <div class="slide" style="background-image: url('images/proje9.png');"></div>
         <div class="slide" style="background-image: url('images/proje3.jpg');"></div>
+        <div class="slide" style="background-image: url('https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHY5bXF6ZXZ3OHZ3OHZ3OHZ3OHZ3OHZ3OHZ3OHZ3OHZ3OHZ3OHZ3JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/3o7TKMGpxxyHlT9A9G/giphy.gif');"></div>
     </div>
     
     <div class="hero-content">
         <div class="hero-banner" data-aos="zoom-in">
-            <h1>GELECEĞİN YAPILARINI ÇELİKLE ŞEKİLLENDİRİYORUZ</h1>
-            <p>SINIRSIZ ÇÖZÜMLER, SARSILMAZ GÜVEN</p>
+            <h1>Geleceği Çelikle İnşa Ediyoruz</h1>
+            <p>Sınırsız Açıklık, Maksimum Güven</p>
         </div>
     </div>
 </section>
@@ -156,12 +188,17 @@
         <div class="about-card" data-aos="fade-up" data-aos-delay="100">
             <i class="fa-solid fa-eye"></i>
             <h3>Vizyonumuz</h3>
-            <p>Sektörümüzde kalite ve güvenin temsilcisi olmayı, çevreye saygılı yapılar inşa etmeyi amaçlıyoruz.</p>
+            <p>Faaliyet gösterdiğimiz her alanda güvenilir, saygın ve tercih edilen bir firma olmaktır. Çevreye ve topluma saygıyı temel ilke olarak benimseyerek, planlı ve istikrarlı büyüme ile sektörümüzde kalite ve güvenin temsilcisi olmayı amaçlıyoruz.</p>
         </div>
         <div class="about-card" data-aos="fade-up" data-aos-delay="200">
             <i class="fa-solid fa-bullseye"></i>
             <h3>Misyonumuz</h3>
-            <p>Güçlü teknik kadromuzla müşterilerimize yüksek kalite standartlarında profesyonel hizmet sunmaktır.</p>
+            <p>İnşaat, metal ve çelik sektöründe, geçmişten gelen deneyimimizi ve güçlü teknik kadromuzu en verimli şekilde kullanarak müşterilerimize yüksek kalite standartlarında hizmet sunmaktır. Çözüm odaklı ve profesyonel yaklaşımımızla kalıcı değerler üretmek temel hedefimizdir.</p>
+        </div>
+        <div class="about-card" data-aos="fade-up" data-aos-delay="300">
+            <i class="fa-solid fa-award"></i>
+            <h3>Kalite Politikamız</h3>
+            <p>Müşteri beklentilerini doğru analiz ederek, güvenilir ve sürdürülebilir çözümler sunarız. Kalite bilincinin tüm çalışanlarımız tarafından benimsenmesini sağlayarak müşteri memnuniyetini en üst seviyede tutmak ve güvenin simgesi olmak temel amacımızdır.</p>
         </div>
     </div>
 </section>
@@ -173,17 +210,40 @@
     <div class="contact-container">
         <div class="contact-info" data-aos="fade-right">
             <h3>Bize Ulaşın</h3>
-            <p><i class="fa-solid fa-location-dot"></i> Koçullu Mah. Bağcı Sk. No:14 Çekmeköy / İstanbul</p>
-            <p><i class="fa-solid fa-phone"></i> +90 531 914 29 16</p>
-            <p><i class="fa-solid fa-envelope"></i> madencilercelik@gmail.com</p>
+            <p>
+                <i class="fa-solid fa-phone"></i>
+                <span>
+                    <strong>Telefon Numaralarımız:</strong>
+                    +90 533 481 55 90 <span style="color:var(--accent); font-weight: bold;">|</span> +90 531 914 29 16
+                </span>
+            </p>
+            <p>
+                <i class="fa-solid fa-envelope"></i>
+                <span>
+                    <strong>E-posta Adresimiz:</strong>
+                    madencilercelik@gmail.com
+                </span>
+            </p>
+            <p>
+                <i class="fa-solid fa-location-dot"></i>
+                <span>
+                    <strong>Adres Bilgimiz:</strong>
+                    Koçullu Mah. Bağcı Sk. No:14<br>
+                    Çekmeköy / İstanbul
+                </span>
+            </p>
         </div>
         <div class="map-box" data-aos="fade-left">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3009.643324151785!2d29.3142!3d41.1152!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDA2JzU0LjciTiAyOcKwMTgnNTEuMSJF!5e0!3m2!1str!2str!4v1620000000000!5m2!1str!2str" allowfullscreen="" loading="lazy"></iframe>
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3009.610217983054!2d29.3406563!3d41.1146208!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cad0509a259c7f%3A0x86134b22306915f0!2zS2_Dp3VsbHUsIEJhxJ9jxLEgU2suIE5vOjE0LCAzNDc5OSDDh2VrbWVrw7Z5L8Swc3RhbmJ1bA!5e0!3m2!1str!2str!4v1700000000000" 
+                allowfullscreen="" loading="lazy"></iframe>
         </div>
     </div>
 </section>
 
-<a href="https://wa.me/905319142916" class="whatsapp" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+<a href="https://wa.me/905319142916" class="whatsapp" target="_blank">
+    <i class="fa-brands fa-whatsapp"></i>
+</a>
 
 <footer>
     <p>© 2026 Madenciler Uzay Çatı Sistemleri. Tüm Hakları Saklıdır.</p>
@@ -193,14 +253,16 @@
 <script>
     AOS.init({ duration: 1000, once: true });
 
-    // Hatasız Slider Akışı
+    // --- HERO SLIDER SCRIPT ---
     const slides = document.querySelectorAll('.slide');
     let currentSlide = 0;
+
     function nextSlide() {
         slides[currentSlide].classList.remove('active');
         currentSlide = (currentSlide + 1) % slides.length;
         slides[currentSlide].classList.add('active');
     }
+
     setInterval(nextSlide, 5000); 
 </script>
 
