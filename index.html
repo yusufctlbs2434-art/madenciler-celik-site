@@ -24,19 +24,22 @@
         /* --- NAVBAR --- */
         header {
             position: fixed; top: 0; width: 100%; z-index: 1000;
-            background: rgba(15, 23, 42, 0.98); padding: 15px 8%;
+            background: rgba(15, 23, 42, 0.98); padding: 10px 5%;
             display: flex; justify-content: space-between; align-items: center;
             box-shadow: 0 2px 10px rgba(0,0,0,0.3);
         }
-        .logo { font-family: 'Montserrat'; color: var(--white); font-weight: 800; font-size: 20px; text-decoration: none; }
-        .logo span { color: var(--accent); }
+        
+        /* LOGO & UNVAN KOMBO */
+        .brand-container { display: flex; align-items: center; gap: 15px; text-decoration: none; }
+        .logo-img { height: 65px; width: auto; object-fit: contain; }
+        .logo-text { font-family: 'Montserrat'; color: var(--white); font-weight: 800; font-size: 14px; line-height: 1.2; text-transform: uppercase; }
+        .logo-text span { color: var(--accent); display: block; font-size: 11px; margin-top: 2px; }
 
         nav ul { display: flex; list-style: none; }
-        nav ul li { position: relative; margin-left: 25px; }
-        nav ul li a { color: var(--white); text-decoration: none; font-size: 13px; font-weight: 600; text-transform: uppercase; transition: 0.3s; }
+        nav ul li { position: relative; margin-left: 20px; }
+        nav ul li a { color: var(--white); text-decoration: none; font-size: 12px; font-weight: 600; text-transform: uppercase; transition: 0.3s; }
         nav ul li a:hover { color: var(--accent); }
 
-        /* Dropdown Menü Tasarımı */
         .dropdown-menu {
             position: absolute; top: 100%; left: 0; background: var(--primary);
             width: 250px; display: none; padding: 15px 0; border-top: 3px solid var(--accent);
@@ -47,30 +50,46 @@
         .dropdown-menu li a { padding: 10px 20px; display: block; text-transform: capitalize; font-size: 13px; }
         .dropdown-menu li a:hover { background: rgba(255,255,255,0.05); color: var(--accent); }
 
-        /* --- HERO (Baskın Bant Tasarımı) --- */
+        /* --- HERO SLIDER --- */
         .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1541888946425-d81bb19480c5?q=80&w=2000') no-repeat center center/cover;
+            height: 100vh; position: relative; overflow: hidden;
             display: flex; justify-content: center; align-items: center;
         }
+        .hero-slider {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;
+        }
+        .slide {
+            position: absolute; width: 100%; height: 100%; opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+            background-size: cover; background-position: center;
+        }
+        .slide.active { opacity: 1; }
+        .slide::after { content: ''; position: absolute; width: 100%; height: 100%; background: rgba(0,0,0,0.5); }
+
+        .hero-content {
+            position: relative; z-index: 2; width: 100%; text-align: center;
+        }
         .hero-banner {
-            background: rgba(15, 23, 42, 0.85);
-            width: 100%; padding: 50px 0;
-            text-align: center; border-top: 5px solid var(--accent); border-bottom: 5px solid var(--accent);
-            backdrop-filter: blur(8px);
+            background: rgba(15, 23, 42, 0.8);
+            width: 100%; padding: 60px 0;
+            border-top: 5px solid var(--accent); border-bottom: 5px solid var(--accent);
+            backdrop-filter: blur(5px);
         }
         .hero-banner h1 {
-            color: var(--white); font-family: 'Montserrat'; font-size: clamp(20px, 5vw, 42px);
-            letter-spacing: 2px; text-transform: uppercase; font-weight: 800;
+            color: var(--white); font-family: 'Montserrat'; font-size: clamp(22px, 4vw, 48px);
+            letter-spacing: 3px; text-transform: uppercase; font-weight: 800; margin-bottom: 10px;
+        }
+        .hero-banner p {
+            color: var(--accent); font-weight: 600; font-size: clamp(14px, 2vw, 20px);
+            text-transform: uppercase; letter-spacing: 4px;
         }
 
-        /* --- BÖLÜM AYARLARI --- */
+        /* --- BÖLÜMLER --- */
         .section { padding: 100px 10%; }
         .section-title { text-align: center; margin-bottom: 60px; }
         .section-title h2 { font-family: 'Montserrat'; font-size: 36px; position: relative; padding-bottom: 15px; text-transform: uppercase; }
         .section-title h2::after { content: ''; width: 60px; height: 4px; background: var(--accent); position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); }
 
-        /* --- HAKKIMIZDA (3'lü Kart Yapısı) --- */
         .about-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
         .about-card { background: var(--white); padding: 40px; border-radius: 12px; transition: 0.4s; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
         .about-card:hover { transform: translateY(-10px); box-shadow: 0 15px 40px rgba(0,0,0,0.1); }
@@ -78,7 +97,6 @@
         .about-card h3 { margin-bottom: 15px; font-family: 'Montserrat'; font-size: 22px; color: var(--primary); }
         .about-card p { font-size: 14.5px; line-height: 1.7; color: var(--gray); text-align: justify; }
 
-        /* --- İLETİŞİM ALANI --- */
         .contact-container { display: flex; flex-wrap: wrap; gap: 30px; margin-top: 40px; }
         .contact-info { flex: 1; min-width: 320px; background: var(--primary); color: white; padding: 50px; border-radius: 12px; }
         .contact-info h3 { font-family: 'Montserrat'; font-size: 24px; margin-bottom: 30px; color: var(--accent); text-transform: uppercase; }
@@ -89,7 +107,6 @@
         .map-box { flex: 1.5; min-width: 320px; height: 450px; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
         .map-box iframe { width: 100%; height: 100%; border: none; }
 
-        /* --- WHATSAPP BUTONU --- */
         .whatsapp {
             position: fixed; bottom: 30px; right: 30px; background: #25d366;
             width: 65px; height: 65px; border-radius: 50%; display: flex;
@@ -100,18 +117,26 @@
 
         footer { background: #020617; color: #64748b; padding: 30px; text-align: center; font-size: 14px; border-top: 1px solid rgba(255,255,255,0.05); }
 
+        @media (max-width: 1024px) {
+            header { padding: 10px 2%; }
+            .logo-text { font-size: 11px; }
+            nav ul li { margin-left: 10px; }
+        }
         @media (max-width: 768px) {
-            header { padding: 15px 5%; }
             nav { display: none; }
-            .section { padding: 60px 5%; }
-            .hero-banner h1 { font-size: 18px; padding: 0 10px; }
+            .hero-banner h1 { font-size: 22px; }
         }
     </style>
 </head>
 <body>
 
 <header>
-    <a href="index.html" class="logo">MADENCİLER <span>UZAY ÇATI</span></a>
+    <a href="index.html" class="brand-container">
+        <img src="images/logo.png" alt="Madenciler Logo" class="logo-img">
+        <div class="logo-text">
+            MADENCİLER ÇELİK UZAY KAFES<span>İNŞ. SAN. VE TİC. LTD. ŞTİ.</span>
+        </div>
+    </a>
     <nav>
         <ul>
             <li><a href="index.html">Anasayfa</a></li>
@@ -141,8 +166,18 @@
 </header>
 
 <section class="hero">
-    <div class="hero-banner" data-aos="zoom-in">
-        <h1>Madenciler Çelik Uzay Çatı Sistemleri</h1>
+    <div class="hero-slider">
+        <div class="slide active" style="background-image: url('images/proje1.png');"></div>
+        <div class="slide" style="background-image: url('images/proje9.png');"></div>
+        <div class="slide" style="background-image: url('images/proje3.jpg');"></div>
+        <div class="slide" style="background-image: url('https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHY5bXF6ZXZ3OHZ3OHZ3OHZ3OHZ3OHZ3OHZ3OHZ3OHZ3OHZ3OHZ3JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/3o7TKMGpxxyHlT9A9G/giphy.gif');"></div>
+    </div>
+    
+    <div class="hero-content">
+        <div class="hero-banner" data-aos="zoom-in">
+            <h1>Geleceği Çelikle İnşa Ediyoruz</h1>
+            <p>Sınırsız Açıklık, Maksimum Güven</p>
+        </div>
     </div>
 </section>
 
@@ -201,7 +236,7 @@
         </div>
         <div class="map-box" data-aos="fade-left">
             <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3008.318264585642!2d29.351253!3d41.06203!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cad3741e595211%3A0x2332aa9d907d9319!2sMadenciler%20%C3%87elik%20Uzay%20Kafes!5e0!3m2!1str!2str!4v1700000000000!5m2!1str!2str" 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3008.8358474271813!2d29.3149487!3d41.0506726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cad3a31e89e907%3A0xc6669f50689e4722!2zS2_Dp3VsbHUsIEJhxJ9jxLEgU2suIE5vOjE0LCAzNDc5OSDDh2VrbWVrw7Z5L8Swc3RhbmJ1bA!5e0!3m2!1str!2str!4v1710000000000!5m2!1str!2str" 
                 allowfullscreen="" loading="lazy"></iframe>
         </div>
     </div>
@@ -217,10 +252,19 @@
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-    AOS.init({ 
-        duration: 1000, 
-        once: true 
-    });
+    AOS.init({ duration: 1000, once: true });
+
+    // --- HERO SLIDER SCRIPT ---
+    const slides = document.querySelectorAll('.slide');
+    let currentSlide = 0;
+
+    function nextSlide() {
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides[currentSlide].classList.add('active');
+    }
+
+    setInterval(nextSlide, 5000); // 5 saniyede bir değişir
 </script>
 
 </body>
