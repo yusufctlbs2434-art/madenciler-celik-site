@@ -10,14 +10,28 @@
     <style>
         :root { --primary: #0f172a; --accent: #f59e0b; --white: #ffffff; --gray: #64748b; --light-bg: #f8fafc; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Poppins', sans-serif; background-color: var(--light-bg); color: var(--primary); line-height: 1.8; }
+        body { font-family: 'Poppins', sans-serif; background-color: var(--light-bg); color: var(--primary); line-height: 1.8; scroll-behavior: smooth; }
 
+        /* --- NAVBAR (Diğer sayfalarla senkron) --- */
         header { position: fixed; top: 0; width: 100%; z-index: 1000; background: #0f172a; padding: 15px 8%; display: flex; justify-content: space-between; align-items: center; }
         .logo { font-family: 'Montserrat'; color: white; font-weight: 800; font-size: 20px; text-decoration: none; }
         .logo span { color: var(--accent); }
+        
         nav ul { display: flex; list-style: none; }
-        nav ul li { margin-left: 25px; }
-        nav ul li a { color: white; text-decoration: none; font-size: 13px; font-weight: 600; text-transform: uppercase; }
+        nav ul li { position: relative; margin-left: 25px; }
+        nav ul li a { color: white; text-decoration: none; font-size: 13px; font-weight: 600; text-transform: uppercase; transition: 0.3s; }
+        nav ul li a:hover { color: var(--accent); }
+
+        /* Dropdown Menü Tasarımı */
+        .dropdown-menu {
+            position: absolute; top: 100%; left: 0; background: var(--primary);
+            width: 250px; display: none; padding: 15px 0; border-top: 3px solid var(--accent);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        .dropdown:hover .dropdown-menu { display: block; }
+        .dropdown-menu li { margin: 0; width: 100%; }
+        .dropdown-menu li a { padding: 10px 20px; display: block; text-transform: capitalize; font-size: 13px; }
+        .dropdown-menu li a:hover { background: rgba(255,255,255,0.05); color: var(--accent); }
 
         .page-banner { padding: 160px 8% 80px; background: linear-gradient(rgba(15,23,42,0.85), rgba(15,23,42,0.85)), url('images/proje1.png'); background-size: cover; background-position: center; color: white; text-align: center; border-bottom: 5px solid var(--accent); }
         .page-banner h1 { font-family: 'Montserrat'; font-size: 42px; text-transform: uppercase; letter-spacing: 2px; }
@@ -37,7 +51,7 @@
         .slide-img { position: absolute; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1.5s ease-in-out; }
         .slide-img.active { opacity: 1; }
 
-        /* İMALAT & MONTAJ - %20 BÜYÜTÜLMÜŞ */
+        /* İMALAT & MONTAJ */
         .tech-section { padding: 80px 8%; background: #0f172a; color: white; }
         .tech-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; max-width: 1400px; margin: 0 auto; }
         
@@ -63,12 +77,37 @@
 
 <header>
     <a href="index.html" class="logo">MADENCİLER <span>UZAY ÇATI</span></a>
-    <nav><ul><li><a href="index.html">Anasayfa</a></li><li><a href="hizmetler.html">Hizmetler</a></li><li><a href="projeler.html">Projeler</a></li></ul></nav>
+    <nav>
+        <ul>
+            <li><a href="index.html">Anasayfa</a></li>
+            <li class="dropdown">
+                <a href="index.html#hakkimizda">Hakkımızda <i class="fa fa-chevron-down" style="font-size: 10px;"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="index.html#hakkimizda">Vizyonumuz</a></li>
+                    <li><a href="index.html#hakkimizda">Misyonumuz</a></li>
+                    <li><a href="index.html#hakkimizda">Kalite Politikamız</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#">Hizmetler <i class="fa fa-chevron-down" style="font-size: 10px;"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#uzay-kafes">Uzay Kafes Sistemleri</a></li>
+                    <li><a href="#celik-konstruksiyon">Çelik Konstrüksiyon</a></li>
+                    <li><a href="#cati-kaplama">Çatı Kaplama</a></li>
+                    <li><a href="#imalat">İmalat</a></li>
+                    <li><a href="#montaj">Montaj</a></li>
+                </ul>
+            </li>
+            <li><a href="projeler.html">Projeler</a></li>
+            <li><a href="projeler.html#referanslar">Referanslar</a></li>
+            <li><a href="index.html#iletisim">İletişim</a></li>
+        </ul>
+    </nav>
 </header>
 
-<div class="page-banner"><h1>Hizmetler</h1></div>
+<div class="page-banner"><h1>Uzmanlık Alanlarımız</h1></div>
 
-<section class="service-row">
+<section id="uzay-kafes" class="service-row">
     <div class="service-info">
         <h2>Uzay Kafes Sistemleri</h2>
         <p>Uzay kafes sistemleri, düğüm noktaları ve taşıyıcı çubukların üç boyutlu geometrik dizilimi ile oluşan, mühendislik açısından dünyanın en verimli statik yapılarından biridir. Bu sistem, yükü tek bir noktaya bindirmek yerine tüm yüzeye yayarak inanılmaz bir taşıma kapasitesi sunar. Mimari açıdan kolonsuz ve geniş açıklıklar (100 metreye kadar) sunması, iç mekan planlamasında sınırsız özgürlük sağlar. Hafifliği sayesinde temel maliyetlerini düşürürken, fabrikasyon üretimi montaj sürecini hızlandırır ve deprem gibi dinamik yüklere karşı konvansiyonel sistemlerden çok daha esnek ve güvenli bir yapı sunar.</p>
@@ -90,7 +129,7 @@
     </div>
 </section>
 
-<section class="service-row">
+<section id="celik-konstruksiyon" class="service-row">
     <div class="service-info">
         <h2>Çelik Konstrüksiyon</h2>
         <p>Endüstriyel gelişimin temel taşı olan çelik konstrüksiyon, yüksek mukavemeti ve sürdürülebilirliği ile modern inşaat teknolojisinin zirvesini temsil eder. S235 ve S355 kalite standartlarında hazırladığımız karkas yapılar, milimetrik toleranslarla projelendirilerek şantiye ortamında hızlıca birleştirilir. Çelik, betonarmeye kıyasla çok daha hafif olmasına rağmen çekme ve basınç kuvvetlerine karşı üstün direnç gösterir. Geri dönüştürülebilir olmasıyla çevre dostudur ve esnek yapısı sayesinde deprem kuşağındaki yapılar için en güvenli tercihtir. Korozyona karşı uyguladığımız özel boya ve kaplama teknikleri ile yapılarınızın ömrünü nesiller boyu koruyoruz.</p>
@@ -111,7 +150,7 @@
     </div>
 </section>
 
-<section class="service-row">
+<section id="cati-kaplama" class="service-row">
     <div class="service-info">
         <h2>Çatı Kaplama Çözümleri</h2>
         <p>Bir yapının konforu ve dayanıklılığı, dış dünyaya karşı duran kabuğunda başlar. Profesyonel kaplama hizmetlerimiz, yapınızın sadece görsel estetiğini tamamlamakla kalmaz, aynı zamanda ısı, ses ve su yalıtımında maksimum performans sunar. Özellikle sanayi yapılarında enerji maliyetlerini düşüren sandviç panel çözümlerinden, kompleks çatı formları için esnek membran uygulamalarına kadar geniş bir yelpazede hizmet veriyoruz. Kullanılan her katman, yapınızın ömrünü uzatmak, nem ve korozyonu engellemek üzere yüksek kalite standartlarında (TS EN) seçilir. Sızdırmazlık garantili detay çözümlerimizle, her mevsim güvenli ve verimli alanlar yaratıyoruz.</p>
@@ -135,7 +174,7 @@
 
 <div class="tech-section">
     <div class="tech-grid">
-        <div class="tech-card">
+        <div id="imalat" class="tech-card">
             <h3>İmalat Teknolojisi</h3>
             <p>Modern tesislerimizde bilgisayar kontrollü (CNC) üretim bantları kullanarak hata payını sıfıra indiriyoruz. Üretilen her küre ve boru elemanı, sevk öncesi uluslararası standartlarda statik testlere tabi tutulmaktadır.</p>
             <div class="tech-gallery">
@@ -145,7 +184,7 @@
             </div>
         </div>
 
-        <div class="tech-card">
+        <div id="montaj" class="tech-card">
             <h3>Saha & Montaj Gücü</h3>
             <p>Eğitimli ve sertifikalı saha personelimizle, iş güvenliğinden taviz vermeden montaj sürecini tamamlıyoruz. Somun anahtarı teknolojisi sayesinde yerinde kaynak gerektirmeyen, hızlı ve güvenli kurulum yapıyoruz.</p>
             <div class="tech-gallery">
