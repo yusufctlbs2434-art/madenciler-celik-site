@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projeler & Referanslar | Madenciler Uzay Çatı</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
@@ -21,21 +21,31 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Poppins', sans-serif; background-color: var(--light-bg); color: var(--primary); scroll-behavior: smooth; }
 
-        /* --- NAVBAR --- */
+        /* --- NAVBAR (HİZMETLER SAYFASI İLE SENKRONİZE) --- */
         header {
             position: fixed; top: 0; width: 100%; z-index: 1000;
-            background: rgba(15, 23, 42, 1); padding: 15px 8%;
+            background: rgba(15, 23, 42, 1); padding: 15px 5%;
             display: flex; justify-content: space-between; align-items: center;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.4);
         }
-        .logo { font-family: 'Montserrat'; color: var(--white); font-weight: 800; font-size: 20px; text-decoration: none; }
-        .logo span { color: var(--accent); }
+        
+        .brand-container { display: flex; align-items: center; gap: 20px; text-decoration: none; }
+        .logo-img { height: 85px; width: auto; object-fit: contain; }
+        .logo-text { 
+            font-family: 'Montserrat'; color: var(--white); font-weight: 900; 
+            font-size: 18px; line-height: 1.2; text-transform: uppercase; 
+        }
+        .logo-text span { 
+            color: var(--accent); display: block; font-size: 12px; 
+            font-weight: 700; margin-top: 4px; letter-spacing: 1px;
+        }
         
         nav ul { display: flex; list-style: none; }
         nav ul li { position: relative; margin-left: 25px; }
         nav ul li a { color: var(--white); text-decoration: none; font-size: 13px; font-weight: 600; text-transform: uppercase; transition: 0.3s; }
         nav ul li a:hover { color: var(--accent); }
 
-        /* Dropdown Menü Tasarımı (Index ile senkronize) */
+        /* Dropdown Menü Tasarımı */
         .dropdown-menu {
             position: absolute; top: 100%; left: 0; background: var(--primary);
             width: 250px; display: none; padding: 15px 0; border-top: 3px solid var(--accent);
@@ -96,16 +106,29 @@
 
         footer { background: #020617; color: #64748b; padding: 40px; text-align: center; font-size: 14px; }
 
+        @media (max-width: 1024px) {
+            .logo-img { height: 65px; }
+            .logo-text { font-size: 15px; }
+        }
+
         @media (max-width: 768px) {
             .section-padding { padding: 60px 5%; }
             header { padding: 15px 5%; }
+            .brand-container { gap: 10px; }
+            .logo-img { height: 50px; }
+            .logo-text { font-size: 13px; }
         }
     </style>
 </head>
 <body>
 
 <header>
-    <a href="index.html" class="logo">MADENCİLER <span>UZAY ÇATI</span></a>
+    <a href="index.html" class="brand-container">
+        <img src="images/logo.png" alt="Madenciler Logo" class="logo-img">
+        <div class="logo-text">
+            MADENCİLER ÇELİK<span>UZAY KAFES SİSTEMLERİ</span>
+        </div>
+    </a>
     <nav>
         <ul>
             <li><a href="index.html">Anasayfa</a></li>
