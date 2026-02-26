@@ -29,21 +29,21 @@
             box-shadow: 0 2px 15px rgba(0,0,0,0.4);
         }
         
-        /* LOGO VE UNVAN BÜYÜTÜLDÜ (TALİMATLARINIZ DOĞRULTUSUNDA) */
+        /* LOGO VE UNVAN BÜYÜTÜLDÜ */
         .brand-container { display: flex; align-items: center; gap: 25px; text-decoration: none; }
-        .logo-img { height: 100px; width: auto; object-fit: contain; }
+        .logo-img { height: 110px; width: auto; object-fit: contain; transition: 0.3s; }
         .logo-text { 
             font-family: 'Montserrat'; color: var(--white); font-weight: 900; 
-            font-size: 22px; line-height: 1.1; text-transform: uppercase; 
+            font-size: 26px; line-height: 1.1; text-transform: uppercase; 
         }
         .logo-text span { 
-            color: var(--accent); display: block; font-size: 14px; 
-            font-weight: 700; margin-top: 5px; letter-spacing: 1.2px;
+            color: var(--accent); display: block; font-size: 16px; 
+            font-weight: 700; margin-top: 5px; letter-spacing: 1.5px;
         }
 
         nav ul { display: flex; list-style: none; }
         nav ul li { position: relative; margin-left: 20px; }
-        nav ul li a { color: var(--white); text-decoration: none; font-size: 12px; font-weight: 600; text-transform: uppercase; transition: 0.3s; }
+        nav ul li a { color: var(--white); text-decoration: none; font-size: 13px; font-weight: 600; text-transform: uppercase; transition: 0.3s; }
         nav ul li a:hover { color: var(--accent); }
 
         .dropdown-menu {
@@ -54,39 +54,27 @@
         .dropdown:hover .dropdown-menu { display: block; }
         .dropdown-menu li { margin: 0; width: 100%; }
         .dropdown-menu li a { padding: 10px 20px; display: block; text-transform: capitalize; font-size: 13px; }
-        .dropdown-menu li a:hover { background: rgba(255,255,255,0.05); color: var(--accent); }
 
-      /* --- HERO SLIDER (GÖRSELDEKİ MODERN TİPOGRAFİ ENTEGRESİ) --- */
-        .hero {
-            height: 100vh; position: relative; overflow: hidden;
-            display: flex; justify-content: center; align-items: center;
-        }
-        .hero-slider {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;
-        }
-        .slide {
-            position: absolute; width: 100%; height: 100%; opacity: 0;
-            transition: opacity 1.5s ease-in-out;
-            background-size: cover; background-position: center;
-        }
+        /* --- HERO SLIDER --- */
+        .hero { height: 100vh; position: relative; overflow: hidden; display: flex; justify-content: center; align-items: center; }
+        .hero-slider { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
+        .slide { position: absolute; width: 100%; height: 100%; opacity: 0; transition: opacity 1.5s ease-in-out; background-size: cover; background-position: center; }
         .slide.active { opacity: 1; }
         .slide::after { content: ''; position: absolute; width: 100%; height: 100%; background: rgba(0,0,0,0.4); }
+        .hero-content { position: relative; z-index: 10; width: 90%; max-width: 1200px; text-align: center; }
+        .hero-typography h1 { color: #ffffff; font-family: 'Montserrat'; font-size: clamp(32px, 7vw, 85px); text-transform: uppercase; font-weight: 900; line-height: 1; margin-bottom: 20px; text-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .hero-typography p { color: var(--accent); font-weight: 700; font-size: clamp(16px, 2.5vw, 26px); text-transform: uppercase; letter-spacing: 8px; text-shadow: 0 5px 15px rgba(0,0,0,0.5); }
 
-        .hero-content {
-            position: relative; z-index: 10; width: 90%; max-width: 1200px; text-align: center;
-        }
-        
-        /* Şerit kaldırıldı, yazı stili görsele göre revize edildi */
-        .hero-typography h1 {
-            color: #ffffff; font-family: 'Montserrat'; font-size: clamp(32px, 7vw, 85px);
-            text-transform: uppercase; font-weight: 900; line-height: 1;
-            margin-bottom: 20px; text-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
-        .hero-typography p {
-            color: var(--accent); font-weight: 700; font-size: clamp(16px, 2.5vw, 26px);
-            text-transform: uppercase; letter-spacing: 8px;
-            text-shadow: 0 5px 15px rgba(0,0,0,0.5);
-        }
+        /* --- NEDEN BİZ BÖLÜMÜ (YENİ) --- */
+        .why-us { display: flex; align-items: center; gap: 50px; background: var(--white); overflow: hidden; }
+        .why-us-image { flex: 1; position: relative; border-radius: 15px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.1); border: 8px solid var(--light-gray); }
+        .why-us-image img { width: 100%; height: auto; display: block; transform: scale(1.02); }
+        .why-us-content { flex: 1.2; }
+        .why-us-content h2 { font-family: 'Montserrat'; font-size: 32px; color: var(--primary); margin-bottom: 20px; text-transform: uppercase; }
+        .why-us-content p { color: var(--gray); line-height: 1.8; font-size: 15px; text-align: justify; margin-bottom: 20px; }
+        .why-us-features { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 25px; }
+        .feature-item { display: flex; align-items: center; gap: 10px; font-weight: 600; color: var(--primary); font-size: 14px; }
+        .feature-item i { color: var(--accent); }
 
         /* --- BÖLÜM AYARLARI --- */
         .section { padding: 100px 10%; }
@@ -123,12 +111,12 @@
 
         @media (max-width: 1024px) {
             header { padding: 10px 2%; }
-            .logo-text { font-size: 13px; }
-            nav ul li { margin-left: 10px; }
+            .logo-text { font-size: 18px; }
+            .logo-img { height: 80px; }
+            .why-us { flex-direction: column; }
         }
         @media (max-width: 768px) {
             nav { display: none; }
-            .logo-img { height: 70px; }
             .logo-text { font-size: 14px; }
             .hero-typography h1 { font-size: 32px; }
         }
@@ -178,11 +166,31 @@
         <div class="slide" style="background-image: url('images/proje9.png');"></div>
         <div class="slide" style="background-image: url('images/proje3.jpg');"></div>
     </div>
-    
     <div class="hero-content">
        <div class="hero-typography" data-aos="zoom-out">
         <h1>GELECEĞİN YAPILARINI<br>ÇELİKLE ŞEKİLLENDİRİYORUZ</h1>
         <p>SINIRSIZ ÇÖZÜMLER, SARSILMAZ GÜVEN</p>
+        </div>
+    </div>
+</section>
+
+<section class="section why-us">
+    <div class="why-us-image" data-aos="fade-right">
+        <img src="images/kaynak.gif" alt="Madenciler Çelik Çalışma">
+    </div>
+    <div class="why-us-content" data-aos="fade-left">
+        <h2>Neden Biz?</h2>
+        <p>
+            <strong>2010 yılından bu yana</strong> sektörde edindiğimiz derin tecrübe ve mühendislik birikimimizle, çelik yapı ve uzay kafes sistemlerinde Türkiye'nin öncü firmaları arasında yer alıyoruz. Madenciler Çelik olarak, her projemizde <strong>profesyonel hizmet</strong> anlayışını, estetik ve statik disiplinlerle harmanlıyoruz.
+        </p>
+        <p>
+            Bizim için başarı, sadece bir yapıyı tamamlamak değil, <strong>koşulsuz müşteri memnuniyeti</strong> sağlamaktır. Kendi bünyemizde yetişmiş <strong>uzman montaj ekibimiz</strong> ile en zorlu sahalarda bile milimetrik hassasiyetle çalışıyor, <strong>sayısız başarılı projeye</strong> imza atmanın haklı gururunu yaşıyoruz. Modern imalat tekniklerimiz ve yüksek kalite standartlarımızla, yapılarınıza değer katmaya devam ediyoruz.
+        </p>
+        <div class="why-us-features">
+            <div class="feature-item"><i class="fa-solid fa-check-double"></i> 14+ Yıllık Sektörel Deneyim</div>
+            <div class="feature-item"><i class="fa-solid fa-check-double"></i> Uzman Mühendislik Kadrosu</div>
+            <div class="feature-item"><i class="fa-solid fa-check-double"></i> Sertifikalı Montaj Ekibi</div>
+            <div class="feature-item"><i class="fa-solid fa-check-double"></i> Zamanında Teslimat Garantisi</div>
         </div>
     </div>
 </section>
@@ -242,7 +250,7 @@
         </div>
         <div class="map-box" data-aos="fade-left">
             <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3009.610217983054!2d29.3406563!3d41.1146208!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cad0509a259c7f%3A0x86134b22306915f0!2zS2_Dp3VsbHUsIEJhxJ9jxLEgU2suIE5vOjE0LCAzNDc5OSDDh2VrbWVrw7Z5L8Swc3RhbmJ1bA!5e0!3m2!1str!2str!4v1700000000000" 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3007.8286026937214!2d29.32431697657367!3d41.072740915444855!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cad1986423c965%3A0x6a0f7601f067673b!2zS2_Dp3VsbHUsIEJhxJ_ some-id-placeholder" 
                 allowfullscreen="" loading="lazy"></iframe>
         </div>
     </div>
@@ -260,16 +268,13 @@
 <script>
     AOS.init({ duration: 1000, once: true });
 
-    // --- HERO SLIDER SCRIPT ---
     const slides = document.querySelectorAll('.slide');
     let currentSlide = 0;
-
     function nextSlide() {
         slides[currentSlide].classList.remove('active');
         currentSlide = (currentSlide + 1) % slides.length;
         slides[currentSlide].classList.add('active');
     }
-
     setInterval(nextSlide, 5000); 
 </script>
 
