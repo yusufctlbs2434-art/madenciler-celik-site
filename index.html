@@ -162,6 +162,41 @@
             .logo-text span { font-size: 10px; }
             .contact-info { padding: 30px 20px; }
         }
+        /* ================================= */
+/* MOBILE SAĞA KAYMA VE BEYAZ BOŞLUK FIX */
+/* ================================= */
+
+html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+/* Mobile hero taşma fix */
+@media (max-width: 768px) {
+
+    .hero {
+        padding-left: 5% !important;
+        padding-right: 5% !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    header {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .hero-slider {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+}
+
+/* ekstra güvenlik fix */
+* {
+    box-sizing: border-box;
+}
     </style>
 </head>
 <body>
