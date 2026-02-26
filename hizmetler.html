@@ -83,7 +83,141 @@
         @media (max-width: 768px) {
             .logo-img { height: 65px; }
             .logo-text { font-size: 14px; }
-        }
+        }/* ============================= */
+/* MOBILE RESPONSIVE FIX ONLY   */
+/* DESKTOP TASARIMA DOKUNMAZ   */
+/* ============================= */
+
+@media (max-width: 768px) {
+
+    /* NAVBAR */
+    header {
+        padding: 10px 4%;
+    }
+
+    .brand-container {
+        gap: 10px;
+    }
+
+    .logo-img {
+        height: 55px;
+    }
+
+    .logo-text {
+        font-size: 12px;
+    }
+
+    .logo-text span {
+        font-size: 10px;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    /* BANNER */
+    .page-banner {
+        padding: 130px 5% 60px;
+    }
+
+    .page-banner h1 {
+        font-size: 26px;
+        letter-spacing: 1px;
+    }
+
+    /* SERVICE ROW */
+    .service-row {
+        flex-direction: column !important;
+        padding: 50px 5%;
+        gap: 25px;
+        min-height: auto;
+    }
+
+    .service-info h2 {
+        font-size: 22px;
+        padding-left: 15px;
+        border-left: 5px solid var(--accent);
+    }
+
+    .service-info p {
+        font-size: 14px;
+    }
+
+    /* SLIDER */
+    .service-slider {
+        width: 100%;
+        height: 240px;
+        border-width: 6px;
+    }
+
+    /* USAGE GRID */
+    .usage-area {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .usage-item {
+        font-size: 11px;
+        padding: 8px;
+    }
+
+    /* TECH SECTION */
+    .tech-section {
+        padding: 50px 5%;
+    }
+
+    .tech-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .tech-card {
+        padding: 25px;
+    }
+
+    .tech-card h3 {
+        font-size: 20px;
+    }
+
+    .tech-card p {
+        font-size: 14px;
+        min-height: auto;
+    }
+
+    .tech-gallery {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .tech-gallery img {
+        height: 100px;
+    }
+
+    /* FOOTER */
+    footer {
+        padding: 25px;
+        font-size: 13px;
+    }
+
+}
+
+
+/* EXTRA SMALL DEVICES */
+@media (max-width: 480px) {
+
+    .page-banner h1 {
+        font-size: 22px;
+    }
+
+    .service-slider {
+        height: 200px;
+    }
+
+    .tech-gallery {
+        grid-template-columns: 1fr;
+    }
+
+}
+
     </style>
 </head>
 <body>
